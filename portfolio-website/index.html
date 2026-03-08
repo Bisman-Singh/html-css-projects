@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio — Developer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">Dev<span>Portfolio</span></div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <p class="hero-greeting">Hello, I'm</p>
+            <h1 class="hero-name">Jane Developer</h1>
+            <p class="hero-tagline">Full-Stack Engineer &amp; Creative Coder</p>
+            <div class="hero-cta">
+                <a href="#projects" class="btn btn-primary">View Work</a>
+                <a href="#contact" class="btn btn-outline">Get in Touch</a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="code-block">
+                <span class="code-line"><span class="kw">const</span> developer = {</span>
+                <span class="code-line indent">name: <span class="str">"Jane"</span>,</span>
+                <span class="code-line indent">skills: [<span class="str">"JS"</span>, <span class="str">"Python"</span>, <span class="str">"Go"</span>],</span>
+                <span class="code-line indent">passion: <span class="str">"Building things"</span></span>
+                <span class="code-line">};</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-grid">
+            <div class="about-text">
+                <p>I'm a passionate developer with 5+ years of experience building web applications, APIs, and developer tools. I love turning complex problems into elegant, user-friendly solutions.</p>
+                <p>When I'm not coding, you'll find me contributing to open source, writing technical articles, or exploring new frameworks.</p>
+            </div>
+            <div class="about-stats">
+                <div class="stat-card">
+                    <span class="stat-number" data-target="50">0</span>
+                    <span class="stat-label">Projects Completed</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number" data-target="5">0</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number" data-target="20">0</span>
+                    <span class="stat-label">Happy Clients</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number" data-target="1200">0</span>
+                    <span class="stat-label">GitHub Commits</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="skills">
+        <h2 class="section-title">Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <div class="skill-icon">&#60;/&#62;</div>
+                <h3>Frontend</h3>
+                <div class="skill-bar"><div class="skill-fill" data-width="90%"></div></div>
+                <p>HTML, CSS, JavaScript, React, Vue</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">&#9881;</div>
+                <h3>Backend</h3>
+                <div class="skill-bar"><div class="skill-fill" data-width="85%"></div></div>
+                <p>Node.js, Python, Go, REST, GraphQL</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">&#128451;</div>
+                <h3>Database</h3>
+                <div class="skill-bar"><div class="skill-fill" data-width="80%"></div></div>
+                <p>PostgreSQL, MongoDB, Redis, Firebase</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">&#9729;</div>
+                <h3>DevOps</h3>
+                <div class="skill-bar"><div class="skill-fill" data-width="75%"></div></div>
+                <p>Docker, AWS, CI/CD, Kubernetes</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+        <h2 class="section-title">Projects</h2>
+        <div class="project-filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="web">Web Apps</button>
+            <button class="filter-btn" data-filter="tool">Tools</button>
+            <button class="filter-btn" data-filter="game">Games</button>
+        </div>
+        <div class="projects-grid">
+            <div class="project-card" data-category="web">
+                <div class="project-image" style="background: linear-gradient(135deg, #667eea, #764ba2);">
+                    <span>E-Commerce</span>
+                </div>
+                <div class="project-info">
+                    <h3>ShopFlow</h3>
+                    <p>Full-stack e-commerce platform with real-time inventory and Stripe payments.</p>
+                    <div class="project-tags"><span>React</span><span>Node.js</span><span>MongoDB</span></div>
+                </div>
+            </div>
+            <div class="project-card" data-category="tool">
+                <div class="project-image" style="background: linear-gradient(135deg, #f093fb, #f5576c);">
+                    <span>CLI Tool</span>
+                </div>
+                <div class="project-info">
+                    <h3>DevSync</h3>
+                    <p>CLI tool for syncing development environments across machines.</p>
+                    <div class="project-tags"><span>Go</span><span>Docker</span><span>SSH</span></div>
+                </div>
+            </div>
+            <div class="project-card" data-category="web">
+                <div class="project-image" style="background: linear-gradient(135deg, #4facfe, #00f2fe);">
+                    <span>Dashboard</span>
+                </div>
+                <div class="project-info">
+                    <h3>MetricsPulse</h3>
+                    <p>Real-time analytics dashboard with customizable widgets.</p>
+                    <div class="project-tags"><span>Vue</span><span>D3.js</span><span>WebSocket</span></div>
+                </div>
+            </div>
+            <div class="project-card" data-category="game">
+                <div class="project-image" style="background: linear-gradient(135deg, #43e97b, #38f9d7);">
+                    <span>Game</span>
+                </div>
+                <div class="project-info">
+                    <h3>Packet Router</h3>
+                    <p>Mobile puzzle game — rotate tiles to route data packets.</p>
+                    <div class="project-tags"><span>Godot</span><span>GDScript</span><span>Android</span></div>
+                </div>
+            </div>
+            <div class="project-card" data-category="tool">
+                <div class="project-image" style="background: linear-gradient(135deg, #fa709a, #fee140);">
+                    <span>API</span>
+                </div>
+                <div class="project-info">
+                    <h3>AuthForge</h3>
+                    <p>Drop-in authentication microservice with OAuth2 and JWT.</p>
+                    <div class="project-tags"><span>Python</span><span>FastAPI</span><span>Redis</span></div>
+                </div>
+            </div>
+            <div class="project-card" data-category="web">
+                <div class="project-image" style="background: linear-gradient(135deg, #a18cd1, #fbc2eb);">
+                    <span>Social</span>
+                </div>
+                <div class="project-info">
+                    <h3>DevConnect</h3>
+                    <p>Social platform for developers to share code snippets and collaborate.</p>
+                    <div class="project-tags"><span>React</span><span>GraphQL</span><span>PostgreSQL</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2 class="section-title">Get in Touch</h2>
+        <div class="contact-grid">
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <input type="text" id="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+            <div class="contact-info">
+                <div class="info-item">
+                    <span class="info-icon">&#9993;</span>
+                    <span>jane@developer.com</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-icon">&#127760;</span>
+                    <span>developer.com</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-icon">&#128205;</span>
+                    <span>San Francisco, CA</span>
+                </div>
+                <div class="social-links">
+                    <a href="#" class="social-link">GitHub</a>
+                    <a href="#" class="social-link">LinkedIn</a>
+                    <a href="#" class="social-link">Twitter</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2026 DevPortfolio. Built with HTML, CSS &amp; JS.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

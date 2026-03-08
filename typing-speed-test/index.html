@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Typing Speed Test</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Typing Speed Test</h1>
+      <p class="subtitle">Test your typing speed — 60 seconds on the clock</p>
+    </header>
+
+    <!-- Stats Bar -->
+    <div class="stats-bar">
+      <div class="stat">
+        <span class="stat-value" id="wpm">0</span>
+        <span class="stat-label">WPM</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value" id="accuracy">100</span>
+        <span class="stat-label">Accuracy %</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value" id="chars">0</span>
+        <span class="stat-label">Characters</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value" id="timer">60</span>
+        <span class="stat-label">Seconds</span>
+      </div>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="progress-track">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
+
+    <!-- Text Display -->
+    <div class="text-display" id="textDisplay"></div>
+
+    <!-- Input -->
+    <textarea class="input-area" id="inputArea" placeholder="Start typing here..." autofocus></textarea>
+
+    <button class="btn-restart" id="restartBtn">Restart</button>
+
+    <!-- Results Overlay -->
+    <div class="results-overlay" id="resultsOverlay">
+      <div class="results-card">
+        <h2>Results</h2>
+        <div class="results-grid">
+          <div class="result-item">
+            <span class="result-value" id="resultWpm">0</span>
+            <span class="result-label">Words Per Minute</span>
+          </div>
+          <div class="result-item">
+            <span class="result-value" id="resultAccuracy">0</span>
+            <span class="result-label">Accuracy %</span>
+          </div>
+          <div class="result-item">
+            <span class="result-value" id="resultChars">0</span>
+            <span class="result-label">Characters Typed</span>
+          </div>
+          <div class="result-item">
+            <span class="result-value" id="resultCorrect">0</span>
+            <span class="result-label">Correct Characters</span>
+          </div>
+        </div>
+        <div class="comparison" id="comparison"></div>
+        <button class="btn-restart" id="resultsRestart">Try Again</button>
+      </div>
+    </div>
+
+    <!-- History -->
+    <div class="history-section" id="historySection">
+      <h3>Past Attempts</h3>
+      <div class="history-list" id="historyList"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
