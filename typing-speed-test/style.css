@@ -100,8 +100,13 @@ header h1 {
   line-height: 1.8;
   margin-bottom: 1rem;
   min-height: 120px;
+  max-height: 200px;
+  overflow-y: auto;
   user-select: none;
   letter-spacing: .02em;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
 }
 .text-display .char {
   transition: color .1s, background .1s;

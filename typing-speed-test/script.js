@@ -1,18 +1,18 @@
 const paragraphs = [
-  "The quick brown fox jumps over the lazy dog near the riverbank where wildflowers bloom in every color imaginable during the warm summer months.",
-  "Programming is the art of telling a computer what to do through carefully crafted instructions that must be precise and unambiguous in their meaning.",
-  "A journey of a thousand miles begins with a single step, and every great achievement starts with the decision to try something new and challenging.",
-  "The ocean waves crashed against the rocky shore as seagulls circled overhead, their cries echoing across the misty morning landscape below the cliffs.",
-  "In the heart of the ancient forest, towering oak trees formed a natural cathedral where sunlight filtered through leaves creating patterns on the ground.",
-  "Technology continues to reshape our daily lives in ways we never imagined, from how we communicate to how we work and entertain ourselves each day.",
-  "The art of cooking requires patience, creativity, and a willingness to experiment with different flavors and techniques until you find the perfect combination.",
-  "Music has the remarkable ability to transport us to different times and places, evoking emotions and memories that words alone cannot adequately express.",
-  "Scientists have discovered that regular exercise not only strengthens the body but also improves mental health, memory, and overall cognitive function significantly.",
-  "The night sky was filled with countless stars, each one a distant sun with its own system of planets orbiting in the vast expanse of space.",
-  "Reading books opens doors to new worlds and perspectives, allowing us to experience lives vastly different from our own through the power of storytelling.",
-  "The city skyline glittered with thousands of lights as the sun set behind the mountains, painting the clouds in shades of orange, pink, and purple.",
-  "Learning a new language is like gaining a new lens through which to view the world, revealing cultural nuances and ways of thinking previously hidden.",
-  "The garden was a masterpiece of careful planning, with rows of vegetables, herbs, and flowers arranged in perfect harmony to maximize both beauty and yield."
+  "The quick brown fox jumps over the lazy dog near the riverbank where wildflowers bloom in every color imaginable during the warm summer months. Butterflies danced from petal to petal as a gentle breeze carried the scent of jasmine across the meadow, making it the perfect afternoon for a long walk through the countryside.",
+  "Programming is the art of telling a computer what to do through carefully crafted instructions that must be precise and unambiguous in their meaning. Every line of code serves a purpose, and the best programmers understand that simplicity and clarity are far more valuable than clever tricks or overly complex solutions.",
+  "A journey of a thousand miles begins with a single step, and every great achievement starts with the decision to try something new and challenging. The road may be long and filled with unexpected obstacles, but persistence and determination will carry you further than talent alone ever could.",
+  "The ocean waves crashed against the rocky shore as seagulls circled overhead, their cries echoing across the misty morning landscape below the cliffs. Fishermen prepared their boats for the day ahead, checking nets and supplies while the first rays of sunlight painted the horizon in brilliant shades of gold.",
+  "In the heart of the ancient forest, towering oak trees formed a natural cathedral where sunlight filtered through leaves creating patterns on the ground. Moss covered the fallen logs and a small stream wound its way between the roots, providing water for the countless creatures that called this place home.",
+  "Technology continues to reshape our daily lives in ways we never imagined, from how we communicate to how we work and entertain ourselves each day. Artificial intelligence, cloud computing, and mobile devices have transformed entire industries and created opportunities that did not exist just a decade ago.",
+  "The art of cooking requires patience, creativity, and a willingness to experiment with different flavors and techniques until you find the perfect combination. Great chefs understand that the best dishes come from quality ingredients, proper timing, and a deep respect for the culinary traditions that inspire them.",
+  "Music has the remarkable ability to transport us to different times and places, evoking emotions and memories that words alone cannot adequately express. Whether it is a symphony orchestra performing a classical masterpiece or a street musician playing a simple melody, music connects people across all boundaries.",
+  "Scientists have discovered that regular exercise not only strengthens the body but also improves mental health, memory, and overall cognitive function significantly. Even moderate physical activity like walking for thirty minutes a day can reduce the risk of chronic diseases and improve quality of life dramatically.",
+  "The night sky was filled with countless stars, each one a distant sun with its own system of planets orbiting in the vast expanse of space. Ancient civilizations used these celestial patterns to navigate the seas, track the seasons, and create myths that explained the mysteries of the universe.",
+  "Reading books opens doors to new worlds and perspectives, allowing us to experience lives vastly different from our own through the power of storytelling. From ancient epics to modern novels, literature has always been humanity's way of preserving knowledge, sharing wisdom, and exploring the depths of imagination.",
+  "The city skyline glittered with thousands of lights as the sun set behind the mountains, painting the clouds in shades of orange, pink, and purple. Streets below buzzed with the energy of evening commuters, street vendors, and musicians, creating a symphony of urban life that never truly sleeps.",
+  "Learning a new language is like gaining a new lens through which to view the world, revealing cultural nuances and ways of thinking previously hidden. Each language carries within it centuries of history, humor, and philosophy that can only be fully appreciated by those who take the time to learn it.",
+  "The garden was a masterpiece of careful planning, with rows of vegetables, herbs, and flowers arranged in perfect harmony to maximize both beauty and yield. Bees hummed busily among the blossoms while a scarecrow stood watch over the ripening tomatoes, its tattered coat flapping gently in the wind."
 ];
 
 const DURATION = 60;
@@ -60,6 +60,11 @@ function renderText(typed) {
     const display = ch === ' ' ? '&nbsp;' : ch;
     return `<span class="char ${cls}">${display}</span>`;
   }).join('');
+
+  const cursor = textDisplay.querySelector('.current');
+  if (cursor) {
+    cursor.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+  }
 }
 
 function updateStats() {

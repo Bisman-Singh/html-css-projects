@@ -1,4 +1,4 @@
-# NexusAI — Animated Landing Page
+# MadeupAI — Animated Landing Page
 
 A modern SaaS-style landing page for a fictional AI productivity platform, built with pure HTML, CSS, and JavaScript.
 
