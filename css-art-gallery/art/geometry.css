@@ -1,0 +1,622 @@
+/* ============================================================
+   GEOMETRY — 10 pure-CSS art pieces
+   Classes: .geo-diamond, .geo-hexagon, .geo-infinity, .geo-yinyang,
+            .geo-celtic, .geo-sierpinski, .geo-illusion, .geo-cube,
+            .geo-helix, .geo-atom
+   ============================================================ */
+
+/* ---------- 1. Diamond ---------- */
+.geo-diamond {
+  position: relative;
+  width: 120px;
+  height: 160px;
+  animation: geoDiamondIdle 3s ease-in-out infinite;
+}
+.geo-diamond::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 100px;
+  height: 60px;
+  background: linear-gradient(135deg, #a78bfa, #7c3aed, #6d28d9);
+  clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+  transform: scaleY(-1);
+  filter: brightness(1.2);
+}
+.geo-diamond::after {
+  content: '';
+  position: absolute;
+  top: 70px;
+  left: 10px;
+  width: 100px;
+  height: 80px;
+  background: linear-gradient(180deg, #8b5cf6, #4c1d95);
+  clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+}
+.geo-diamond .diamond-sparkle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: white;
+  border-radius: 50%;
+  filter: blur(1px);
+  animation: geoDiamondSparkle 2s ease-in-out infinite;
+}
+.geo-diamond .s1 { top: 30px; left: 35px; animation-delay: 0s; }
+.geo-diamond .s2 { top: 50px; left: 70px; animation-delay: 0.6s; }
+.geo-diamond .s3 { top: 20px; left: 80px; animation-delay: 1.2s; }
+.card:hover .geo-diamond,
+.lightbox-art .geo-diamond {
+  animation: geoDiamondHover 1s ease-in-out infinite;
+  filter: drop-shadow(0 0 20px rgba(139, 92, 246, 0.8));
+}
+@keyframes geoDiamondIdle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+@keyframes geoDiamondHover {
+  0%, 100% { transform: scale(1) rotate(0deg); filter: brightness(1); }
+  50% { transform: scale(1.1) rotate(5deg); filter: brightness(1.4); }
+}
+@keyframes geoDiamondSparkle {
+  0%, 100% { opacity: 0.3; transform: scale(0.5); }
+  50% { opacity: 1; transform: scale(1.5); }
+}
+
+/* ---------- 2. Hexagon ---------- */
+.geo-hexagon {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  animation: geoHexIdle 4s ease-in-out infinite;
+}
+.geo-hexagon::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 130px;
+  height: 130px;
+  background: linear-gradient(135deg, #06b6d4, #0891b2, #0e7490);
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+.geo-hexagon::after {
+  content: '';
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  width: 90px;
+  height: 90px;
+  background: linear-gradient(135deg, #67e8f9, #22d3ee, #06b6d4);
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  animation: geoHexInner 6s linear infinite;
+}
+.card:hover .geo-hexagon,
+.lightbox-art .geo-hexagon {
+  animation: geoHexHover 2s linear infinite;
+}
+.card:hover .geo-hexagon::after,
+.lightbox-art .geo-hexagon::after {
+  animation: geoHexInnerHover 1s linear infinite;
+  filter: drop-shadow(0 0 15px rgba(6, 182, 212, 0.6));
+}
+@keyframes geoHexIdle {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(5deg); }
+}
+@keyframes geoHexInner {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+@keyframes geoHexHover {
+  0% { transform: rotate(0deg) scale(1.05); }
+  100% { transform: rotate(360deg) scale(1.05); }
+}
+@keyframes geoHexInnerHover {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(-360deg); }
+}
+
+/* ---------- 3. Infinity ---------- */
+.geo-infinity {
+  position: relative;
+  width: 160px;
+  height: 90px;
+  animation: geoInfIdle 3s ease-in-out infinite;
+}
+.geo-infinity::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 5px;
+  width: 60px;
+  height: 60px;
+  border: 8px solid transparent;
+  border-color: #f472b6 #ec4899 #db2777 #be185d;
+  border-radius: 50% 50% 0 50%;
+  transform: rotate(-45deg);
+  animation: geoInfFlow 3s linear infinite;
+}
+.geo-infinity::after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  right: 5px;
+  width: 60px;
+  height: 60px;
+  border: 8px solid transparent;
+  border-color: #c084fc #a855f7 #9333ea #7e22ce;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(45deg);
+  animation: geoInfFlow 3s linear infinite reverse;
+}
+.card:hover .geo-infinity,
+.lightbox-art .geo-infinity {
+  animation: geoInfHover 1.5s ease-in-out infinite;
+  filter: drop-shadow(0 0 15px rgba(236, 72, 153, 0.6));
+}
+.card:hover .geo-infinity::before,
+.lightbox-art .geo-infinity::before {
+  animation: geoInfFlow 1s linear infinite;
+}
+.card:hover .geo-infinity::after,
+.lightbox-art .geo-infinity::after {
+  animation: geoInfFlow 1s linear infinite reverse;
+}
+@keyframes geoInfIdle {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+}
+@keyframes geoInfFlow {
+  0% { border-color: #f472b6 #ec4899 #db2777 #be185d; }
+  33% { border-color: #c084fc #a855f7 #9333ea #7e22ce; }
+  66% { border-color: #818cf8 #6366f1 #4f46e5 #4338ca; }
+  100% { border-color: #f472b6 #ec4899 #db2777 #be185d; }
+}
+@keyframes geoInfHover {
+  0%, 100% { transform: scale(1.05); }
+  50% { transform: scale(1.15); }
+}
+
+/* ---------- 4. Yin-Yang ---------- */
+.geo-yinyang {
+  position: relative;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background: linear-gradient(to right, #1e293b 50%, #e2e8f0 50%);
+  animation: geoYYSpin 8s linear infinite;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+.geo-yinyang::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background: #e2e8f0;
+}
+.geo-yinyang::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background: #1e293b;
+}
+.geo-yinyang .yy-dot-light {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #1e293b;
+  z-index: 2;
+}
+.geo-yinyang .yy-dot-dark {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #e2e8f0;
+  z-index: 2;
+}
+.card:hover .geo-yinyang,
+.lightbox-art .geo-yinyang {
+  animation: geoYYSpinFast 1.5s linear infinite;
+  box-shadow: 0 0 30px rgba(129, 140, 248, 0.5);
+}
+@keyframes geoYYSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+@keyframes geoYYSpinFast {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ---------- 5. Celtic ---------- */
+.geo-celtic {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  animation: geoCelticIdle 4s ease-in-out infinite;
+}
+.geo-celtic::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 100px;
+  height: 100px;
+  border: 8px solid #22c55e;
+  border-radius: 50%;
+  box-shadow: inset 0 0 10px rgba(34, 197, 94, 0.3);
+}
+.geo-celtic::after {
+  content: '';
+  position: absolute;
+  top: 35px;
+  left: 5px;
+  width: 100px;
+  height: 70px;
+  border: 8px solid #16a34a;
+  border-radius: 50%;
+  transform: rotate(60deg);
+  box-shadow: inset 0 0 10px rgba(22, 163, 74, 0.3);
+}
+.geo-celtic .celtic-ring {
+  position: absolute;
+  top: 35px;
+  left: 35px;
+  width: 100px;
+  height: 70px;
+  border: 8px solid #15803d;
+  border-radius: 50%;
+  transform: rotate(-60deg);
+  box-shadow: inset 0 0 10px rgba(21, 128, 61, 0.3);
+}
+.card:hover .geo-celtic,
+.lightbox-art .geo-celtic {
+  animation: geoCelticHover 2s ease-in-out infinite;
+  filter: drop-shadow(0 0 20px rgba(34, 197, 94, 0.7));
+}
+.card:hover .geo-celtic::before,
+.lightbox-art .geo-celtic::before {
+  box-shadow: inset 0 0 20px rgba(34, 197, 94, 0.6), 0 0 15px rgba(34, 197, 94, 0.4);
+}
+@keyframes geoCelticIdle {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(10deg); }
+}
+@keyframes geoCelticHover {
+  0% { transform: rotate(0deg) scale(1.1); }
+  100% { transform: rotate(360deg) scale(1.1); }
+}
+
+/* ---------- 6. Sierpinski ---------- */
+.geo-sierpinski {
+  position: relative;
+  width: 160px;
+  height: 140px;
+  animation: geoSierIdle 4s ease-in-out infinite;
+}
+.geo-sierpinski::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 160px;
+  height: 140px;
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+.geo-sierpinski::after {
+  content: '';
+  position: absolute;
+  top: 70px;
+  left: 40px;
+  width: 80px;
+  height: 70px;
+  background: #0c1222;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  transform: rotate(180deg);
+}
+.geo-sierpinski .sier-tri-l {
+  position: absolute;
+  top: 35px;
+  left: 20px;
+  width: 40px;
+  height: 35px;
+  background: #0c1222;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  transform: rotate(180deg);
+}
+.geo-sierpinski .sier-tri-r {
+  position: absolute;
+  top: 35px;
+  right: 20px;
+  width: 40px;
+  height: 35px;
+  background: #0c1222;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  transform: rotate(180deg);
+}
+.card:hover .geo-sierpinski,
+.lightbox-art .geo-sierpinski {
+  animation: geoSierHover 1.5s ease-in-out infinite;
+  filter: drop-shadow(0 0 15px rgba(245, 158, 11, 0.6));
+}
+@keyframes geoSierIdle {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+}
+@keyframes geoSierHover {
+  0%, 100% { transform: scale(1.1) rotate(0deg); }
+  50% { transform: scale(1.2) rotate(5deg); }
+}
+
+/* ---------- 7. Illusion (Penrose Triangle) ---------- */
+.geo-illusion {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  animation: geoIllusionIdle 5s ease-in-out infinite;
+}
+.geo-illusion::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 130px;
+  height: 130px;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6, #a855f7);
+  clip-path: polygon(
+    50% 5%, 60% 5%, 95% 85%, 88% 90%,
+    60% 30%, 40% 30%, 12% 90%, 5% 85%,
+    40% 5%
+  );
+}
+.geo-illusion::after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 130px;
+  height: 130px;
+  background: linear-gradient(225deg, #4f46e5, #7c3aed);
+  clip-path: polygon(
+    50% 25%, 75% 70%, 85% 70%, 88% 90%,
+    12% 90%, 15% 70%, 25% 70%
+  );
+  opacity: 0.8;
+}
+.card:hover .geo-illusion,
+.lightbox-art .geo-illusion {
+  animation: geoIllusionHover 2s linear infinite;
+  filter: drop-shadow(0 0 20px rgba(99, 102, 241, 0.7));
+}
+@keyframes geoIllusionIdle {
+  0%, 100% { transform: perspective(400px) rotateY(0deg); }
+  50% { transform: perspective(400px) rotateY(10deg); }
+}
+@keyframes geoIllusionHover {
+  0% { transform: perspective(400px) rotateY(0deg); }
+  100% { transform: perspective(400px) rotateY(360deg); }
+}
+
+/* ---------- 8. 3D Cube ---------- */
+.geo-cube {
+  position: relative;
+  width: 130px;
+  height: 150px;
+  animation: geoCubeIdle 4s ease-in-out infinite;
+}
+.geo-cube::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  transform: skewY(-30deg);
+}
+.geo-cube::after {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 100px;
+  width: 40px;
+  height: 80px;
+  background: linear-gradient(135deg, #1d4ed8, #1e40af);
+  transform: skewY(30deg) translateX(-40px);
+}
+.geo-cube .cube-top {
+  position: absolute;
+  top: -5px;
+  left: 20px;
+  width: 80px;
+  height: 46px;
+  background: linear-gradient(135deg, #60a5fa, #3b82f6);
+  transform: skewX(-45deg) translateX(23px);
+}
+.card:hover .geo-cube,
+.lightbox-art .geo-cube {
+  animation: geoCubeHover 2s linear infinite;
+  filter: drop-shadow(0 0 20px rgba(59, 130, 246, 0.6));
+}
+@keyframes geoCubeIdle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+@keyframes geoCubeHover {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ---------- 9. Helix (DNA) ---------- */
+.geo-helix {
+  position: relative;
+  width: 80px;
+  height: 170px;
+  animation: geoHelixIdle 3s ease-in-out infinite;
+}
+.geo-helix .helix-dot {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  animation: geoHelixWave 3s ease-in-out infinite;
+}
+.geo-helix .h1 { top: 10px; left: 10px; background: #ef4444; animation-delay: 0s; }
+.geo-helix .h2 { top: 10px; right: 10px; background: #3b82f6; animation-delay: 0s; }
+.geo-helix .h3 { top: 35px; left: 20px; background: #3b82f6; animation-delay: 0.3s; }
+.geo-helix .h4 { top: 35px; right: 20px; background: #ef4444; animation-delay: 0.3s; }
+.geo-helix .h5 { top: 60px; left: 10px; background: #ef4444; animation-delay: 0.6s; }
+.geo-helix .h6 { top: 60px; right: 10px; background: #3b82f6; animation-delay: 0.6s; }
+.geo-helix .h7 { top: 85px; left: 20px; background: #3b82f6; animation-delay: 0.9s; }
+.geo-helix .h8 { top: 85px; right: 20px; background: #ef4444; animation-delay: 0.9s; }
+.geo-helix .h9 { top: 110px; left: 10px; background: #ef4444; animation-delay: 1.2s; }
+.geo-helix .h10 { top: 110px; right: 10px; background: #3b82f6; animation-delay: 1.2s; }
+.geo-helix .h11 { top: 135px; left: 20px; background: #3b82f6; animation-delay: 1.5s; }
+.geo-helix .h12 { top: 135px; right: 20px; background: #ef4444; animation-delay: 1.5s; }
+.geo-helix .helix-bar {
+  position: absolute;
+  left: 15px;
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(90deg, #ef4444, #3b82f6);
+  border-radius: 2px;
+  opacity: 0.5;
+}
+.geo-helix .hb1 { top: 15px; }
+.geo-helix .hb2 { top: 40px; }
+.geo-helix .hb3 { top: 65px; }
+.geo-helix .hb4 { top: 90px; }
+.geo-helix .hb5 { top: 115px; }
+.geo-helix .hb6 { top: 140px; }
+.card:hover .geo-helix,
+.lightbox-art .geo-helix {
+  animation: geoHelixHover 1.5s linear infinite;
+}
+.card:hover .geo-helix .helix-dot,
+.lightbox-art .geo-helix .helix-dot {
+  animation-duration: 1s;
+  box-shadow: 0 0 10px currentColor;
+}
+@keyframes geoHelixIdle {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(3deg); }
+}
+@keyframes geoHelixWave {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(8px); }
+}
+@keyframes geoHelixHover {
+  0% { transform: rotateY(0deg); }
+  100% { transform: rotateY(360deg); }
+}
+
+/* ---------- 10. Atom ---------- */
+.geo-atom {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  animation: geoAtomIdle 3s ease-in-out infinite;
+}
+.geo-atom .nucleus {
+  position: absolute;
+  top: 55px;
+  left: 55px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #f87171, #dc2626, #991b1b);
+  box-shadow: 0 0 15px rgba(239, 68, 68, 0.5);
+  z-index: 5;
+}
+.geo-atom .orbit {
+  position: absolute;
+  top: 15px;
+  left: -5px;
+  width: 160px;
+  height: 120px;
+  border: 3px solid rgba(129, 140, 248, 0.4);
+  border-radius: 50%;
+}
+.geo-atom .orbit-1 { transform: rotate(0deg); }
+.geo-atom .orbit-2 { transform: rotate(60deg); }
+.geo-atom .orbit-3 { transform: rotate(120deg); }
+.geo-atom .electron {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #c4b5fd, #818cf8);
+  box-shadow: 0 0 10px rgba(129, 140, 248, 0.8);
+  z-index: 10;
+}
+.geo-atom .e1 {
+  animation: geoAtomOrbit1 3s linear infinite;
+}
+.geo-atom .e2 {
+  animation: geoAtomOrbit2 3s linear infinite;
+}
+.geo-atom .e3 {
+  animation: geoAtomOrbit3 3s linear infinite;
+}
+.card:hover .geo-atom,
+.lightbox-art .geo-atom {
+  animation: geoAtomHover 2s ease-in-out infinite;
+}
+.card:hover .geo-atom .electron,
+.lightbox-art .geo-atom .electron {
+  animation-duration: 1s;
+  box-shadow: 0 0 20px rgba(129, 140, 248, 1);
+}
+.card:hover .geo-atom .nucleus,
+.lightbox-art .geo-atom .nucleus {
+  box-shadow: 0 0 25px rgba(239, 68, 68, 0.8);
+}
+@keyframes geoAtomIdle {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+}
+@keyframes geoAtomOrbit1 {
+  0% { top: 0; left: 70px; }
+  25% { top: 55px; left: 145px; }
+  50% { top: 110px; left: 70px; }
+  75% { top: 55px; left: -10px; }
+  100% { top: 0; left: 70px; }
+}
+@keyframes geoAtomOrbit2 {
+  0% { top: 110px; left: 70px; }
+  25% { top: 55px; left: -10px; }
+  50% { top: 0; left: 70px; }
+  75% { top: 55px; left: 145px; }
+  100% { top: 110px; left: 70px; }
+}
+@keyframes geoAtomOrbit3 {
+  0% { top: 55px; left: 145px; }
+  25% { top: 110px; left: 70px; }
+  50% { top: 55px; left: -10px; }
+  75% { top: 0; left: 70px; }
+  100% { top: 55px; left: 145px; }
+}
+@keyframes geoAtomHover {
+  0%, 100% { transform: scale(1.05); filter: brightness(1.1); }
+  50% { transform: scale(1.12); filter: brightness(1.3); }
+}

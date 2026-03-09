@@ -1,0 +1,966 @@
+/* ===== BUILDINGS CSS ART — 10 pieces ===== */
+
+/* ---------- 1. HOUSE ---------- */
+.house {
+  position: relative;
+  width: 130px;
+  height: 140px;
+  animation: buildings-house-idle 4s ease-in-out infinite;
+}
+.house .roof {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 65px solid transparent;
+  border-right: 65px solid transparent;
+  border-bottom: 45px solid #c0392b;
+  top: 0;
+  left: 0;
+  filter: drop-shadow(0 -2px 5px rgba(0,0,0,0.15));
+}
+.house .walls {
+  position: absolute;
+  width: 110px;
+  height: 70px;
+  background: linear-gradient(180deg, #f5deb3, #deb887);
+  top: 43px;
+  left: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+.house .door {
+  position: absolute;
+  width: 22px;
+  height: 35px;
+  background: linear-gradient(180deg, #6d4c41, #5d4037);
+  border-radius: 11px 11px 0 0;
+  bottom: 27px;
+  left: 54px;
+  box-shadow: inset -2px 0 5px rgba(0,0,0,0.2);
+}
+.house .door::after {
+  content: '';
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #f9ca24;
+  border-radius: 50%;
+  top: 18px;
+  right: 5px;
+}
+.house .window-left,
+.house .window-right {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: rgba(116, 185, 255, 0.4);
+  border: 2px solid #95a5a6;
+  top: 55px;
+  transition: all 0.3s ease;
+}
+.house .window-left { left: 20px; }
+.house .window-right { right: 20px; }
+.house .window-left::before,
+.house .window-right::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background: #95a5a6;
+  top: 50%;
+}
+.house .window-left::after,
+.house .window-right::after {
+  content: '';
+  position: absolute;
+  width: 1px;
+  height: 100%;
+  background: #95a5a6;
+  left: 50%;
+}
+.house .chimney {
+  position: absolute;
+  width: 16px;
+  height: 30px;
+  background: linear-gradient(180deg, #95a5a6, #7f8c8d);
+  top: -5px;
+  right: 25px;
+}
+.house .chimney-smoke span {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: rgba(149, 165, 166, 0.4);
+  border-radius: 50%;
+  filter: blur(2px);
+  right: 28px;
+  animation: buildings-house-smoke 3s ease-out infinite;
+}
+.house .chimney-smoke span:nth-child(1) { top: -15px; animation-delay: 0s; }
+.house .chimney-smoke span:nth-child(2) { top: -10px; animation-delay: 0.8s; }
+.house .chimney-smoke span:nth-child(3) { top: -5px; animation-delay: 1.6s; }
+.card:hover .house .window-left,
+.card:hover .house .window-right,
+.lightbox-art .house .window-left,
+.lightbox-art .house .window-right {
+  background: rgba(249, 202, 36, 0.7);
+  box-shadow: 0 0 10px rgba(249, 202, 36, 0.5);
+}
+.card:hover .house .chimney-smoke span,
+.lightbox-art .house .chimney-smoke span {
+  animation: buildings-house-smoke 1.5s ease-out infinite;
+  background: rgba(149, 165, 166, 0.6);
+  width: 12px;
+  height: 12px;
+}
+.card:hover .house,
+.lightbox-art .house {
+  animation: buildings-house-idle 2s ease-in-out infinite;
+}
+@keyframes buildings-house-idle {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.01); }
+}
+@keyframes buildings-house-smoke {
+  0% { transform: translateY(0) scale(1); opacity: 0.4; }
+  100% { transform: translateY(-25px) translateX(5px) scale(2); opacity: 0; }
+}
+
+/* ---------- 2. SKYSCRAPER ---------- */
+.skyscraper {
+  position: relative;
+  width: 70px;
+  height: 170px;
+  animation: buildings-skyscraper-idle 3s ease-in-out infinite;
+}
+.skyscraper::before {
+  content: '';
+  position: absolute;
+  width: 55px;
+  height: 150px;
+  background: linear-gradient(135deg, #34495e, #2c3e50, #2d3436);
+  top: 15px;
+  left: 8px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+}
+.skyscraper::after {
+  content: '';
+  position: absolute;
+  width: 3px;
+  height: 18px;
+  background: linear-gradient(180deg, #e74c3c, #636e72);
+  top: 0;
+  left: 34px;
+  border-radius: 1px;
+}
+.skyscraper .head {
+  position: absolute;
+  top: 25px;
+  left: 14px;
+  width: 6px;
+  height: 4px;
+  background: rgba(249, 202, 36, 0.5);
+  z-index: 2;
+  box-shadow:
+    12px 0 0 0 rgba(249, 202, 36, 0.4),
+    24px 0 0 0 rgba(249, 202, 36, 0.3),
+    36px 0 0 0 rgba(249, 202, 36, 0.5),
+    0 14px 0 0 rgba(249, 202, 36, 0.3),
+    12px 14px 0 0 rgba(249, 202, 36, 0.5),
+    24px 14px 0 0 rgba(249, 202, 36, 0.4),
+    36px 14px 0 0 rgba(249, 202, 36, 0.3),
+    0 28px 0 0 rgba(249, 202, 36, 0.5),
+    12px 28px 0 0 rgba(249, 202, 36, 0.3),
+    24px 28px 0 0 rgba(249, 202, 36, 0.5),
+    36px 28px 0 0 rgba(249, 202, 36, 0.4),
+    0 42px 0 0 rgba(249, 202, 36, 0.4),
+    12px 42px 0 0 rgba(249, 202, 36, 0.5),
+    24px 42px 0 0 rgba(249, 202, 36, 0.3),
+    36px 42px 0 0 rgba(249, 202, 36, 0.5),
+    0 56px 0 0 rgba(249, 202, 36, 0.3),
+    12px 56px 0 0 rgba(249, 202, 36, 0.4),
+    24px 56px 0 0 rgba(249, 202, 36, 0.5),
+    36px 56px 0 0 rgba(249, 202, 36, 0.3),
+    0 70px 0 0 rgba(249, 202, 36, 0.5),
+    12px 70px 0 0 rgba(249, 202, 36, 0.3),
+    24px 70px 0 0 rgba(249, 202, 36, 0.4),
+    36px 70px 0 0 rgba(249, 202, 36, 0.5),
+    0 84px 0 0 rgba(249, 202, 36, 0.4),
+    12px 84px 0 0 rgba(249, 202, 36, 0.5),
+    24px 84px 0 0 rgba(249, 202, 36, 0.3),
+    36px 84px 0 0 rgba(249, 202, 36, 0.4),
+    0 98px 0 0 rgba(249, 202, 36, 0.3),
+    12px 98px 0 0 rgba(249, 202, 36, 0.5),
+    24px 98px 0 0 rgba(249, 202, 36, 0.4),
+    36px 98px 0 0 rgba(249, 202, 36, 0.5),
+    0 112px 0 0 rgba(249, 202, 36, 0.5),
+    12px 112px 0 0 rgba(249, 202, 36, 0.4),
+    24px 112px 0 0 rgba(249, 202, 36, 0.5),
+    36px 112px 0 0 rgba(249, 202, 36, 0.3);
+  transition: box-shadow 0.5s ease;
+}
+.card:hover .skyscraper .head,
+.lightbox-art .skyscraper .head {
+  animation: buildings-skyscraper-lights 2s ease-in-out infinite;
+  box-shadow:
+    12px 0 0 0 rgba(249, 202, 36, 0.8),
+    24px 0 0 0 rgba(249, 202, 36, 0.9),
+    36px 0 0 0 rgba(249, 202, 36, 0.7),
+    0 14px 0 0 rgba(249, 202, 36, 0.9),
+    12px 14px 0 0 rgba(249, 202, 36, 0.7),
+    24px 14px 0 0 rgba(249, 202, 36, 0.8),
+    36px 14px 0 0 rgba(249, 202, 36, 0.9),
+    0 28px 0 0 rgba(249, 202, 36, 0.7),
+    12px 28px 0 0 rgba(249, 202, 36, 0.9),
+    24px 28px 0 0 rgba(249, 202, 36, 0.8),
+    36px 28px 0 0 rgba(249, 202, 36, 0.7),
+    0 42px 0 0 rgba(249, 202, 36, 0.8),
+    12px 42px 0 0 rgba(249, 202, 36, 0.9),
+    24px 42px 0 0 rgba(249, 202, 36, 0.7),
+    36px 42px 0 0 rgba(249, 202, 36, 0.9),
+    0 56px 0 0 rgba(249, 202, 36, 0.9),
+    12px 56px 0 0 rgba(249, 202, 36, 0.8),
+    24px 56px 0 0 rgba(249, 202, 36, 0.9),
+    36px 56px 0 0 rgba(249, 202, 36, 0.7),
+    0 70px 0 0 rgba(249, 202, 36, 0.7),
+    12px 70px 0 0 rgba(249, 202, 36, 0.9),
+    24px 70px 0 0 rgba(249, 202, 36, 0.8),
+    36px 70px 0 0 rgba(249, 202, 36, 0.9),
+    0 84px 0 0 rgba(249, 202, 36, 0.8),
+    12px 84px 0 0 rgba(249, 202, 36, 0.7),
+    24px 84px 0 0 rgba(249, 202, 36, 0.9),
+    36px 84px 0 0 rgba(249, 202, 36, 0.8),
+    0 98px 0 0 rgba(249, 202, 36, 0.9),
+    12px 98px 0 0 rgba(249, 202, 36, 0.7),
+    24px 98px 0 0 rgba(249, 202, 36, 0.8),
+    36px 98px 0 0 rgba(249, 202, 36, 0.9),
+    0 112px 0 0 rgba(249, 202, 36, 0.7),
+    12px 112px 0 0 rgba(249, 202, 36, 0.9),
+    24px 112px 0 0 rgba(249, 202, 36, 0.7),
+    36px 112px 0 0 rgba(249, 202, 36, 0.8);
+}
+.card:hover .skyscraper,
+.lightbox-art .skyscraper {
+  filter: drop-shadow(0 0 10px rgba(249, 202, 36, 0.2));
+}
+@keyframes buildings-skyscraper-idle {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.01); }
+}
+@keyframes buildings-skyscraper-lights {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+/* ---------- 3. LIGHTHOUSE ---------- */
+.lighthouse {
+  position: relative;
+  width: 80px;
+  height: 170px;
+  animation: buildings-lighthouse-idle 3s ease-in-out infinite;
+}
+.lighthouse::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 12px;
+  width: 56px;
+  height: 130px;
+  background: repeating-linear-gradient(
+    180deg,
+    #e74c3c 0px, #e74c3c 20px,
+    #ecf0f1 20px, #ecf0f1 40px
+  );
+  clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+.lighthouse::after {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 40px;
+  height: 20px;
+  background: linear-gradient(180deg, #636e72, #95a5a6);
+  border-radius: 5px 5px 0 0;
+}
+.lighthouse .head {
+  position: absolute;
+  top: 13px;
+  left: 25px;
+  width: 30px;
+  height: 12px;
+  background: radial-gradient(circle, #ffeaa7, #f9ca24);
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(249, 202, 36, 0.5);
+  z-index: 2;
+  animation: buildings-lighthouse-glow 2s ease-in-out infinite;
+}
+.lighthouse .body {
+  position: absolute;
+  top: 5px;
+  left: 30px;
+  width: 20px;
+  height: 15px;
+  background: linear-gradient(180deg, #e74c3c, #c0392b);
+  border-radius: 50% 50% 0 0;
+}
+.card:hover .lighthouse .head,
+.lightbox-art .lighthouse .head {
+  animation: buildings-lighthouse-beam 0.8s linear infinite;
+  box-shadow: 0 0 30px rgba(249, 202, 36, 0.8), 40px 0 30px rgba(249, 202, 36, 0.3), -40px 0 30px rgba(249, 202, 36, 0.3);
+}
+.card:hover .lighthouse,
+.lightbox-art .lighthouse {
+  filter: drop-shadow(0 0 10px rgba(249, 202, 36, 0.3));
+}
+@keyframes buildings-lighthouse-idle {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.01); }
+}
+@keyframes buildings-lighthouse-glow {
+  0%, 100% { box-shadow: 0 0 10px rgba(249, 202, 36, 0.4); }
+  50% { box-shadow: 0 0 20px rgba(249, 202, 36, 0.7); }
+}
+@keyframes buildings-lighthouse-beam {
+  0% { box-shadow: 0 0 30px rgba(249, 202, 36, 0.8), 50px 0 40px rgba(249, 202, 36, 0.4); }
+  25% { box-shadow: 0 0 30px rgba(249, 202, 36, 0.8), 0 -50px 40px rgba(249, 202, 36, 0.4); }
+  50% { box-shadow: 0 0 30px rgba(249, 202, 36, 0.8), -50px 0 40px rgba(249, 202, 36, 0.4); }
+  75% { box-shadow: 0 0 30px rgba(249, 202, 36, 0.8), 0 50px 40px rgba(249, 202, 36, 0.4); }
+  100% { box-shadow: 0 0 30px rgba(249, 202, 36, 0.8), 50px 0 40px rgba(249, 202, 36, 0.4); }
+}
+
+/* ---------- 4. CASTLE ---------- */
+.castle {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  animation: buildings-castle-idle 4s ease-in-out infinite;
+}
+.castle::before {
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 90px;
+  background: linear-gradient(180deg, #95a5a6, #7f8c8d);
+  bottom: 0;
+  left: 50px;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.3);
+}
+.castle::after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 60px;
+  background: linear-gradient(180deg, #95a5a6, #7f8c8d);
+  bottom: 0;
+  left: 10px;
+  box-shadow: 100px 0 0 0 #7f8c8d;
+}
+.castle .head {
+  position: absolute;
+  top: 48px;
+  left: 50px;
+  width: 10px;
+  height: 12px;
+  background: #95a5a6;
+  z-index: 2;
+  box-shadow:
+    13px 0 0 0 #95a5a6,
+    26px 0 0 0 #95a5a6,
+    39px 0 0 0 #95a5a6;
+}
+.castle .body {
+  position: absolute;
+  top: 78px;
+  left: 10px;
+  width: 7px;
+  height: 10px;
+  background: #95a5a6;
+  box-shadow:
+    10px 0 0 0 #95a5a6,
+    20px 0 0 0 #95a5a6;
+}
+.castle .ear-left {
+  position: absolute;
+  top: 78px;
+  right: 10px;
+  width: 7px;
+  height: 10px;
+  background: #95a5a6;
+  box-shadow:
+    10px 0 0 0 #95a5a6,
+    20px 0 0 0 #95a5a6;
+}
+.castle .ear-right {
+  position: absolute;
+  width: 18px;
+  height: 30px;
+  background: #5d4037;
+  border-radius: 9px 9px 0 0;
+  bottom: 0;
+  left: 66px;
+}
+.castle .nose {
+  position: absolute;
+  width: 4px;
+  height: 20px;
+  background: #e74c3c;
+  top: 33px;
+  left: 73px;
+  z-index: 3;
+}
+.castle .nose::after {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 8px;
+  background: #e74c3c;
+  top: -4px;
+  left: -4px;
+  clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+  transition: transform 0.3s ease;
+}
+.card:hover .castle .nose::after,
+.lightbox-art .castle .nose::after {
+  animation: buildings-castle-flag 0.5s ease-in-out infinite;
+}
+.card:hover .castle,
+.lightbox-art .castle {
+  filter: drop-shadow(0 0 10px rgba(149, 165, 166, 0.3));
+}
+@keyframes buildings-castle-idle {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.01); }
+}
+@keyframes buildings-castle-flag {
+  0%, 100% { transform: skewX(0deg); }
+  25% { transform: skewX(10deg); }
+  75% { transform: skewX(-10deg); }
+}
+
+/* ---------- 5. WINDMILL ---------- */
+.windmill {
+  position: relative;
+  width: 100px;
+  height: 160px;
+  animation: buildings-windmill-idle 3s ease-in-out infinite;
+}
+.windmill::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 25px;
+  width: 50px;
+  height: 100px;
+  background: linear-gradient(180deg, #deb887, #d2b48c, #c4a574);
+  clip-path: polygon(15% 0%, 85% 0%, 100% 100%, 0% 100%);
+  box-shadow: 0 3px 15px rgba(0,0,0,0.2);
+}
+.windmill::after {
+  content: '';
+  position: absolute;
+  width: 14px;
+  height: 22px;
+  background: #6d4c41;
+  border-radius: 7px 7px 0 0;
+  bottom: 0;
+  left: 43px;
+}
+.windmill .head {
+  position: absolute;
+  width: 80px;
+  height: 6px;
+  background: linear-gradient(90deg, #5d4037, #8d6e63, #5d4037);
+  top: 55px;
+  left: 10px;
+  transform-origin: center;
+  animation: buildings-windmill-spin 6s linear infinite;
+  z-index: 2;
+}
+.windmill .head::before {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 80px;
+  background: linear-gradient(180deg, #5d4037, #8d6e63, #5d4037);
+  top: -37px;
+  left: 37px;
+}
+.windmill .head::after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #3e2723;
+  border-radius: 50%;
+  top: -2px;
+  left: 35px;
+}
+.windmill .body {
+  position: absolute;
+  width: 10px;
+  height: 12px;
+  background: rgba(116, 185, 255, 0.4);
+  border: 1px solid #95a5a6;
+  bottom: 30px;
+  left: 32px;
+  box-shadow: 20px 0 0 0 rgba(116, 185, 255, 0.3);
+}
+.card:hover .windmill .head,
+.lightbox-art .windmill .head {
+  animation: buildings-windmill-spin 1.5s linear infinite;
+}
+@keyframes buildings-windmill-idle {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.01); }
+}
+@keyframes buildings-windmill-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ---------- 6. IGLOO ---------- */
+.igloo {
+  position: relative;
+  width: 130px;
+  height: 100px;
+  animation: buildings-igloo-idle 4s ease-in-out infinite;
+}
+.igloo::before {
+  content: '';
+  position: absolute;
+  width: 110px;
+  height: 70px;
+  background:
+    radial-gradient(circle at 25% 80%, rgba(200, 215, 225, 0.2) 8%, transparent 8%),
+    radial-gradient(circle at 75% 80%, rgba(200, 215, 225, 0.2) 8%, transparent 8%),
+    radial-gradient(circle at 50% 55%, rgba(200, 215, 225, 0.2) 8%, transparent 8%),
+    radial-gradient(circle at 20% 50%, rgba(200, 215, 225, 0.15) 6%, transparent 6%),
+    radial-gradient(circle at 80% 50%, rgba(200, 215, 225, 0.15) 6%, transparent 6%),
+    linear-gradient(180deg, #ecf0f1, #dfe6e9, #d5dde5);
+  border-radius: 55px 55px 0 0;
+  bottom: 10px;
+  left: 10px;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.15);
+}
+.igloo::after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 25px;
+  background: linear-gradient(180deg, #dfe6e9, #d5dde5);
+  border-radius: 15px 15px 0 0;
+  bottom: 10px;
+  right: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.igloo .head {
+  position: absolute;
+  width: 20px;
+  height: 18px;
+  background: #2c3e50;
+  border-radius: 10px 10px 0 0;
+  bottom: 10px;
+  right: 10px;
+}
+.igloo .body {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  top: 0;
+  left: 30px;
+  filter: blur(1px);
+  box-shadow:
+    40px 5px 0 1px rgba(255, 255, 255, 0.5),
+    20px -5px 0 0 rgba(255, 255, 255, 0.4),
+    60px 0 0 2px rgba(255, 255, 255, 0.3),
+    80px 3px 0 0 rgba(255, 255, 255, 0.5),
+    10px 8px 0 1px rgba(255, 255, 255, 0.4),
+    50px -8px 0 0 rgba(255, 255, 255, 0.3);
+  animation: buildings-igloo-snow 4s linear infinite;
+}
+.card:hover .igloo,
+.lightbox-art .igloo {
+  filter: drop-shadow(0 0 10px rgba(200, 220, 240, 0.4));
+}
+.card:hover .igloo .body,
+.lightbox-art .igloo .body {
+  animation: buildings-igloo-snow 2s linear infinite;
+}
+@keyframes buildings-igloo-idle {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+}
+@keyframes buildings-igloo-snow {
+  0% { transform: translateY(-10px); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateY(30px); opacity: 0; }
+}
+
+/* ---------- 7. PAGODA ---------- */
+.pagoda {
+  position: relative;
+  width: 120px;
+  height: 160px;
+  animation: buildings-pagoda-idle 4s ease-in-out infinite;
+}
+.pagoda::before {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 60px;
+  background: linear-gradient(180deg, #c0392b, #a93226);
+  bottom: 0;
+  left: 45px;
+}
+.pagoda::after {
+  content: '';
+  position: absolute;
+  width: 90px;
+  height: 12px;
+  background: linear-gradient(180deg, #c0392b, #922b21);
+  bottom: 55px;
+  left: 15px;
+  border-radius: 0 0 50% 50%;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+.pagoda .head {
+  position: absolute;
+  width: 70px;
+  height: 12px;
+  background: linear-gradient(180deg, #c0392b, #922b21);
+  bottom: 95px;
+  left: 25px;
+  border-radius: 0 0 50% 50%;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+.pagoda .body {
+  position: absolute;
+  width: 50px;
+  height: 12px;
+  background: linear-gradient(180deg, #c0392b, #922b21);
+  bottom: 130px;
+  left: 35px;
+  border-radius: 0 0 50% 50%;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+.pagoda .ear-left {
+  position: absolute;
+  width: 20px;
+  height: 30px;
+  background: linear-gradient(180deg, #c0392b, #e74c3c);
+  bottom: 60px;
+  left: 50px;
+}
+.pagoda .ear-right {
+  position: absolute;
+  width: 16px;
+  height: 25px;
+  background: linear-gradient(180deg, #c0392b, #e74c3c);
+  bottom: 100px;
+  left: 52px;
+}
+.pagoda .nose {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: radial-gradient(circle, #f9ca24, #f39c12);
+  border-radius: 50%;
+  bottom: 20px;
+  left: 56px;
+  box-shadow: 0 0 10px rgba(249, 202, 36, 0.5);
+  animation: buildings-pagoda-lantern 2s ease-in-out infinite;
+}
+.card:hover .pagoda .nose,
+.lightbox-art .pagoda .nose {
+  animation: buildings-pagoda-lantern 0.5s ease-in-out infinite;
+  box-shadow: 0 0 20px rgba(249, 202, 36, 0.8);
+}
+.card:hover .pagoda,
+.lightbox-art .pagoda {
+  filter: drop-shadow(0 0 10px rgba(192, 57, 43, 0.3));
+}
+@keyframes buildings-pagoda-idle {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.01); }
+}
+@keyframes buildings-pagoda-lantern {
+  0%, 100% { box-shadow: 0 0 10px rgba(249, 202, 36, 0.5); }
+  50% { box-shadow: 0 0 20px rgba(249, 202, 36, 0.9); }
+}
+
+/* ---------- 8. TENT ---------- */
+.tent {
+  position: relative;
+  width: 130px;
+  height: 120px;
+  animation: buildings-tent-idle 3s ease-in-out infinite;
+}
+.tent::before {
+  content: '';
+  position: absolute;
+  width: 120px;
+  height: 80px;
+  background: linear-gradient(135deg, #27ae60, #2ecc71, #27ae60);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  bottom: 10px;
+  left: 5px;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.2);
+}
+.tent::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 35px;
+  background: linear-gradient(180deg, #1e8449, #145a32);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  bottom: 10px;
+  left: 55px;
+}
+.tent .head {
+  position: absolute;
+  width: 3px;
+  height: 12px;
+  background: #636e72;
+  bottom: 88px;
+  left: 63px;
+  z-index: 2;
+}
+.tent .head::after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 7px;
+  background: #e74c3c;
+  top: -5px;
+  left: -4px;
+  clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+  animation: buildings-tent-flag 2s ease-in-out infinite;
+}
+.tent .body {
+  position: absolute;
+  width: 2px;
+  height: 25px;
+  background: #636e72;
+  bottom: 10px;
+  left: 2px;
+  transform: rotate(-25deg);
+  transform-origin: bottom center;
+  box-shadow: 123px 0 0 0 #636e72;
+}
+.tent .ear-left {
+  position: absolute;
+  width: 15px;
+  height: 10px;
+  background: radial-gradient(circle at 50% 80%, #e67e22, #d35400, rgba(211, 84, 0, 0));
+  border-radius: 50% 50% 0 0;
+  bottom: 10px;
+  left: 57px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  filter: blur(2px);
+}
+.card:hover .tent .ear-left,
+.lightbox-art .tent .ear-left {
+  opacity: 1;
+  animation: buildings-tent-fire 0.3s ease-in-out infinite alternate;
+}
+.card:hover .tent .head::after,
+.lightbox-art .tent .head::after {
+  animation: buildings-tent-flag 0.5s ease-in-out infinite;
+}
+@keyframes buildings-tent-idle {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.01); }
+}
+@keyframes buildings-tent-flag {
+  0%, 100% { transform: skewX(0deg); }
+  50% { transform: skewX(15deg); }
+}
+@keyframes buildings-tent-fire {
+  0% { transform: scaleY(1) scaleX(1); }
+  100% { transform: scaleY(1.3) scaleX(0.8); }
+}
+
+/* ---------- 9. BARN ---------- */
+.barn {
+  position: relative;
+  width: 150px;
+  height: 130px;
+  animation: buildings-barn-idle 4s ease-in-out infinite;
+}
+.barn::before {
+  content: '';
+  position: absolute;
+  width: 100px;
+  height: 70px;
+  background: linear-gradient(180deg, #c0392b, #a93226);
+  bottom: 0;
+  left: 10px;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.3);
+}
+.barn::after {
+  content: '';
+  position: absolute;
+  width: 110px;
+  height: 45px;
+  background: linear-gradient(180deg, #922b21, #c0392b);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  top: 15px;
+  left: 5px;
+}
+.barn .head {
+  position: absolute;
+  width: 24px;
+  height: 35px;
+  background: #6d4c41;
+  bottom: 0;
+  left: 48px;
+}
+.barn .head::before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ecf0f1;
+  top: 5px;
+  left: 2px;
+  transform: rotate(45deg);
+}
+.barn .body {
+  position: absolute;
+  width: 30px;
+  height: 80px;
+  background: linear-gradient(180deg, #7f8c8d, #95a5a6);
+  border-radius: 15px 15px 0 0;
+  bottom: 0;
+  right: 5px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+.barn .ear-left {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: rgba(116, 185, 255, 0.3);
+  border: 1px solid #95a5a6;
+  bottom: 35px;
+  left: 20px;
+  box-shadow: 50px 0 0 0 rgba(116, 185, 255, 0.3);
+}
+.card:hover .barn,
+.lightbox-art .barn {
+  animation: buildings-barn-rock 0.8s ease-in-out infinite;
+}
+.card:hover .barn .ear-left,
+.lightbox-art .barn .ear-left {
+  background: rgba(249, 202, 36, 0.5);
+  box-shadow: 50px 0 0 0 rgba(249, 202, 36, 0.5), 0 0 8px rgba(249, 202, 36, 0.3), 50px 0 8px rgba(249, 202, 36, 0.3);
+}
+@keyframes buildings-barn-idle {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.01); }
+}
+@keyframes buildings-barn-rock {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-1deg); }
+  75% { transform: rotate(1deg); }
+}
+
+/* ---------- 10. CHURCH ---------- */
+.church {
+  position: relative;
+  width: 110px;
+  height: 165px;
+  animation: buildings-church-idle 4s ease-in-out infinite;
+}
+.church::before {
+  content: '';
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(180deg, #deb887, #d2b48c);
+  bottom: 0;
+  left: 15px;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.2);
+}
+.church::after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 60px;
+  background: linear-gradient(180deg, #c4a574, #deb887);
+  bottom: 80px;
+  left: 40px;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+.church .head {
+  position: absolute;
+  top: 8px;
+  left: 51px;
+  width: 8px;
+  height: 20px;
+  background: #8d6e63;
+  z-index: 2;
+}
+.church .head::before {
+  content: '';
+  position: absolute;
+  width: 18px;
+  height: 6px;
+  background: #8d6e63;
+  top: 3px;
+  left: -5px;
+}
+.church .body {
+  position: absolute;
+  width: 20px;
+  height: 30px;
+  background: transparent;
+  border: 3px solid rgba(116, 185, 255, 0.4);
+  border-radius: 10px 10px 0 0;
+  bottom: 25px;
+  left: 30px;
+  box-shadow: 30px 0 0 0 rgba(116, 185, 255, 0.4);
+}
+.church .ear-left {
+  position: absolute;
+  width: 18px;
+  height: 28px;
+  background: #6d4c41;
+  border-radius: 9px 9px 0 0;
+  bottom: 0;
+  left: 46px;
+}
+.church .ear-right {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #f9ca24;
+  border-radius: 50%;
+  top: 32px;
+  left: 51px;
+  z-index: 3;
+  box-shadow: 0 0 8px rgba(249, 202, 36, 0.5);
+  transition: transform 0.3s ease;
+}
+.card:hover .church .ear-right,
+.lightbox-art .church .ear-right {
+  animation: buildings-church-bell 0.3s ease-in-out infinite;
+  box-shadow: 0 0 15px rgba(249, 202, 36, 0.8);
+}
+.card:hover .church .body,
+.lightbox-art .church .body {
+  border-color: rgba(249, 202, 36, 0.6);
+  box-shadow: 30px 0 0 0 rgba(249, 202, 36, 0.6), 0 0 10px rgba(249, 202, 36, 0.2), 30px 0 10px rgba(249, 202, 36, 0.2);
+}
+@keyframes buildings-church-idle {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.01); }
+}
+@keyframes buildings-church-bell {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(15deg); }
+  75% { transform: rotate(-15deg); }
+}

@@ -1,0 +1,940 @@
+/* ===== ANIMALS CSS ART — 10 pieces ===== */
+
+/* ---------- 1. CAT ---------- */
+.cat {
+  position: relative;
+  width: 120px;
+  height: 140px;
+}
+.cat .head {
+  position: absolute;
+  width: 100px;
+  height: 90px;
+  background: linear-gradient(145deg, #f5a623, #e8912e);
+  border-radius: 50% 50% 45% 45%;
+  top: 30px;
+  left: 10px;
+  box-shadow: inset -5px -5px 15px rgba(0,0,0,0.15);
+}
+.cat .ear-left {
+  position: absolute;
+  top: 5px;
+  left: 15px;
+  width: 0;
+  height: 0;
+  border-left: 18px solid transparent;
+  border-right: 18px solid transparent;
+  border-bottom: 35px solid #f5a623;
+  filter: drop-shadow(0 0 2px rgba(0,0,0,0.15));
+}
+.cat .ear-left::after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: -10px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 20px solid #f8c9c9;
+}
+.cat .ear-right {
+  position: absolute;
+  top: 5px;
+  right: 15px;
+  width: 0;
+  height: 0;
+  border-left: 18px solid transparent;
+  border-right: 18px solid transparent;
+  border-bottom: 35px solid #f5a623;
+  filter: drop-shadow(0 0 2px rgba(0,0,0,0.15));
+}
+.cat .ear-right::after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: -10px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 20px solid #f8c9c9;
+}
+.cat .eye-left,
+.cat .eye-right {
+  position: absolute;
+  width: 18px;
+  height: 22px;
+  background: radial-gradient(circle, #2d3436 40%, #636e72 45%, #55efc4 50%, #00b894 100%);
+  border-radius: 50%;
+  top: 55px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 3px rgba(0,0,0,0.2);
+}
+.cat .eye-left { left: 30px; }
+.cat .eye-right { right: 30px; }
+.cat .nose {
+  position: absolute;
+  width: 10px;
+  height: 7px;
+  background: #e17055;
+  border-radius: 50% 50% 40% 40%;
+  top: 78px;
+  left: 55px;
+  transform: translateX(-50%);
+}
+.cat .mouth {
+  position: absolute;
+  width: 20px;
+  height: 10px;
+  border-bottom: 2px solid #d63031;
+  border-radius: 0 0 50% 50%;
+  top: 84px;
+  left: 50px;
+  transform: translateX(-50%);
+}
+.cat .whisker {
+  position: absolute;
+  width: 35px;
+  height: 1.5px;
+  background: rgba(45, 52, 54, 0.5);
+  top: 80px;
+  border-radius: 1px;
+}
+.cat .whisker:nth-child(8) { left: -12px; transform: rotate(-8deg); }
+.cat .whisker:nth-child(9) { left: -15px; top: 85px; transform: rotate(5deg); }
+.cat .whisker:nth-child(10) { right: -12px; left: auto; transform: rotate(8deg); }
+.cat .whisker:nth-child(11) { right: -15px; left: auto; top: 85px; transform: rotate(-5deg); }
+.cat {
+  animation: animals-cat-idle 3s ease-in-out infinite;
+}
+.card:hover .cat .eye-left,
+.card:hover .cat .eye-right,
+.lightbox-art .cat .eye-left,
+.lightbox-art .cat .eye-right {
+  height: 8px;
+  border-radius: 50%;
+  top: 62px;
+}
+.card:hover .cat,
+.lightbox-art .cat {
+  animation: animals-cat-purr 0.5s ease-in-out infinite;
+}
+@keyframes animals-cat-idle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+@keyframes animals-cat-purr {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  25% { transform: scale(1.03) rotate(-1deg); }
+  75% { transform: scale(1.03) rotate(1deg); }
+}
+
+/* ---------- 2. DOG ---------- */
+.dog {
+  position: relative;
+  width: 120px;
+  height: 140px;
+  animation: animals-dog-idle 2.5s ease-in-out infinite;
+}
+.dog .head {
+  position: absolute;
+  width: 100px;
+  height: 90px;
+  background: linear-gradient(145deg, #dfe6e9, #b2bec3);
+  border-radius: 50% 50% 45% 45%;
+  top: 25px;
+  left: 10px;
+  box-shadow: inset -5px -5px 15px rgba(0,0,0,0.1);
+}
+.dog .head::before {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 18px;
+  background: #636e72;
+  border-radius: 50%;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.dog .ear-left {
+  position: absolute;
+  width: 30px;
+  height: 50px;
+  background: linear-gradient(180deg, #b2bec3, #a0a8ad);
+  border-radius: 0 0 50% 50%;
+  top: 25px;
+  left: 0;
+  transform: rotate(15deg);
+  box-shadow: 2px 3px 8px rgba(0,0,0,0.15);
+}
+.dog .ear-right {
+  position: absolute;
+  width: 30px;
+  height: 50px;
+  background: linear-gradient(180deg, #b2bec3, #a0a8ad);
+  border-radius: 0 0 50% 50%;
+  top: 25px;
+  right: 0;
+  transform: rotate(-15deg);
+  box-shadow: -2px 3px 8px rgba(0,0,0,0.15);
+}
+.dog .eye-left,
+.dog .eye-right {
+  position: absolute;
+  width: 14px;
+  height: 16px;
+  background: radial-gradient(circle, #2d3436 50%, #636e72 55%, #74b9ff 60%, #0984e3 100%);
+  border-radius: 50%;
+  top: 50px;
+  box-shadow: 0 0 2px rgba(0,0,0,0.2);
+}
+.dog .eye-left { left: 30px; }
+.dog .eye-right { right: 30px; }
+.dog .nose {
+  position: absolute;
+  width: 16px;
+  height: 12px;
+  background: #2d3436;
+  border-radius: 50%;
+  top: 72px;
+  left: 52px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+.dog .mouth {
+  position: absolute;
+  width: 6px;
+  height: 0;
+  background: #e17055;
+  border-radius: 0 0 4px 4px;
+  top: 84px;
+  left: 57px;
+  transition: height 0.3s ease;
+  overflow: hidden;
+}
+.card:hover .dog .mouth,
+.lightbox-art .dog .mouth {
+  height: 20px;
+}
+.card:hover .dog,
+.lightbox-art .dog {
+  animation: animals-dog-wag 0.4s ease-in-out infinite;
+}
+@keyframes animals-dog-idle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+@keyframes animals-dog-wag {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-3deg); }
+  75% { transform: rotate(3deg); }
+}
+
+/* ---------- 3. PENGUIN ---------- */
+.penguin {
+  position: relative;
+  width: 100px;
+  height: 140px;
+  animation: animals-penguin-idle 3s ease-in-out infinite;
+}
+.penguin::before {
+  content: '';
+  position: absolute;
+  width: 80px;
+  height: 110px;
+  background: linear-gradient(135deg, #2d3436, #636e72);
+  border-radius: 40px 40px 35px 35px;
+  top: 5px;
+  left: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+.penguin::after {
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 75px;
+  background: linear-gradient(180deg, #ffeaa7, #fdcb6e);
+  border-radius: 25px 25px 20px 20px;
+  top: 25px;
+  left: 25px;
+}
+.penguin .head {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 14px solid #e67e22;
+  z-index: 2;
+  top: 40px;
+}
+.penguin .eye-left,
+.penguin .eye-right {
+  position: absolute;
+  width: 10px;
+  height: 12px;
+  background: radial-gradient(circle, #fff 30%, #2d3436 35%);
+  border-radius: 50%;
+  top: 25px;
+  z-index: 2;
+}
+.penguin .eye-left { left: 28px; }
+.penguin .eye-right { right: 28px; }
+.penguin .body {
+  position: absolute;
+  bottom: 0;
+  left: 25px;
+  width: 15px;
+  height: 10px;
+  background: #e67e22;
+  border-radius: 0 0 5px 5px;
+}
+.penguin .body::after {
+  content: '';
+  position: absolute;
+  left: 25px;
+  width: 15px;
+  height: 10px;
+  background: #e67e22;
+  border-radius: 0 0 5px 5px;
+}
+.card:hover .penguin,
+.lightbox-art .penguin {
+  animation: animals-penguin-tilt 0.8s ease-in-out infinite;
+}
+@keyframes animals-penguin-idle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+@keyframes animals-penguin-tilt {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-8deg); }
+  75% { transform: rotate(8deg); }
+}
+
+/* ---------- 4. OWL ---------- */
+.owl {
+  position: relative;
+  width: 110px;
+  height: 140px;
+  animation: animals-owl-idle 4s ease-in-out infinite;
+}
+.owl::before {
+  content: '';
+  position: absolute;
+  width: 90px;
+  height: 100px;
+  background: linear-gradient(180deg, #8e6e53, #a0855e, #7d5a40);
+  border-radius: 50% 50% 40% 40%;
+  top: 25px;
+  left: 10px;
+  box-shadow: inset 0 -10px 20px rgba(0,0,0,0.2);
+}
+.owl::after {
+  content: '';
+  position: absolute;
+  width: 60px;
+  height: 50px;
+  background: linear-gradient(180deg, #ffeaa7, #dab785);
+  border-radius: 30px 30px 25px 25px;
+  bottom: 15px;
+  left: 25px;
+}
+.owl .head {
+  position: absolute;
+  top: 0;
+  left: 10px;
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 25px solid #8e6e53;
+}
+.owl .head::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 42px;
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 25px solid #8e6e53;
+}
+.owl .eye-left,
+.owl .eye-right {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  background: radial-gradient(circle, #2d3436 35%, #f39c12 38%, #e67e22 100%);
+  border-radius: 50%;
+  top: 40px;
+  box-shadow: 0 0 0 3px #7d5a40;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+.owl .eye-left { left: 16px; }
+.owl .eye-right { right: 16px; }
+.owl .nose {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 10px solid #e67e22;
+  top: 68px;
+  left: 49px;
+  z-index: 2;
+}
+.card:hover .owl .eye-left,
+.card:hover .owl .eye-right,
+.lightbox-art .owl .eye-left,
+.lightbox-art .owl .eye-right {
+  height: 4px;
+  border-radius: 50%;
+  top: 52px;
+}
+.card:hover .owl,
+.lightbox-art .owl {
+  animation: animals-owl-bob 1s ease-in-out infinite;
+}
+@keyframes animals-owl-idle {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+}
+@keyframes animals-owl-bob {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-5px) rotate(-3deg); }
+  75% { transform: translateY(-5px) rotate(3deg); }
+}
+
+/* ---------- 5. FISH ---------- */
+.fish {
+  position: relative;
+  width: 140px;
+  height: 80px;
+  animation: animals-fish-swim 3s ease-in-out infinite;
+}
+.fish::before {
+  content: '';
+  position: absolute;
+  width: 100px;
+  height: 55px;
+  background: linear-gradient(180deg, #0984e3, #74b9ff, #0984e3);
+  border-radius: 50% 50% 45% 45%;
+  top: 12px;
+  left: 10px;
+  box-shadow: inset -3px 0 10px rgba(0,0,0,0.1), 0 3px 10px rgba(0,0,0,0.2);
+}
+.fish::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 18px;
+  width: 0;
+  height: 0;
+  border-top: 22px solid transparent;
+  border-bottom: 22px solid transparent;
+  border-left: 30px solid #0984e3;
+}
+.fish .head {
+  position: absolute;
+  width: 10px;
+  height: 12px;
+  background: radial-gradient(circle, #fff 40%, #2d3436 45%);
+  border-radius: 50%;
+  top: 28px;
+  left: 22px;
+  z-index: 2;
+}
+.fish .body {
+  position: absolute;
+  top: 15px;
+  left: 55px;
+  width: 20px;
+  height: 35px;
+  background: linear-gradient(180deg, transparent 0%, rgba(116,185,255,0.4) 50%, transparent 100%);
+  clip-path: polygon(0% 0%, 100% 25%, 100% 75%, 0% 100%);
+}
+.card:hover .fish,
+.lightbox-art .fish {
+  animation: animals-fish-dash 0.8s ease-in-out infinite;
+}
+.card:hover .fish::before,
+.lightbox-art .fish::before {
+  box-shadow: inset -3px 0 10px rgba(0,0,0,0.1), 0 3px 10px rgba(0,0,0,0.2),
+    30px -8px 0 3px rgba(116, 185, 255, 0.3),
+    40px -2px 0 2px rgba(116, 185, 255, 0.2),
+    35px 8px 0 2px rgba(116, 185, 255, 0.25);
+}
+@keyframes animals-fish-swim {
+  0%, 100% { transform: translateX(0) translateY(0); }
+  25% { transform: translateX(5px) translateY(-3px); }
+  75% { transform: translateX(-5px) translateY(3px); }
+}
+@keyframes animals-fish-dash {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(15px); }
+}
+
+/* ---------- 6. BUTTERFLY ---------- */
+.butterfly {
+  position: relative;
+  width: 120px;
+  height: 100px;
+  animation: animals-butterfly-idle 3s ease-in-out infinite;
+}
+.butterfly::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 4px;
+  height: 50px;
+  background: linear-gradient(180deg, #2d3436, #636e72);
+  border-radius: 2px;
+}
+.butterfly::after {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 12px;
+  border-top: 2px solid #636e72;
+  border-radius: 50% 50% 0 0;
+  border-left: 2px solid #636e72;
+  border-right: 2px solid #636e72;
+}
+.butterfly .head {
+  position: absolute;
+  width: 45px;
+  height: 40px;
+  background: linear-gradient(135deg, #e74c3c, #e67e22, #f1c40f);
+  border-radius: 50% 10% 50% 10%;
+  top: 10px;
+  right: 7px;
+  transform: rotate(-15deg);
+  box-shadow: inset -3px -3px 8px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+}
+.butterfly .body {
+  position: absolute;
+  width: 45px;
+  height: 40px;
+  background: linear-gradient(225deg, #e74c3c, #e67e22, #f1c40f);
+  border-radius: 10% 50% 10% 50%;
+  top: 10px;
+  left: 7px;
+  transform: rotate(15deg);
+  box-shadow: inset 3px -3px 8px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+}
+.butterfly .ear-left {
+  position: absolute;
+  width: 35px;
+  height: 30px;
+  background: linear-gradient(135deg, #9b59b6, #8e44ad, #6c3483);
+  border-radius: 50% 10% 50% 10%;
+  bottom: 8px;
+  right: 10px;
+  transform: rotate(-10deg);
+  box-shadow: inset -3px 3px 8px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+}
+.butterfly .ear-right {
+  position: absolute;
+  width: 35px;
+  height: 30px;
+  background: linear-gradient(225deg, #9b59b6, #8e44ad, #6c3483);
+  border-radius: 10% 50% 10% 50%;
+  bottom: 8px;
+  left: 10px;
+  transform: rotate(10deg);
+  box-shadow: inset 3px 3px 8px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+}
+.card:hover .butterfly,
+.lightbox-art .butterfly {
+  animation: animals-butterfly-flutter 0.4s ease-in-out infinite;
+}
+.card:hover .butterfly .head,
+.lightbox-art .butterfly .head {
+  transform: rotate(-25deg) scaleY(0.8);
+}
+.card:hover .butterfly .body,
+.lightbox-art .butterfly .body {
+  transform: rotate(25deg) scaleY(0.8);
+}
+.card:hover .butterfly .ear-left,
+.lightbox-art .butterfly .ear-left {
+  transform: rotate(-20deg) scaleY(0.8);
+}
+.card:hover .butterfly .ear-right,
+.lightbox-art .butterfly .ear-right {
+  transform: rotate(20deg) scaleY(0.8);
+}
+@keyframes animals-butterfly-idle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+@keyframes animals-butterfly-flutter {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-5px) rotate(-2deg); }
+  75% { transform: translateY(-5px) rotate(2deg); }
+}
+
+/* ---------- 7. LADYBUG ---------- */
+.ladybug {
+  position: relative;
+  width: 100px;
+  height: 110px;
+  animation: animals-ladybug-idle 3s ease-in-out infinite;
+}
+.ladybug::before {
+  content: '';
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background: radial-gradient(circle at 40% 35%, #ff6b6b, #ee5a24, #c0392b);
+  border-radius: 50% 50% 45% 45%;
+  top: 25px;
+  left: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3),
+    inset -5px -5px 15px rgba(0,0,0,0.15);
+}
+.ladybug::after {
+  content: '';
+  position: absolute;
+  top: 25px;
+  left: 49px;
+  width: 2px;
+  height: 80px;
+  background: #2d3436;
+}
+.ladybug .head {
+  position: absolute;
+  width: 35px;
+  height: 30px;
+  background: #2d3436;
+  border-radius: 50%;
+  top: 5px;
+  left: 32px;
+}
+.ladybug .head::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: 5px;
+  width: 2px;
+  height: 15px;
+  background: #2d3436;
+  transform: rotate(-20deg);
+  border-radius: 1px;
+  box-shadow: 22px 0 0 0 #2d3436;
+}
+.ladybug .eye-left,
+.ladybug .eye-right {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: radial-gradient(circle, #fff 40%, #2d3436 50%);
+  border-radius: 50%;
+  top: 15px;
+  z-index: 2;
+}
+.ladybug .eye-left { left: 36px; }
+.ladybug .eye-right { left: 56px; }
+.ladybug .nose {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #2d3436;
+  border-radius: 50%;
+  top: 55px;
+  left: 25px;
+  box-shadow:
+    35px -10px 0 0 #2d3436,
+    12px 15px 0 0 #2d3436,
+    25px 15px 0 0 #2d3436,
+    -5px 10px 0 0 #2d3436,
+    42px 10px 0 0 #2d3436;
+}
+.card:hover .ladybug,
+.lightbox-art .ladybug {
+  animation: animals-ladybug-fly 0.6s ease-in-out infinite;
+}
+.card:hover .ladybug::before,
+.lightbox-art .ladybug::before {
+  border-radius: 50% 50% 50% 50%;
+  transform: scaleX(1.1);
+}
+@keyframes animals-ladybug-idle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+@keyframes animals-ladybug-fly {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-15px) scale(1.05); }
+}
+
+/* ---------- 8. WHALE ---------- */
+.whale {
+  position: relative;
+  width: 160px;
+  height: 100px;
+  animation: animals-whale-idle 4s ease-in-out infinite;
+}
+.whale::before {
+  content: '';
+  position: absolute;
+  width: 130px;
+  height: 70px;
+  background: linear-gradient(180deg, #2980b9, #3498db, #5dade2);
+  border-radius: 60% 60% 50% 50%;
+  top: 15px;
+  left: 5px;
+  box-shadow: inset -5px -5px 15px rgba(0,0,0,0.15), 0 5px 15px rgba(0,0,0,0.2);
+}
+.whale::after {
+  content: '';
+  position: absolute;
+  width: 45px;
+  height: 35px;
+  background: linear-gradient(135deg, #74b9ff, #a9cce3);
+  border-radius: 50%;
+  top: 30px;
+  left: 15px;
+}
+.whale .head {
+  position: absolute;
+  right: 0;
+  top: 15px;
+  width: 0;
+  height: 0;
+  border-top: 18px solid #2980b9;
+  border-bottom: 18px solid #2980b9;
+  border-right: 25px solid transparent;
+  transform: rotate(-10deg);
+}
+.whale .eye-left {
+  position: absolute;
+  width: 8px;
+  height: 10px;
+  background: radial-gradient(circle, #fff 35%, #2d3436 40%);
+  border-radius: 50%;
+  top: 35px;
+  left: 20px;
+  z-index: 2;
+}
+.whale .body {
+  position: absolute;
+  top: 62px;
+  left: 60px;
+  width: 20px;
+  height: 3px;
+  background: #2d3436;
+  border-radius: 2px;
+}
+.card:hover .whale,
+.lightbox-art .whale {
+  animation: animals-whale-dive 1.5s ease-in-out infinite;
+}
+.card:hover .whale .head,
+.lightbox-art .whale .head {
+  box-shadow: 10px -25px 0 3px rgba(116, 185, 255, 0.4),
+              15px -35px 0 2px rgba(116, 185, 255, 0.3),
+              8px -45px 0 4px rgba(116, 185, 255, 0.2);
+}
+@keyframes animals-whale-idle {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-5px) rotate(1deg); }
+}
+@keyframes animals-whale-dive {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-10px) rotate(-3deg); }
+  75% { transform: translateY(5px) rotate(2deg); }
+}
+
+/* ---------- 9. FLAMINGO ---------- */
+.flamingo {
+  position: relative;
+  width: 100px;
+  height: 160px;
+  animation: animals-flamingo-sway 3s ease-in-out infinite;
+}
+.flamingo::before {
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: radial-gradient(circle at 40% 40%, #fd79a8, #e84393, #c44569);
+  border-radius: 50%;
+  top: 40px;
+  left: 25px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+.flamingo::after {
+  content: '';
+  position: absolute;
+  width: 3px;
+  height: 65px;
+  background: linear-gradient(180deg, #fd79a8, #e84393);
+  bottom: 0;
+  left: 40px;
+  border-radius: 1px;
+  box-shadow: 15px 0 0 0 #e84393;
+}
+.flamingo .head {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background: radial-gradient(circle, #fd79a8, #e84393);
+  border-radius: 50%;
+  top: 5px;
+  left: 55px;
+  z-index: 2;
+}
+.flamingo .head::before {
+  content: '';
+  position: absolute;
+  top: 6px;
+  right: -12px;
+  width: 14px;
+  height: 6px;
+  background: linear-gradient(180deg, #2d3436 50%, #e67e22 50%);
+  border-radius: 3px;
+  clip-path: polygon(0 0, 100% 30%, 100% 70%, 0 100%);
+}
+.flamingo .head::after {
+  content: '';
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background: #2d3436;
+  border-radius: 50%;
+  top: 4px;
+  left: 10px;
+}
+.flamingo .body {
+  position: absolute;
+  width: 4px;
+  height: 40px;
+  background: linear-gradient(180deg, #fd79a8, #e84393);
+  top: 18px;
+  left: 48px;
+  border-radius: 0 0 20px 0;
+  transform-origin: top center;
+  transform: rotate(15deg);
+}
+.card:hover .flamingo,
+.lightbox-art .flamingo {
+  animation: animals-flamingo-dance 0.8s ease-in-out infinite;
+}
+@keyframes animals-flamingo-sway {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(2deg); }
+}
+@keyframes animals-flamingo-dance {
+  0%, 100% { transform: rotate(0deg) translateY(0); }
+  25% { transform: rotate(-5deg) translateY(-5px); }
+  75% { transform: rotate(5deg) translateY(-5px); }
+}
+
+/* ---------- 10. OCTOPUS ---------- */
+.octopus {
+  position: relative;
+  width: 120px;
+  height: 140px;
+  animation: animals-octopus-idle 3s ease-in-out infinite;
+}
+.octopus::before {
+  content: '';
+  position: absolute;
+  width: 70px;
+  height: 60px;
+  background: radial-gradient(circle at 40% 35%, #a29bfe, #6c5ce7, #5f27cd);
+  border-radius: 50% 50% 40% 40%;
+  top: 0;
+  left: 25px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+.octopus::after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 8px;
+  background: #e17055;
+  border-radius: 0 0 50% 50%;
+  top: 40px;
+  left: 45px;
+}
+.octopus .eye-left,
+.octopus .eye-right {
+  position: absolute;
+  width: 14px;
+  height: 16px;
+  background: radial-gradient(circle, #fff 40%, #2d3436 45%);
+  border-radius: 50%;
+  top: 20px;
+  z-index: 2;
+}
+.octopus .eye-left { left: 35px; }
+.octopus .eye-right { left: 65px; }
+.octopus .head {
+  position: absolute;
+  top: 55px;
+  left: 18px;
+  width: 10px;
+  height: 45px;
+  background: linear-gradient(180deg, #6c5ce7, #a29bfe);
+  border-radius: 5px 5px 10px 10px;
+  transform: rotate(-20deg);
+  transform-origin: top center;
+  box-shadow:
+    14px 0 0 0 #7c6cf7,
+    28px 3px 0 0 #8c7cf7,
+    42px 0 0 0 #9c8cf7,
+    56px -3px 0 0 #8c7cf7,
+    70px 0 0 0 #7c6cf7,
+    84px 3px 0 0 #6c5ce7;
+  animation: animals-octopus-tentacles 2s ease-in-out infinite;
+}
+.octopus .body {
+  position: absolute;
+  top: 55px;
+  right: 18px;
+  width: 10px;
+  height: 45px;
+  background: linear-gradient(180deg, #6c5ce7, #a29bfe);
+  border-radius: 5px 5px 10px 10px;
+  transform: rotate(20deg);
+  transform-origin: top center;
+}
+.card:hover .octopus,
+.lightbox-art .octopus {
+  animation: animals-octopus-wiggle 0.6s ease-in-out infinite;
+}
+.card:hover .octopus .head,
+.lightbox-art .octopus .head {
+  animation: animals-octopus-tentacles 0.5s ease-in-out infinite;
+}
+@keyframes animals-octopus-idle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+@keyframes animals-octopus-tentacles {
+  0%, 100% { transform: rotate(-20deg); }
+  50% { transform: rotate(-10deg); }
+}
+@keyframes animals-octopus-wiggle {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-8px) rotate(-5deg); }
+  75% { transform: translateY(-8px) rotate(5deg); }
+}

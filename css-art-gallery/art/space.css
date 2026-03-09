@@ -1,0 +1,803 @@
+/* ===== SPACE CSS ART — 10 pieces ===== */
+
+/* ---------- 1. ROCKET ---------- */
+.rocket {
+  position: relative;
+  width: 80px;
+  height: 170px;
+  animation: space-rocket-idle 2s ease-in-out infinite;
+}
+.rocket .body {
+  position: absolute;
+  width: 40px;
+  height: 90px;
+  background: linear-gradient(180deg, #dfe6e9, #b2bec3, #636e72);
+  border-radius: 20px 20px 5px 5px;
+  top: 10px;
+  left: 20px;
+  box-shadow: inset -5px 0 10px rgba(0,0,0,0.1), 0 5px 15px rgba(0,0,0,0.2);
+}
+.rocket .window {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background: radial-gradient(circle at 35% 35%, #74b9ff, #0984e3, #0652dd);
+  border-radius: 50%;
+  top: 35px;
+  left: 31px;
+  z-index: 2;
+  box-shadow: 0 0 0 3px #636e72, inset -2px -2px 4px rgba(0,0,0,0.3);
+}
+.rocket .fin-left {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 20px solid transparent;
+  border-right: 15px solid #e74c3c;
+  border-bottom: 10px solid transparent;
+  top: 80px;
+  left: 8px;
+  filter: drop-shadow(0 2px 3px rgba(0,0,0,0.2));
+}
+.rocket .fin-right {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 20px solid transparent;
+  border-left: 15px solid #e74c3c;
+  border-bottom: 10px solid transparent;
+  top: 80px;
+  right: 8px;
+  filter: drop-shadow(0 2px 3px rgba(0,0,0,0.2));
+}
+.rocket .flame {
+  position: absolute;
+  width: 24px;
+  height: 45px;
+  background: linear-gradient(180deg, #f39c12, #e67e22, #e74c3c, rgba(231, 76, 60, 0));
+  border-radius: 0 0 50% 50%;
+  bottom: 0;
+  left: 28px;
+  animation: space-rocket-flame 0.3s ease-in-out infinite alternate;
+  filter: blur(2px);
+}
+.rocket .flame::before {
+  content: '';
+  position: absolute;
+  width: 14px;
+  height: 30px;
+  background: linear-gradient(180deg, #ffeaa7, #f9ca24, rgba(249, 202, 36, 0));
+  border-radius: 0 0 50% 50%;
+  top: 0;
+  left: 5px;
+  animation: space-rocket-flame 0.2s ease-in-out infinite alternate;
+}
+.card:hover .rocket,
+.lightbox-art .rocket {
+  animation: space-rocket-launch 0.3s ease-in-out infinite;
+}
+.card:hover .rocket .flame,
+.lightbox-art .rocket .flame {
+  height: 55px;
+  filter: blur(1px);
+}
+@keyframes space-rocket-idle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+@keyframes space-rocket-flame {
+  0% { transform: scaleX(0.8) scaleY(0.9); }
+  100% { transform: scaleX(1.2) scaleY(1.1); }
+}
+@keyframes space-rocket-launch {
+  0%, 100% { transform: translateX(-1px); }
+  50% { transform: translateX(1px); }
+}
+
+/* ---------- 2. SATURN ---------- */
+.saturn {
+  position: relative;
+  width: 160px;
+  height: 120px;
+  animation: space-saturn-idle 5s ease-in-out infinite;
+}
+.saturn::before {
+  content: '';
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(circle at 35% 35%, #ffeaa7, #f9ca24, #f0932b, #cc8e35);
+  border-radius: 50%;
+  top: 30px;
+  left: 50px;
+  box-shadow: inset -5px -5px 15px rgba(0,0,0,0.2), 0 0 20px rgba(249, 202, 36, 0.3);
+  z-index: 2;
+}
+.saturn::after {
+  content: '';
+  position: absolute;
+  width: 150px;
+  height: 40px;
+  border: 6px solid transparent;
+  border-top-color: rgba(204, 142, 53, 0.5);
+  border-bottom-color: rgba(204, 142, 53, 0.3);
+  border-radius: 50%;
+  top: 40px;
+  left: 5px;
+  transform: rotateX(65deg) rotateZ(-15deg);
+  box-shadow: 0 0 15px rgba(249, 202, 36, 0.15);
+}
+.saturn .head {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: radial-gradient(circle, #ffeaa7, #f9ca24);
+  border-radius: 50%;
+  top: 20px;
+  right: 25px;
+  z-index: 3;
+  box-shadow: 0 0 10px rgba(249, 202, 36, 0.6);
+  animation: space-saturn-orbit 4s linear infinite;
+}
+.card:hover .saturn,
+.lightbox-art .saturn {
+  animation: space-saturn-spin 3s linear infinite;
+  filter: drop-shadow(0 0 15px rgba(249, 202, 36, 0.4));
+}
+@keyframes space-saturn-idle {
+  0%, 100% { transform: rotate(-5deg); }
+  50% { transform: rotate(5deg); }
+}
+@keyframes space-saturn-orbit {
+  0% { transform: rotate(0deg) translateX(20px) rotate(0deg); }
+  100% { transform: rotate(360deg) translateX(20px) rotate(-360deg); }
+}
+@keyframes space-saturn-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ---------- 3. UFO ---------- */
+.ufo {
+  position: relative;
+  width: 140px;
+  height: 120px;
+  animation: space-ufo-idle 3s ease-in-out infinite;
+}
+.ufo::before {
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 35px;
+  background: radial-gradient(circle at 50% 70%, rgba(0, 210, 211, 0.4), rgba(0, 210, 211, 0.15), transparent);
+  border-radius: 50% 50% 0 0;
+  top: 15px;
+  left: 45px;
+  border: 2px solid rgba(0, 210, 211, 0.3);
+  border-bottom: none;
+  box-shadow: 0 0 15px rgba(0, 210, 211, 0.3);
+}
+.ufo::after {
+  content: '';
+  position: absolute;
+  width: 120px;
+  height: 25px;
+  background: linear-gradient(180deg, #636e72, #95a5a6, #636e72);
+  border-radius: 50%;
+  top: 48px;
+  left: 10px;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.3);
+}
+.ufo .head {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #f1c40f;
+  border-radius: 50%;
+  top: 55px;
+  left: 30px;
+  z-index: 2;
+  box-shadow:
+    18px 0 0 0 #e74c3c,
+    36px 0 0 0 #2ecc71,
+    54px 0 0 0 #3498db,
+    72px 0 0 0 #f39c12;
+  animation: space-ufo-lights 1.5s ease-in-out infinite;
+}
+.ufo .body {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-top: 45px solid rgba(0, 210, 211, 0);
+  transition: border-top-color 0.3s ease;
+}
+.card:hover .ufo .body,
+.lightbox-art .ufo .body {
+  border-top-color: rgba(0, 210, 211, 0.2);
+  filter: blur(3px);
+}
+.card:hover .ufo,
+.lightbox-art .ufo {
+  animation: space-ufo-hover 1s ease-in-out infinite;
+}
+.card:hover .ufo .head,
+.lightbox-art .ufo .head {
+  animation: space-ufo-lights 0.4s ease-in-out infinite;
+}
+@keyframes space-ufo-idle {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  25% { transform: translateY(-5px) translateX(3px); }
+  75% { transform: translateY(-3px) translateX(-3px); }
+}
+@keyframes space-ufo-lights {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+@keyframes space-ufo-hover {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+/* ---------- 4. ASTRONAUT ---------- */
+.astronaut {
+  position: relative;
+  width: 90px;
+  height: 150px;
+  animation: space-astronaut-float 4s ease-in-out infinite;
+}
+.astronaut::before {
+  content: '';
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  background: linear-gradient(135deg, #dfe6e9, #b2bec3);
+  border-radius: 50%;
+  top: 0;
+  left: 22px;
+  box-shadow: 0 0 0 3px #636e72, 0 5px 15px rgba(0,0,0,0.2);
+}
+.astronaut::after {
+  content: '';
+  position: absolute;
+  width: 35px;
+  height: 30px;
+  background: linear-gradient(135deg, rgba(116, 185, 255, 0.4), rgba(9, 132, 227, 0.3));
+  border-radius: 40%;
+  top: 8px;
+  left: 27px;
+  box-shadow: inset -3px -3px 8px rgba(255,255,255,0.2);
+}
+.astronaut .body {
+  position: absolute;
+  width: 50px;
+  height: 55px;
+  background: linear-gradient(180deg, #dfe6e9, #b2bec3);
+  border-radius: 10px 10px 15px 15px;
+  top: 42px;
+  left: 20px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+.astronaut .body::before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 30px;
+  background: linear-gradient(180deg, #636e72, #95a5a6);
+  border-radius: 5px;
+  top: 5px;
+  right: -8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+.astronaut .head {
+  position: absolute;
+  width: 12px;
+  height: 30px;
+  background: linear-gradient(180deg, #dfe6e9, #b2bec3);
+  border-radius: 5px;
+  top: 55px;
+  left: 8px;
+  transform: rotate(15deg);
+}
+.astronaut .ear-left {
+  position: absolute;
+  width: 12px;
+  height: 30px;
+  background: linear-gradient(180deg, #dfe6e9, #b2bec3);
+  border-radius: 5px;
+  top: 55px;
+  right: 8px;
+  transform: rotate(-15deg);
+}
+.astronaut .ear-right {
+  position: absolute;
+  width: 15px;
+  height: 35px;
+  background: linear-gradient(180deg, #dfe6e9, #b2bec3);
+  border-radius: 5px 5px 8px 8px;
+  bottom: 0;
+  left: 25px;
+  box-shadow: 15px 0 0 0 #b2bec3;
+}
+.card:hover .astronaut,
+.lightbox-art .astronaut {
+  animation: space-astronaut-spin 3s linear infinite;
+}
+@keyframes space-astronaut-float {
+  0%, 100% { transform: translateY(0) rotate(-3deg); }
+  50% { transform: translateY(-10px) rotate(3deg); }
+}
+@keyframes space-astronaut-spin {
+  0% { transform: rotate(0deg) translateY(-5px); }
+  100% { transform: rotate(360deg) translateY(-5px); }
+}
+
+/* ---------- 5. MOON PHASES ---------- */
+.moonphases {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  animation: space-moon-idle 5s ease-in-out infinite;
+}
+.moonphases::before {
+  content: '';
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  background: radial-gradient(circle at 40% 35%, #ffeaa7, #fdcb6e, #d4a35a);
+  border-radius: 50%;
+  top: 5px;
+  left: 5px;
+  box-shadow: 0 0 25px rgba(253, 203, 110, 0.4), inset -5px -5px 15px rgba(0,0,0,0.1);
+}
+.moonphases::after {
+  content: '';
+  position: absolute;
+  width: 65px;
+  height: 90px;
+  background: radial-gradient(circle at 30% 50%, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.7));
+  border-radius: 50%;
+  top: 5px;
+  right: 0;
+  animation: space-moon-phase 6s ease-in-out infinite;
+}
+.moonphases .head {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: rgba(180, 160, 100, 0.4);
+  border-radius: 50%;
+  top: 25px;
+  left: 20px;
+  z-index: 2;
+  box-shadow:
+    20px 8px 0 3px rgba(180, 160, 100, 0.3),
+    5px 30px 0 5px rgba(180, 160, 100, 0.2),
+    25px 35px 0 2px rgba(180, 160, 100, 0.35);
+}
+.card:hover .moonphases,
+.lightbox-art .moonphases {
+  filter: drop-shadow(0 0 20px rgba(253, 203, 110, 0.6));
+}
+.card:hover .moonphases::after,
+.lightbox-art .moonphases::after {
+  animation: space-moon-phase 2s ease-in-out infinite;
+}
+@keyframes space-moon-idle {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+}
+@keyframes space-moon-phase {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(30px); }
+  100% { transform: translateX(0); }
+}
+
+/* ---------- 6. SATELLITE ---------- */
+.satellite {
+  position: relative;
+  width: 150px;
+  height: 80px;
+  animation: space-satellite-idle 4s ease-in-out infinite;
+}
+.satellite::before {
+  content: '';
+  position: absolute;
+  width: 35px;
+  height: 30px;
+  background: linear-gradient(135deg, #636e72, #95a5a6, #636e72);
+  border-radius: 4px;
+  top: 25px;
+  left: 57px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+}
+.satellite::after {
+  content: '';
+  position: absolute;
+  width: 45px;
+  height: 20px;
+  background: linear-gradient(180deg, #2980b9, #3498db, #2980b9);
+  border: 1px solid rgba(41, 128, 185, 0.6);
+  top: 30px;
+  left: 5px;
+  box-shadow: 0 0 10px rgba(52, 152, 219, 0.3),
+    97px 0 0 0 #2980b9;
+}
+.satellite .head {
+  position: absolute;
+  width: 3px;
+  height: 20px;
+  background: #636e72;
+  top: 8px;
+  left: 73px;
+  border-radius: 1px;
+}
+.satellite .head::after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: radial-gradient(circle, #e74c3c, #c0392b);
+  border-radius: 50%;
+  top: -5px;
+  left: -3px;
+  box-shadow: 0 0 8px rgba(231, 76, 60, 0.6);
+  animation: space-satellite-blink 1.5s ease-in-out infinite;
+}
+.satellite .body {
+  position: absolute;
+  width: 45px;
+  height: 20px;
+  background: linear-gradient(180deg, #2980b9, #3498db, #2980b9);
+  border: 1px solid rgba(41, 128, 185, 0.6);
+  top: 30px;
+  right: 5px;
+  box-shadow: 0 0 10px rgba(52, 152, 219, 0.3);
+}
+.card:hover .satellite,
+.lightbox-art .satellite {
+  animation: space-satellite-orbit 3s linear infinite;
+}
+@keyframes space-satellite-idle {
+  0%, 100% { transform: rotate(-5deg); }
+  50% { transform: rotate(5deg); }
+}
+@keyframes space-satellite-blink {
+  0%, 100% { opacity: 1; box-shadow: 0 0 8px rgba(231, 76, 60, 0.6); }
+  50% { opacity: 0.3; box-shadow: 0 0 3px rgba(231, 76, 60, 0.2); }
+}
+@keyframes space-satellite-orbit {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ---------- 7. SHOOTING STAR ---------- */
+.shootingstar {
+  position: relative;
+  width: 160px;
+  height: 100px;
+  animation: space-shootingstar-idle 3s ease-in-out infinite;
+}
+.shootingstar::before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: radial-gradient(circle, #fff, #ffeaa7, #f9ca24);
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  top: 30px;
+  right: 20px;
+  z-index: 2;
+  filter: drop-shadow(0 0 8px rgba(249, 202, 36, 0.8));
+}
+.shootingstar::after {
+  content: '';
+  position: absolute;
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, rgba(249, 202, 36, 0.3), rgba(255, 234, 167, 0.6), #ffeaa7);
+  top: 38px;
+  left: 10px;
+  border-radius: 2px;
+  filter: blur(1px);
+}
+.card:hover .shootingstar,
+.lightbox-art .shootingstar {
+  animation: space-shootingstar-streak 1s ease-in-out infinite;
+}
+.card:hover .shootingstar::before,
+.lightbox-art .shootingstar::before {
+  filter: drop-shadow(0 0 15px rgba(249, 202, 36, 1));
+}
+@keyframes space-shootingstar-idle {
+  0%, 100% { opacity: 0.8; transform: translate(0, 0); }
+  50% { opacity: 1; transform: translate(-3px, 2px); }
+}
+@keyframes space-shootingstar-streak {
+  0% { transform: translate(30px, -20px); opacity: 0; }
+  20% { opacity: 1; }
+  100% { transform: translate(-30px, 20px); opacity: 0; }
+}
+
+/* ---------- 8. BLACK HOLE ---------- */
+.blackhole {
+  position: relative;
+  width: 130px;
+  height: 130px;
+  animation: space-blackhole-idle 8s linear infinite;
+}
+.blackhole::before {
+  content: '';
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background: conic-gradient(
+    from 0deg,
+    #e74c3c, #f39c12, #f1c40f, #e67e22,
+    #e74c3c, #9b59b6, #3498db, #e74c3c,
+    #f39c12, #f1c40f, #e67e22, #e74c3c
+  );
+  border-radius: 50%;
+  top: 5px;
+  left: 5px;
+  mask: radial-gradient(circle, transparent 25%, rgba(0,0,0,0.3) 30%, black 45%);
+  -webkit-mask: radial-gradient(circle, transparent 25%, rgba(0,0,0,0.3) 30%, black 45%);
+  animation: space-blackhole-spin 6s linear infinite;
+  filter: blur(2px);
+}
+.blackhole::after {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: radial-gradient(circle, #0f172a, #1a1a2e, transparent);
+  border-radius: 50%;
+  top: 45px;
+  left: 45px;
+  box-shadow: 0 0 20px 10px rgba(15, 23, 42, 0.8);
+}
+.blackhole .head {
+  position: absolute;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  top: 0;
+  left: 0;
+  box-shadow: 0 0 30px rgba(231, 76, 60, 0.2), 0 0 60px rgba(243, 156, 18, 0.1);
+  animation: space-blackhole-glow 3s ease-in-out infinite;
+}
+.card:hover .blackhole,
+.lightbox-art .blackhole {
+  filter: drop-shadow(0 0 20px rgba(231, 76, 60, 0.5));
+}
+.card:hover .blackhole::before,
+.lightbox-art .blackhole::before {
+  animation: space-blackhole-spin 1.5s linear infinite;
+  filter: blur(1px);
+}
+@keyframes space-blackhole-idle {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+}
+@keyframes space-blackhole-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+@keyframes space-blackhole-glow {
+  0%, 100% { box-shadow: 0 0 30px rgba(231, 76, 60, 0.2), 0 0 60px rgba(243, 156, 18, 0.1); }
+  50% { box-shadow: 0 0 50px rgba(231, 76, 60, 0.4), 0 0 80px rgba(243, 156, 18, 0.2); }
+}
+
+/* ---------- 9. SPACE STATION ---------- */
+.spacestation {
+  position: relative;
+  width: 160px;
+  height: 100px;
+  animation: space-station-idle 5s ease-in-out infinite;
+}
+.spacestation::before {
+  content: '';
+  position: absolute;
+  width: 140px;
+  height: 8px;
+  background: linear-gradient(90deg, #636e72, #95a5a6, #636e72);
+  top: 46px;
+  left: 10px;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+.spacestation::after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 20px;
+  background: linear-gradient(180deg, #636e72, #95a5a6);
+  border-radius: 3px;
+  top: 40px;
+  left: 65px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+.spacestation .head {
+  position: absolute;
+  width: 40px;
+  height: 16px;
+  background: linear-gradient(180deg, #2980b9, #3498db);
+  border: 1px solid rgba(41, 128, 185, 0.5);
+  top: 42px;
+  left: 12px;
+  box-shadow: 0 0 8px rgba(52, 152, 219, 0.3);
+}
+.spacestation .body {
+  position: absolute;
+  width: 40px;
+  height: 16px;
+  background: linear-gradient(180deg, #2980b9, #3498db);
+  border: 1px solid rgba(41, 128, 185, 0.5);
+  top: 42px;
+  right: 12px;
+  box-shadow: 0 0 8px rgba(52, 152, 219, 0.3);
+}
+.spacestation .ear-left {
+  position: absolute;
+  width: 15px;
+  height: 12px;
+  background: #636e72;
+  border-radius: 3px;
+  top: 32px;
+  left: 72px;
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+}
+.spacestation .ear-right {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background: #e74c3c;
+  border-radius: 50%;
+  top: 35px;
+  left: 77px;
+  z-index: 2;
+  box-shadow: 0 0 6px rgba(231, 76, 60, 0.6);
+  animation: space-station-blink 2s ease-in-out infinite;
+}
+.card:hover .spacestation,
+.lightbox-art .spacestation {
+  animation: space-station-rotate 8s linear infinite;
+}
+@keyframes space-station-idle {
+  0%, 100% { transform: rotate(-2deg) translateY(0); }
+  50% { transform: rotate(2deg) translateY(-3px); }
+}
+@keyframes space-station-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.2; }
+}
+@keyframes space-station-rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ---------- 10. ALIEN ---------- */
+.alien {
+  position: relative;
+  width: 100px;
+  height: 140px;
+  animation: space-alien-idle 3s ease-in-out infinite;
+}
+.alien::before {
+  content: '';
+  position: absolute;
+  width: 70px;
+  height: 80px;
+  background: radial-gradient(circle at 40% 35%, #55efc4, #00b894, #00a383);
+  border-radius: 45% 45% 35% 35%;
+  top: 5px;
+  left: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+.alien::after {
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(180deg, #00b894, #00a383);
+  border-radius: 10px 10px 15px 15px;
+  top: 75px;
+  left: 25px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}
+.alien .eye-left,
+.alien .eye-right {
+  position: absolute;
+  width: 22px;
+  height: 14px;
+  background: radial-gradient(ellipse, #2d3436 50%, #1e272e 100%);
+  border-radius: 50%;
+  top: 35px;
+  z-index: 2;
+  box-shadow: inset -2px -2px 4px rgba(255,255,255,0.1);
+}
+.alien .eye-left { left: 22px; transform: rotate(-10deg); }
+.alien .eye-right { right: 22px; transform: rotate(10deg); }
+.alien .head {
+  position: absolute;
+  width: 12px;
+  height: 6px;
+  background: #2d3436;
+  border-radius: 0 0 50% 50%;
+  top: 58px;
+  left: 44px;
+  z-index: 2;
+}
+.alien .body {
+  position: absolute;
+  width: 3px;
+  height: 15px;
+  background: #00b894;
+  top: -8px;
+  left: 38px;
+  border-radius: 1px;
+  box-shadow: 20px 0 0 0 #00b894;
+}
+.alien .body::before {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: radial-gradient(circle, #55efc4, #00b894);
+  border-radius: 50%;
+  top: -4px;
+  left: -1px;
+  box-shadow: 20px 0 0 0 #55efc4;
+}
+.alien .ear-left {
+  position: absolute;
+  width: 10px;
+  height: 25px;
+  background: linear-gradient(180deg, #00b894, #00a383);
+  border-radius: 5px;
+  top: 85px;
+  left: 12px;
+  transform: rotate(15deg);
+}
+.alien .ear-right {
+  position: absolute;
+  width: 10px;
+  height: 25px;
+  background: linear-gradient(180deg, #00b894, #00a383);
+  border-radius: 5px;
+  top: 85px;
+  right: 12px;
+  transform: rotate(-15deg);
+}
+.card:hover .alien .ear-left,
+.lightbox-art .alien .ear-left {
+  animation: space-alien-wave-left 0.6s ease-in-out infinite;
+}
+.card:hover .alien .ear-right,
+.lightbox-art .alien .ear-right {
+  animation: space-alien-wave-right 0.6s ease-in-out infinite;
+}
+.card:hover .alien,
+.lightbox-art .alien {
+  animation: space-alien-bounce 0.8s ease-in-out infinite;
+}
+@keyframes space-alien-idle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+@keyframes space-alien-wave-left {
+  0%, 100% { transform: rotate(15deg); }
+  50% { transform: rotate(45deg); }
+}
+@keyframes space-alien-wave-right {
+  0%, 100% { transform: rotate(-15deg); }
+  50% { transform: rotate(-45deg); }
+}
+@keyframes space-alien-bounce {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-10px) scale(1.05); }
+}

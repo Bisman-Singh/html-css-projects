@@ -3,13 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CSS Art Gallery</title>
+  <title>CSS Art Gallery — 200 Pure CSS Illustrations</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="art/nature.css">
+  <link rel="stylesheet" href="art/animals.css">
+  <link rel="stylesheet" href="art/food.css">
+  <link rel="stylesheet" href="art/space.css">
+  <link rel="stylesheet" href="art/buildings.css">
+  <link rel="stylesheet" href="art/vehicles.css">
+  <link rel="stylesheet" href="art/electronics.css">
+  <link rel="stylesheet" href="art/music.css">
+  <link rel="stylesheet" href="art/emotions.css">
+  <link rel="stylesheet" href="art/weather.css">
+  <link rel="stylesheet" href="art/geometry.css">
+  <link rel="stylesheet" href="art/fantasy.css">
+  <link rel="stylesheet" href="art/plants.css">
+  <link rel="stylesheet" href="art/stationery.css">
+  <link rel="stylesheet" href="art/sports.css">
+  <link rel="stylesheet" href="art/symbols.css">
+  <link rel="stylesheet" href="art/scenes.css">
+  <link rel="stylesheet" href="art/characters.css">
+  <link rel="stylesheet" href="art/holidays.css">
+  <link rel="stylesheet" href="art/abstract.css">
 </head>
 <body>
   <header>
     <h1>CSS Art Gallery</h1>
-    <p class="subtitle">Pure CSS illustrations — no images, no SVGs, just code</p>
+    <p class="subtitle">200 pure CSS illustrations — no images, no SVGs, just code</p>
+    <div class="controls">
+      <div class="search-box">
+        <input type="text" id="search" placeholder="Search art pieces..." autocomplete="off">
+      </div>
+      <div class="filter-bar" id="filterBar"></div>
+      <p class="counter" id="counter"></p>
+    </div>
   </header>
 
   <main class="gallery" id="gallery"></main>
@@ -19,9 +46,12 @@
       <button class="lightbox-close" id="lightboxClose">&times;</button>
       <div class="lightbox-art" id="lightboxArt"></div>
       <h2 class="lightbox-title" id="lightboxTitle"></h2>
+      <p class="lightbox-cat" id="lightboxCat"></p>
     </div>
   </div>
 
+  <script src="art-data-1.js"></script>
+  <script src="art-data-2.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

@@ -1,0 +1,955 @@
+/* ==============================
+   ELECTRONICS — 10 Pure CSS Art Pieces
+   ============================== */
+
+/* --- 1. Gamepad --- */
+.elec-gamepad {
+  position: relative;
+  width: 180px;
+  height: 120px;
+  margin: 0 auto;
+}
+.elec-gamepad::before {
+  content: '';
+  position: absolute;
+  top: 25px;
+  left: 20px;
+  width: 140px;
+  height: 65px;
+  background: linear-gradient(180deg, #2c3e50, #34495e);
+  border-radius: 30px 30px 40px 40px;
+  box-shadow: 0 6px 15px rgba(0,0,0,.4), inset 0 2px 4px rgba(255,255,255,.1);
+}
+.elec-gamepad::after {
+  content: '';
+  position: absolute;
+  top: 55px;
+  left: 10px;
+  width: 35px;
+  height: 45px;
+  background: linear-gradient(180deg, #34495e, #2c3e50);
+  border-radius: 0 0 20px 20px;
+  box-shadow: 4px 4px 10px rgba(0,0,0,.3);
+}
+.elec-gamepad .grip-right {
+  position: absolute;
+  top: 55px;
+  right: 10px;
+  width: 35px;
+  height: 45px;
+  background: linear-gradient(180deg, #34495e, #2c3e50);
+  border-radius: 0 0 20px 20px;
+  box-shadow: -4px 4px 10px rgba(0,0,0,.3);
+}
+.elec-gamepad .dpad {
+  position: absolute;
+  top: 42px;
+  left: 42px;
+  width: 30px;
+  height: 30px;
+}
+.elec-gamepad .dpad::before {
+  content: '';
+  position: absolute;
+  top: 9px;
+  left: 0;
+  width: 30px;
+  height: 12px;
+  background: #1a252f;
+  border-radius: 2px;
+}
+.elec-gamepad .dpad::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 9px;
+  width: 12px;
+  height: 30px;
+  background: #1a252f;
+  border-radius: 2px;
+}
+.elec-gamepad .gp-btn {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0,0,0,.3), inset 0 1px 2px rgba(255,255,255,.2);
+  transition: box-shadow .3s, transform .2s;
+}
+.elec-gamepad .gp-btn:nth-child(3) { top: 38px; right: 38px; background: #e74c3c; }
+.elec-gamepad .gp-btn:nth-child(4) { top: 50px; right: 24px; background: #2ecc71; }
+.elec-gamepad .gp-btn:nth-child(5) { top: 50px; right: 52px; background: #f39c12; }
+.elec-gamepad .gp-btn:nth-child(6) { top: 62px; right: 38px; background: #3498db; }
+.card:hover .elec-gamepad .gp-btn,
+.lightbox-art .elec-gamepad .gp-btn {
+  box-shadow: 0 0 12px 4px currentColor, 0 2px 4px rgba(0,0,0,.3);
+  transform: scale(1.1);
+}
+.card:hover .elec-gamepad .gp-btn:nth-child(3),
+.lightbox-art .elec-gamepad .gp-btn:nth-child(3) { box-shadow: 0 0 12px 4px rgba(231,76,60,.6); }
+.card:hover .elec-gamepad .gp-btn:nth-child(4),
+.lightbox-art .elec-gamepad .gp-btn:nth-child(4) { box-shadow: 0 0 12px 4px rgba(46,204,113,.6); }
+.card:hover .elec-gamepad .gp-btn:nth-child(5),
+.lightbox-art .elec-gamepad .gp-btn:nth-child(5) { box-shadow: 0 0 12px 4px rgba(243,156,18,.6); }
+.card:hover .elec-gamepad .gp-btn:nth-child(6),
+.lightbox-art .elec-gamepad .gp-btn:nth-child(6) { box-shadow: 0 0 12px 4px rgba(52,152,219,.6); }
+
+/* --- 2. Camera --- */
+.elec-camera {
+  position: relative;
+  width: 160px;
+  height: 120px;
+  margin: 0 auto;
+}
+.elec-camera::before {
+  content: '';
+  position: absolute;
+  top: 30px;
+  left: 15px;
+  width: 130px;
+  height: 70px;
+  background: linear-gradient(180deg, #555, #333);
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0,0,0,.4), inset 0 1px 3px rgba(255,255,255,.15);
+}
+.elec-camera::after {
+  content: '';
+  position: absolute;
+  top: 22px;
+  left: 30px;
+  width: 40px;
+  height: 14px;
+  background: linear-gradient(180deg, #444, #333);
+  border-radius: 4px 4px 0 0;
+}
+.elec-camera .cam-lens {
+  position: absolute;
+  top: 45px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 44px;
+  height: 44px;
+  background: radial-gradient(circle, #1a1a2e 20%, #16213e 22%, #0f3460 50%, #1a1a2e 52%, #333 90%);
+  border-radius: 50%;
+  border: 4px solid #555;
+  box-shadow: 0 0 8px rgba(0,0,0,.4), inset 0 0 10px rgba(100,180,255,.1);
+  transition: box-shadow .4s;
+}
+.elec-camera .cam-lens::before {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 12px;
+  height: 8px;
+  background: rgba(255,255,255,.15);
+  border-radius: 50%;
+  transform: rotate(-30deg);
+}
+.elec-camera .cam-flash {
+  position: absolute;
+  top: 35px;
+  right: 22px;
+  width: 12px;
+  height: 10px;
+  background: linear-gradient(180deg, #f1c40f, #e67e22);
+  border-radius: 3px;
+  transition: box-shadow .3s;
+}
+.elec-camera .cam-btn {
+  position: absolute;
+  top: 22px;
+  right: 30px;
+  width: 16px;
+  height: 10px;
+  background: linear-gradient(180deg, #e74c3c, #c0392b);
+  border-radius: 3px 3px 0 0;
+  transition: transform .2s;
+}
+.elec-camera .viewfinder {
+  position: absolute;
+  top: 24px;
+  right: 55px;
+  width: 14px;
+  height: 10px;
+  background: #222;
+  border: 2px solid #555;
+  border-radius: 2px;
+}
+.card:hover .elec-camera .cam-flash,
+.lightbox-art .elec-camera .cam-flash {
+  box-shadow: 0 0 20px 10px rgba(241,196,15,.8), 0 0 40px 20px rgba(241,196,15,.4);
+}
+.card:hover .elec-camera .cam-lens,
+.lightbox-art .elec-camera .cam-lens {
+  box-shadow: 0 0 15px rgba(100,180,255,.5), inset 0 0 15px rgba(100,180,255,.2);
+}
+.card:hover .elec-camera .cam-btn,
+.lightbox-art .elec-camera .cam-btn {
+  transform: translateY(2px);
+}
+
+/* --- 3. Laptop --- */
+.elec-laptop {
+  position: relative;
+  width: 170px;
+  height: 120px;
+  margin: 0 auto;
+}
+.elec-laptop::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  width: 140px;
+  height: 80px;
+  background: linear-gradient(180deg, #2c3e50, #1a252f);
+  border-radius: 6px 6px 0 0;
+  border: 3px solid #555;
+  border-bottom: none;
+  box-shadow: inset 0 0 30px rgba(100,180,255,.05);
+  transition: box-shadow .4s;
+}
+.elec-laptop::after {
+  content: '';
+  position: absolute;
+  top: 18px;
+  left: 24px;
+  width: 122px;
+  height: 64px;
+  background: linear-gradient(180deg, #0a0a2e, #1a1a3e);
+  border-radius: 2px;
+  box-shadow:
+    inset 10px 10px 0 -8px rgba(100,180,255,.08),
+    inset 20px 20px 0 -18px rgba(100,180,255,.06),
+    inset 30px 30px 0 -28px rgba(100,180,255,.04);
+  transition: box-shadow .4s;
+}
+.elec-laptop .keyboard {
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  width: 160px;
+  height: 18px;
+  background: linear-gradient(180deg, #777, #555);
+  border-radius: 0 0 4px 4px;
+  box-shadow: 0 3px 8px rgba(0,0,0,.3);
+}
+.elec-laptop .keyboard::before {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 3px;
+  background: #444;
+  border-radius: 2px;
+}
+.elec-laptop .screen-line {
+  position: absolute;
+  left: 30px;
+  height: 3px;
+  border-radius: 2px;
+  opacity: .4;
+}
+.elec-laptop .screen-line:nth-child(2) { top: 28px; width: 80px; background: #3498db; }
+.elec-laptop .screen-line:nth-child(3) { top: 36px; width: 60px; background: #2ecc71; }
+.elec-laptop .screen-line:nth-child(4) { top: 44px; width: 90px; background: #9b59b6; }
+.elec-laptop .screen-line:nth-child(5) { top: 52px; width: 45px; background: #e74c3c; }
+.elec-laptop .screen-line:nth-child(6) { top: 60px; width: 70px; background: #f39c12; }
+.card:hover .elec-laptop::before,
+.lightbox-art .elec-laptop::before {
+  box-shadow: inset 0 0 30px rgba(100,180,255,.15), 0 0 20px rgba(100,180,255,.1);
+}
+.card:hover .elec-laptop::after,
+.lightbox-art .elec-laptop::after {
+  box-shadow:
+    inset 0 0 40px rgba(100,180,255,.15),
+    inset 10px 10px 0 -8px rgba(100,180,255,.12),
+    inset 20px 20px 0 -18px rgba(100,180,255,.1);
+}
+.card:hover .elec-laptop .screen-line,
+.lightbox-art .elec-laptop .screen-line {
+  opacity: .8;
+  animation: elecScreenPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes elecScreenPulse {
+  0%, 100% { opacity: .8; }
+  50% { opacity: .4; }
+}
+
+/* --- 4. Phone --- */
+.elec-phone {
+  position: relative;
+  width: 90px;
+  height: 150px;
+  margin: 0 auto;
+}
+.elec-phone::before {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 80px;
+  height: 140px;
+  background: linear-gradient(180deg, #2c3e50, #1a252f);
+  border-radius: 16px;
+  border: 3px solid #555;
+  box-shadow: 0 6px 15px rgba(0,0,0,.4), inset 0 1px 3px rgba(255,255,255,.1);
+}
+.elec-phone::after {
+  content: '';
+  position: absolute;
+  top: 22px;
+  left: 14px;
+  width: 62px;
+  height: 106px;
+  background: linear-gradient(180deg, #0a1628, #1a2a4e);
+  border-radius: 4px;
+  transition: box-shadow .4s;
+}
+.elec-phone .notch {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 8px;
+  background: #1a252f;
+  border-radius: 0 0 6px 6px;
+  z-index: 2;
+}
+.elec-phone .notch::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  right: 5px;
+  width: 5px;
+  height: 5px;
+  background: #0a1628;
+  border-radius: 50%;
+}
+.elec-phone .home-btn {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 6px;
+  background: #444;
+  border-radius: 3px;
+  z-index: 2;
+}
+.elec-phone .notification {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  width: 8px;
+  height: 8px;
+  background: #e74c3c;
+  border-radius: 50%;
+  opacity: 0;
+  z-index: 3;
+  transition: opacity .3s;
+}
+.card:hover .elec-phone .notification,
+.lightbox-art .elec-phone .notification {
+  opacity: 1;
+  animation: elecNotifPulse 1s ease-in-out infinite;
+}
+.card:hover .elec-phone::after,
+.lightbox-art .elec-phone::after {
+  box-shadow: 0 0 20px rgba(100,180,255,.15);
+}
+
+@keyframes elecNotifPulse {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(231,76,60,.4); }
+  50% { transform: scale(1.2); box-shadow: 0 0 8px 4px rgba(231,76,60,.3); }
+}
+
+/* --- 5. Retro TV --- */
+.elec-tv {
+  position: relative;
+  width: 160px;
+  height: 140px;
+  margin: 0 auto;
+}
+.elec-tv::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  width: 130px;
+  height: 95px;
+  background: linear-gradient(180deg, #8b6914, #6b4f12);
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,.4), inset 0 2px 4px rgba(255,255,255,.1);
+}
+.elec-tv::after {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 25px;
+  width: 85px;
+  height: 75px;
+  background: linear-gradient(135deg, #1a1a2e, #2a2a4e);
+  border-radius: 10px;
+  box-shadow: inset 0 0 20px rgba(0,0,0,.5);
+  transition: box-shadow .4s;
+}
+.elec-tv .antenna {
+  position: absolute;
+  top: 0;
+  width: 3px;
+  height: 20px;
+  background: #888;
+  border-radius: 2px;
+}
+.elec-tv .antenna:first-child { left: 55px; transform: rotate(-20deg); transform-origin: bottom; }
+.elec-tv .antenna:nth-child(2) { left: 95px; transform: rotate(20deg); transform-origin: bottom; }
+.elec-tv .tv-knob {
+  position: absolute;
+  top: 40px;
+  right: 20px;
+  width: 14px;
+  height: 14px;
+  background: radial-gradient(circle, #aaa 40%, #666 100%);
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0,0,0,.3);
+}
+.elec-tv .tv-knob:nth-child(4) { top: 62px; }
+.elec-tv .tv-leg {
+  position: absolute;
+  bottom: 5px;
+  width: 4px;
+  height: 14px;
+  background: #6b4f12;
+  border-radius: 0 0 2px 2px;
+}
+.elec-tv .tv-leg:nth-child(5) { left: 35px; transform: rotate(-8deg); }
+.elec-tv .tv-leg:nth-child(6) { right: 40px; transform: rotate(8deg); }
+.card:hover .elec-tv::after,
+.lightbox-art .elec-tv::after {
+  animation: elecStatic .15s steps(4) infinite;
+  box-shadow: inset 0 0 20px rgba(200,200,200,.15);
+}
+
+@keyframes elecStatic {
+  0% { background: linear-gradient(135deg, #1a1a2e, #2a2a4e); }
+  25% { background: linear-gradient(180deg, #2a2a3e, #1a1a2e); }
+  50% { background: linear-gradient(225deg, #1a1a2e, #3a3a5e); }
+  75% { background: linear-gradient(90deg, #2a2a4e, #1a1a2e); }
+  100% { background: linear-gradient(135deg, #1a1a2e, #2a2a4e); }
+}
+
+/* --- 6. Microphone --- */
+.elec-mic {
+  position: relative;
+  width: 100px;
+  height: 150px;
+  margin: 0 auto;
+}
+.elec-mic::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 55px;
+  background: radial-gradient(ellipse at 30% 30%, #888 0%, #444 50%, #333 100%);
+  border-radius: 25px 25px 20px 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.4),
+    inset 2px 2px 0 rgba(255,255,255,.1),
+    inset -2px -2px 0 rgba(0,0,0,.2);
+  background-image:
+    repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(0,0,0,.15) 3px, rgba(0,0,0,.15) 4px),
+    repeating-linear-gradient(90deg, transparent, transparent 3px, rgba(0,0,0,.1) 3px, rgba(0,0,0,.1) 4px);
+}
+.elec-mic::after {
+  content: '';
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 40px;
+  background: linear-gradient(180deg, #666, #444);
+  border-radius: 4px;
+  box-shadow: 0 3px 8px rgba(0,0,0,.3);
+}
+.elec-mic .mic-stand {
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 8px;
+  background: linear-gradient(180deg, #555, #333);
+  border-radius: 4px;
+}
+.elec-mic .mic-stand::before {
+  content: '';
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 40px;
+  background: linear-gradient(180deg, #555, #444);
+}
+.elec-mic .sound-wave {
+  position: absolute;
+  top: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70px;
+  height: 30px;
+  border: 3px solid rgba(100,180,255,.2);
+  border-radius: 50%;
+  opacity: 0;
+}
+.elec-mic .sound-wave:nth-child(3) { width: 90px; height: 40px; top: 20px; }
+.card:hover .elec-mic .sound-wave,
+.lightbox-art .elec-mic .sound-wave {
+  animation: elecSoundWave 1.5s ease-out infinite;
+}
+.elec-mic .sound-wave:nth-child(3) { animation-delay: .4s; }
+
+@keyframes elecSoundWave {
+  0% { opacity: .6; transform: translateX(-50%) scale(.8); }
+  100% { opacity: 0; transform: translateX(-50%) scale(1.4); }
+}
+
+/* --- 7. USB Drive --- */
+.elec-usb {
+  position: relative;
+  width: 100px;
+  height: 140px;
+  margin: 0 auto;
+  transition: transform .4s;
+}
+.elec-usb::before {
+  content: '';
+  position: absolute;
+  top: 30px;
+  left: 20px;
+  width: 60px;
+  height: 70px;
+  background: linear-gradient(180deg, #3498db, #2980b9);
+  border-radius: 8px 8px 4px 4px;
+  box-shadow: 0 4px 12px rgba(52,152,219,.3), inset 0 2px 4px rgba(255,255,255,.15);
+}
+.elec-usb::after {
+  content: '';
+  position: absolute;
+  top: 95px;
+  left: 28px;
+  width: 44px;
+  height: 25px;
+  background: linear-gradient(180deg, #ccc, #aaa);
+  border-radius: 0 0 3px 3px;
+  box-shadow: 0 3px 8px rgba(0,0,0,.3);
+}
+.elec-usb .usb-inner {
+  position: absolute;
+  top: 100px;
+  left: 34px;
+  width: 32px;
+  height: 14px;
+  background: #f5f5f5;
+  border-radius: 2px;
+}
+.elec-usb .usb-inner::before {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 5px;
+  width: 6px;
+  height: 6px;
+  background: #ddd;
+  border-radius: 1px;
+  box-shadow: 14px 0 0 #ddd;
+}
+.elec-usb .usb-led {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8px;
+  height: 8px;
+  background: #2ecc71;
+  border-radius: 50%;
+  box-shadow: 0 0 6px rgba(46,204,113,.5);
+  animation: elecLedBlink 2s ease-in-out infinite;
+}
+.elec-usb .usb-symbol {
+  position: absolute;
+  top: 58px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255,255,255,.3);
+  border-radius: 50%;
+}
+.elec-usb .usb-symbol::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -2px;
+  width: 24px;
+  height: 2px;
+  background: rgba(255,255,255,.3);
+  transform: translateY(-50%);
+}
+.card:hover .elec-usb,
+.lightbox-art .elec-usb {
+  transform: translateY(-10px);
+}
+.card:hover .elec-usb .usb-led,
+.lightbox-art .elec-usb .usb-led {
+  animation-duration: .3s;
+}
+
+@keyframes elecLedBlink {
+  0%, 100% { opacity: 1; box-shadow: 0 0 6px rgba(46,204,113,.5); }
+  50% { opacity: .3; box-shadow: 0 0 2px rgba(46,204,113,.2); }
+}
+
+/* --- 8. Robot --- */
+.elec-robot {
+  position: relative;
+  width: 130px;
+  height: 150px;
+  margin: 0 auto;
+}
+.elec-robot::before {
+  content: '';
+  position: absolute;
+  top: 15px;
+  left: 35px;
+  width: 60px;
+  height: 50px;
+  background: linear-gradient(180deg, #95a5a6, #7f8c8d);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,.3), inset 0 2px 4px rgba(255,255,255,.15);
+}
+.elec-robot::after {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 60px;
+  width: 10px;
+  height: 15px;
+  background: linear-gradient(180deg, #e74c3c, #c0392b);
+  border-radius: 5px 5px 0 0;
+}
+.elec-robot .robot-eye {
+  position: absolute;
+  top: 28px;
+  width: 12px;
+  height: 12px;
+  background: radial-gradient(circle, #00ff88 40%, #00cc66 100%);
+  border-radius: 50%;
+  box-shadow: 0 0 6px rgba(0,255,136,.5);
+  animation: elecRobotBlink 4s ease-in-out infinite;
+}
+.elec-robot .robot-eye:first-child { left: 45px; }
+.elec-robot .robot-eye:nth-child(2) { left: 73px; }
+.elec-robot .robot-mouth {
+  position: absolute;
+  top: 47px;
+  left: 47px;
+  width: 36px;
+  height: 8px;
+  background: #555;
+  border-radius: 2px;
+  box-shadow:
+    inset 5px 0 0 #777,
+    inset 10px 0 0 #555,
+    inset 15px 0 0 #777,
+    inset 20px 0 0 #555,
+    inset 25px 0 0 #777,
+    inset 30px 0 0 #555;
+}
+.elec-robot .robot-body {
+  position: absolute;
+  top: 70px;
+  left: 30px;
+  width: 70px;
+  height: 55px;
+  background: linear-gradient(180deg, #bdc3c7, #95a5a6);
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,.3);
+}
+.elec-robot .robot-body::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  background: radial-gradient(circle, #e74c3c 30%, #c0392b 100%);
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(231,76,60,.4);
+}
+.elec-robot .robot-neck {
+  position: absolute;
+  top: 62px;
+  left: 57px;
+  width: 16px;
+  height: 12px;
+  background: #888;
+  border-radius: 2px;
+}
+.elec-robot .robot-arm {
+  position: absolute;
+  top: 75px;
+  width: 12px;
+  height: 40px;
+  background: linear-gradient(180deg, #aaa, #888);
+  border-radius: 6px;
+  transform-origin: top center;
+  transition: transform .4s;
+}
+.elec-robot .robot-arm:nth-child(6) { left: 18px; }
+.elec-robot .robot-arm:nth-child(7) { right: 18px; }
+.card:hover .elec-robot .robot-arm:nth-child(6),
+.lightbox-art .elec-robot .robot-arm:nth-child(6) {
+  animation: elecArmWave 1s ease-in-out infinite;
+}
+.card:hover .elec-robot .robot-arm:nth-child(7),
+.lightbox-art .elec-robot .robot-arm:nth-child(7) {
+  animation: elecArmWave 1s ease-in-out infinite .5s;
+}
+
+@keyframes elecRobotBlink {
+  0%, 42%, 48%, 100% { transform: scaleY(1); }
+  45% { transform: scaleY(.1); }
+}
+@keyframes elecArmWave {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(-30deg); }
+}
+
+/* --- 9. Floppy Disk --- */
+.elec-floppy {
+  position: relative;
+  width: 120px;
+  height: 130px;
+  margin: 0 auto;
+}
+.elec-floppy::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 100px;
+  height: 105px;
+  background: linear-gradient(180deg, #2c3e50, #1a252f);
+  border-radius: 4px 4px 0 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,.4);
+}
+.elec-floppy::after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 30px;
+  width: 60px;
+  height: 30px;
+  background: linear-gradient(180deg, #ddd, #bbb);
+  border-radius: 0 0 4px 4px;
+  transition: transform .4s;
+}
+.elec-floppy .floppy-slider {
+  position: absolute;
+  top: 12px;
+  left: 55px;
+  width: 20px;
+  height: 26px;
+  background: linear-gradient(180deg, #ccc, #999);
+  border-radius: 2px;
+  transition: transform .4s;
+  z-index: 1;
+}
+.elec-floppy .floppy-slider::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 5px;
+  width: 10px;
+  height: 10px;
+  background: #2c3e50;
+  border-radius: 2px;
+}
+.elec-floppy .floppy-label {
+  position: absolute;
+  top: 55px;
+  left: 20px;
+  width: 80px;
+  height: 40px;
+  background: linear-gradient(135deg, #f5f5dc, #e8e8c8);
+  border-radius: 2px;
+  box-shadow: inset 0 0 4px rgba(0,0,0,.1);
+}
+.elec-floppy .floppy-label::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: 50px;
+  height: 3px;
+  background: rgba(0,0,0,.15);
+  box-shadow: 0 8px 0 rgba(0,0,0,.12), 0 16px 0 rgba(0,0,0,.1);
+  border-radius: 1px;
+}
+.elec-floppy .floppy-hole {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 30px;
+  border: 3px solid #3a4a5a;
+  border-radius: 50%;
+}
+.elec-floppy .floppy-hole::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  background: #0a1020;
+  border-radius: 50%;
+}
+.card:hover .elec-floppy .floppy-slider,
+.lightbox-art .elec-floppy .floppy-slider {
+  transform: translateX(-10px);
+}
+
+/* --- 10. Watch --- */
+.elec-watch {
+  position: relative;
+  width: 110px;
+  height: 150px;
+  margin: 0 auto;
+}
+.elec-watch::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 35px;
+  width: 40px;
+  height: 35px;
+  background: linear-gradient(180deg, #8b6914, #6b4f12);
+  border-radius: 8px 8px 0 0;
+  box-shadow: inset 0 2px 4px rgba(255,255,255,.1);
+}
+.elec-watch::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 35px;
+  width: 40px;
+  height: 35px;
+  background: linear-gradient(180deg, #6b4f12, #8b6914);
+  border-radius: 0 0 8px 8px;
+}
+.elec-watch .watch-face {
+  position: absolute;
+  top: 30px;
+  left: 15px;
+  width: 80px;
+  height: 80px;
+  background: radial-gradient(circle, #f5f5f5 60%, #ddd 80%, #bbb 100%);
+  border-radius: 50%;
+  border: 5px solid #8b6914;
+  box-shadow: 0 4px 12px rgba(0,0,0,.4), inset 0 0 10px rgba(0,0,0,.1);
+  transition: box-shadow .4s;
+}
+.elec-watch .watch-face::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 6px;
+  height: 6px;
+  background: #333;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+}
+.elec-watch .hour-hand {
+  position: absolute;
+  top: 22px;
+  left: 50%;
+  width: 4px;
+  height: 22px;
+  background: #333;
+  border-radius: 2px;
+  transform-origin: bottom center;
+  transform: translateX(-50%) rotate(30deg);
+}
+.elec-watch .minute-hand {
+  position: absolute;
+  top: 14px;
+  left: 50%;
+  width: 3px;
+  height: 28px;
+  background: #555;
+  border-radius: 2px;
+  transform-origin: bottom center;
+  transform: translateX(-50%) rotate(150deg);
+}
+.elec-watch .second-hand {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  width: 1px;
+  height: 32px;
+  background: #e74c3c;
+  transform-origin: bottom center;
+  transform: translateX(-50%) rotate(90deg);
+  animation: elecSecondTick 60s linear infinite;
+}
+.elec-watch .watch-marker {
+  position: absolute;
+  top: 4px;
+  left: 50%;
+  width: 2px;
+  height: 6px;
+  background: #333;
+  transform-origin: bottom center;
+}
+.elec-watch .watch-marker:nth-child(5) { transform: translateX(-50%) rotate(0deg); top: 4px; }
+.elec-watch .watch-marker:nth-child(6) { transform: translateX(-50%) rotate(90deg); top: 4px; }
+.elec-watch .watch-marker:nth-child(7) { transform: translateX(-50%) rotate(180deg); top: 4px; }
+.elec-watch .watch-marker:nth-child(8) { transform: translateX(-50%) rotate(270deg); top: 4px; }
+.elec-watch .crown {
+  position: absolute;
+  top: 60px;
+  right: 8px;
+  width: 10px;
+  height: 12px;
+  background: linear-gradient(90deg, #a07818, #c8a030);
+  border-radius: 0 3px 3px 0;
+  z-index: 2;
+}
+.card:hover .elec-watch .watch-face,
+.lightbox-art .elec-watch .watch-face {
+  box-shadow: 0 0 20px rgba(139,105,20,.5), 0 4px 12px rgba(0,0,0,.4), inset 0 0 10px rgba(0,0,0,.1);
+}
+.card:hover .elec-watch .second-hand,
+.lightbox-art .elec-watch .second-hand {
+  animation-duration: 10s;
+}
+
+@keyframes elecSecondTick {
+  to { transform: translateX(-50%) rotate(450deg); }
+}

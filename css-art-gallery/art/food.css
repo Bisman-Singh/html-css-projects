@@ -1,0 +1,791 @@
+/* ===== FOOD CSS ART — 10 pieces ===== */
+
+/* ---------- 1. COFFEE ---------- */
+.coffee {
+  position: relative;
+  width: 100px;
+  height: 130px;
+  animation: food-coffee-idle 3s ease-in-out infinite;
+}
+.coffee::before {
+  content: '';
+  position: absolute;
+  width: 80px;
+  height: 70px;
+  background: linear-gradient(180deg, #ecf0f1, #bdc3c7);
+  border-radius: 5px 5px 25px 25px;
+  top: 30px;
+  left: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+.coffee::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 35px;
+  border: 5px solid #bdc3c7;
+  border-left: none;
+  border-radius: 0 15px 15px 0;
+  top: 42px;
+  right: 0;
+}
+.coffee .liquid {
+  position: absolute;
+  width: 68px;
+  height: 45px;
+  background: linear-gradient(180deg, #6F4E37, #8B6914, #5C3317);
+  border-radius: 0 0 20px 20px;
+  top: 48px;
+  left: 16px;
+  overflow: hidden;
+}
+.coffee .liquid::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 8px;
+  background: linear-gradient(90deg, rgba(255,255,255,0.05), rgba(255,255,255,0.15), rgba(255,255,255,0.05));
+  top: 0;
+  animation: food-coffee-shimmer 2s ease-in-out infinite;
+}
+.coffee .steam span {
+  position: absolute;
+  width: 6px;
+  height: 20px;
+  background: rgba(255,255,255,0.3);
+  border-radius: 50%;
+  filter: blur(3px);
+  animation: food-coffee-steam 2s ease-in-out infinite;
+}
+.coffee .steam span:nth-child(1) { left: 28px; top: 8px; animation-delay: 0s; }
+.coffee .steam span:nth-child(2) { left: 45px; top: 5px; animation-delay: 0.5s; }
+.coffee .steam span:nth-child(3) { left: 60px; top: 10px; animation-delay: 1s; }
+.card:hover .coffee .steam span,
+.lightbox-art .coffee .steam span {
+  animation: food-coffee-steam-hover 0.8s ease-in-out infinite;
+  background: rgba(255,255,255,0.5);
+  height: 30px;
+}
+.card:hover .coffee,
+.lightbox-art .coffee {
+  animation: food-coffee-hover 1s ease-in-out infinite;
+}
+@keyframes food-coffee-idle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-2px); }
+}
+@keyframes food-coffee-steam {
+  0%, 100% { transform: translateY(0) scaleX(1); opacity: 0.3; }
+  50% { transform: translateY(-12px) scaleX(1.5); opacity: 0; }
+}
+@keyframes food-coffee-steam-hover {
+  0%, 100% { transform: translateY(0) scaleX(1); opacity: 0.5; }
+  50% { transform: translateY(-25px) scaleX(2); opacity: 0; }
+}
+@keyframes food-coffee-shimmer {
+  0%, 100% { transform: translateX(-100%); }
+  50% { transform: translateX(100%); }
+}
+@keyframes food-coffee-hover {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-3deg); }
+  75% { transform: rotate(3deg); }
+}
+
+/* ---------- 2. PIZZA ---------- */
+.pizza {
+  position: relative;
+  width: 130px;
+  height: 140px;
+  animation: food-pizza-idle 4s ease-in-out infinite;
+}
+.pizza::before {
+  content: '';
+  position: absolute;
+  width: 120px;
+  height: 130px;
+  background: linear-gradient(180deg, #f9ca24, #f0932b, #e55039);
+  clip-path: polygon(50% 5%, 5% 95%, 95% 95%);
+  top: 0;
+  left: 5px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+.pizza::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 5px;
+  width: 120px;
+  height: 20px;
+  background: linear-gradient(90deg, #c4a35a, #d4a843, #c4a35a);
+  border-radius: 0 0 5px 5px;
+  clip-path: polygon(3% 0%, 97% 0%, 100% 100%, 0% 100%);
+}
+.pizza .head {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background: radial-gradient(circle, #c0392b 60%, #922b21 100%);
+  border-radius: 50%;
+  top: 55px;
+  left: 55px;
+  z-index: 2;
+  box-shadow:
+    -15px 25px 0 0 #c0392b,
+    18px 20px 0 0 #c0392b,
+    -5px 40px 0 1px #c0392b,
+    10px 50px 0 0 #c0392b;
+}
+.pizza .body {
+  position: absolute;
+  bottom: 25px;
+  left: 30px;
+  width: 10px;
+  height: 15px;
+  background: linear-gradient(180deg, #f9ca24, transparent);
+  border-radius: 0 0 5px 5px;
+  filter: blur(1px);
+  box-shadow: 30px 0 0 0 rgba(249, 202, 36, 0.6), 55px -5px 0 0 rgba(249, 202, 36, 0.4);
+}
+.card:hover .pizza,
+.lightbox-art .pizza {
+  animation: food-pizza-wobble 0.6s ease-in-out infinite;
+  filter: drop-shadow(0 0 10px rgba(240, 147, 43, 0.4));
+}
+@keyframes food-pizza-idle {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(1deg); }
+}
+@keyframes food-pizza-wobble {
+  0%, 100% { transform: rotate(0deg) scale(1); }
+  25% { transform: rotate(-5deg) scale(1.05); }
+  75% { transform: rotate(5deg) scale(1.05); }
+}
+
+/* ---------- 3. DONUT ---------- */
+.donut {
+  position: relative;
+  width: 110px;
+  height: 110px;
+  animation: food-donut-idle 4s ease-in-out infinite;
+}
+.donut::before {
+  content: '';
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(145deg, #d4a35a, #c49245, #b8833e);
+  border-radius: 50%;
+  top: 5px;
+  left: 5px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3), inset 0 -5px 15px rgba(0,0,0,0.2);
+  mask: radial-gradient(circle at center, transparent 22%, black 23%);
+  -webkit-mask: radial-gradient(circle at center, transparent 22%, black 23%);
+}
+.donut::after {
+  content: '';
+  position: absolute;
+  width: 100px;
+  height: 55px;
+  background: linear-gradient(135deg, #ff6b81, #ee5a80, #d4407a);
+  border-radius: 50px 50px 45px 45px;
+  top: 5px;
+  left: 5px;
+  mask: radial-gradient(circle at 50% 90%, transparent 22%, black 23%);
+  -webkit-mask: radial-gradient(circle at 50% 90%, transparent 22%, black 23%);
+  box-shadow: inset 0 -3px 8px rgba(0,0,0,0.15);
+}
+.donut .head {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background: #f1c40f;
+  border-radius: 50%;
+  top: 15px;
+  left: 40px;
+  z-index: 2;
+  box-shadow:
+    10px 5px 0 0 #2ecc71,
+    -12px 8px 0 0 #e74c3c,
+    20px 12px 0 0 #3498db,
+    -5px 18px 0 0 #f39c12,
+    15px 22px 0 0 #9b59b6,
+    -15px 25px 0 0 #1abc9c,
+    8px 30px 0 0 #e67e22,
+    25px 8px 0 0 #e74c3c;
+}
+.card:hover .donut,
+.lightbox-art .donut {
+  animation: food-donut-spin 2s linear infinite;
+}
+@keyframes food-donut-idle {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(5deg); }
+}
+@keyframes food-donut-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ---------- 4. ICE CREAM ---------- */
+.icecream {
+  position: relative;
+  width: 100px;
+  height: 160px;
+  animation: food-icecream-idle 3s ease-in-out infinite;
+}
+.icecream::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+  border-top: 80px solid #d4a35a;
+}
+.icecream::after {
+  content: '';
+  position: absolute;
+  bottom: 62px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+  border-top: 80px solid transparent;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 3px,
+    rgba(0,0,0,0.08) 3px,
+    rgba(0,0,0,0.08) 6px
+  );
+  clip-path: polygon(15% 0%, 85% 0%, 100% 100%, 0% 100%);
+  width: 60px;
+  height: 80px;
+}
+.icecream .head {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: radial-gradient(circle at 35% 35%, #ff9ff3, #f368e0, #be2edd);
+  border-radius: 50%;
+  top: 25px;
+  left: 25px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+.icecream .body {
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  background: radial-gradient(circle at 35% 35%, #ffeaa7, #fdcb6e, #f9ca24);
+  border-radius: 50%;
+  top: 8px;
+  left: 28px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}
+.icecream .ear-left {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: radial-gradient(circle at 35% 35%, #dfe6e9, #b2bec3, #95a5a6);
+  border-radius: 50%;
+  top: 0;
+  left: 30px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}
+.icecream .ear-right {
+  position: absolute;
+  width: 8px;
+  height: 15px;
+  background: linear-gradient(180deg, #ff9ff3, transparent);
+  border-radius: 0 0 4px 4px;
+  top: 70px;
+  left: 40px;
+  filter: blur(1px);
+  box-shadow: 15px 3px 0 0 rgba(253, 203, 110, 0.5);
+}
+.card:hover .icecream,
+.lightbox-art .icecream {
+  animation: food-icecream-melt 1s ease-in-out infinite;
+}
+.card:hover .icecream .head,
+.lightbox-art .icecream .head {
+  transform: scaleX(1.05) translateY(3px);
+}
+@keyframes food-icecream-idle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+@keyframes food-icecream-melt {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-5deg); }
+  75% { transform: rotate(5deg); }
+}
+
+/* ---------- 5. SUSHI ---------- */
+.sushi {
+  position: relative;
+  width: 130px;
+  height: 100px;
+  animation: food-sushi-idle 3s ease-in-out infinite;
+}
+.sushi::before {
+  content: '';
+  position: absolute;
+  width: 80px;
+  height: 35px;
+  background: linear-gradient(180deg, #ffeaa7, #fdcb6e);
+  border-radius: 8px 8px 5px 5px;
+  top: 35px;
+  left: 25px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+.sushi::after {
+  content: '';
+  position: absolute;
+  width: 86px;
+  height: 18px;
+  background: linear-gradient(180deg, #2d3436, #1e272e);
+  top: 48px;
+  left: 22px;
+  border-radius: 2px;
+}
+.sushi .head {
+  position: absolute;
+  width: 78px;
+  height: 20px;
+  background: linear-gradient(135deg, #e55039, #eb4d4b, #ff6b6b);
+  border-radius: 5px 5px 3px 3px;
+  top: 20px;
+  left: 26px;
+  z-index: 2;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+.sushi .body {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: radial-gradient(circle, #badc58, #6ab04c);
+  border-radius: 50%;
+  top: 40px;
+  right: 15px;
+  z-index: 3;
+}
+.sushi .ear-left {
+  position: absolute;
+  width: 3px;
+  height: 50px;
+  background: linear-gradient(180deg, #d4a35a, #c49245);
+  border-radius: 1px;
+  top: 15px;
+  left: 5px;
+  transform: rotate(-15deg);
+}
+.sushi .ear-right {
+  position: absolute;
+  width: 3px;
+  height: 50px;
+  background: linear-gradient(180deg, #d4a35a, #c49245);
+  border-radius: 1px;
+  top: 15px;
+  left: 12px;
+  transform: rotate(-10deg);
+}
+.card:hover .sushi,
+.lightbox-art .sushi {
+  animation: food-sushi-bounce 0.6s ease-in-out infinite;
+  filter: drop-shadow(0 0 8px rgba(229, 80, 57, 0.3));
+}
+@keyframes food-sushi-idle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-2px); }
+}
+@keyframes food-sushi-bounce {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-10px) scale(1.05); }
+}
+
+/* ---------- 6. HAMBURGER ---------- */
+.hamburger {
+  position: relative;
+  width: 120px;
+  height: 100px;
+  animation: food-hamburger-idle 3s ease-in-out infinite;
+}
+.hamburger::before {
+  content: '';
+  position: absolute;
+  width: 100px;
+  height: 30px;
+  background: linear-gradient(180deg, #d4a35a, #c49245, #b8833e);
+  border-radius: 30px 30px 3px 3px;
+  top: 0;
+  left: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.hamburger::after {
+  content: '';
+  position: absolute;
+  width: 100px;
+  height: 22px;
+  background: linear-gradient(180deg, #c49245, #b8833e, #a67535);
+  border-radius: 3px 3px 15px 15px;
+  bottom: 0;
+  left: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+.hamburger .head {
+  position: absolute;
+  width: 105px;
+  height: 14px;
+  background: linear-gradient(180deg, #6d4c41, #5d4037, #4e342e);
+  border-radius: 3px;
+  top: 30px;
+  left: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+.hamburger .body {
+  position: absolute;
+  width: 108px;
+  height: 10px;
+  background: linear-gradient(180deg, #27ae60, #2ecc71, #27ae60);
+  top: 44px;
+  left: 6px;
+  border-radius: 2px;
+  clip-path: polygon(0 0, 3% 100%, 8% 0, 11% 100%, 16% 0, 19% 100%, 24% 0, 27% 100%, 32% 0, 35% 100%, 40% 0, 43% 100%, 48% 0, 51% 100%, 56% 0, 59% 100%, 64% 0, 67% 100%, 72% 0, 75% 100%, 80% 0, 83% 100%, 88% 0, 91% 100%, 96% 0, 100% 100%, 100% 0);
+}
+.hamburger .ear-left {
+  position: absolute;
+  width: 102px;
+  height: 8px;
+  background: linear-gradient(180deg, #e74c3c, #c0392b);
+  border-radius: 2px;
+  top: 54px;
+  left: 9px;
+}
+.hamburger .ear-right {
+  position: absolute;
+  width: 104px;
+  height: 10px;
+  background: linear-gradient(180deg, #f9ca24, #f0932b);
+  border-radius: 2px;
+  top: 62px;
+  left: 8px;
+}
+.card:hover .hamburger,
+.lightbox-art .hamburger {
+  animation: food-hamburger-bounce 0.5s ease-in-out infinite;
+}
+@keyframes food-hamburger-idle {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+}
+@keyframes food-hamburger-bounce {
+  0%, 100% { transform: translateY(0) scaleY(1); }
+  30% { transform: translateY(-15px) scaleY(1); }
+  50% { transform: translateY(0) scaleY(0.9) scaleX(1.05); }
+  70% { transform: translateY(-5px) scaleY(1); }
+}
+
+/* ---------- 7. CUPCAKE ---------- */
+.cupcake {
+  position: relative;
+  width: 100px;
+  height: 130px;
+  animation: food-cupcake-idle 3s ease-in-out infinite;
+}
+.cupcake::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 20px;
+  width: 60px;
+  height: 55px;
+  background: linear-gradient(180deg, #b8833e, #a67535);
+  clip-path: polygon(5% 0%, 95% 0%, 85% 100%, 15% 100%);
+  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+.cupcake::after {
+  content: '';
+  position: absolute;
+  bottom: 45px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70px;
+  height: 55px;
+  background: radial-gradient(circle at 50% 60%, #ff9ff3, #f368e0, #be2edd);
+  border-radius: 50% 50% 35% 35%;
+  box-shadow: 0 -3px 15px rgba(243, 104, 224, 0.3);
+}
+.cupcake .head {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: radial-gradient(circle, #e74c3c, #c0392b);
+  border-radius: 50%;
+  top: 10px;
+  left: 44px;
+  z-index: 2;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+.cupcake .head::before {
+  content: '';
+  position: absolute;
+  width: 3px;
+  height: 12px;
+  background: #27ae60;
+  border-radius: 1px;
+  bottom: 10px;
+  left: 4px;
+}
+.cupcake .body {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #f1c40f;
+  border-radius: 50%;
+  top: 40px;
+  left: 30px;
+  z-index: 2;
+  box-shadow:
+    12px 5px 0 0 #2ecc71,
+    24px 0 0 0 #3498db,
+    5px 12px 0 0 #e74c3c,
+    18px 15px 0 0 #f39c12,
+    30px 10px 0 0 #9b59b6;
+}
+.card:hover .cupcake,
+.lightbox-art .cupcake {
+  animation: food-cupcake-wobble 0.6s ease-in-out infinite;
+  filter: drop-shadow(0 0 10px rgba(243, 104, 224, 0.4));
+}
+@keyframes food-cupcake-idle {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+}
+@keyframes food-cupcake-wobble {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-5deg); }
+  75% { transform: rotate(5deg); }
+}
+
+/* ---------- 8. WINE GLASS ---------- */
+.wineglass {
+  position: relative;
+  width: 80px;
+  height: 150px;
+  animation: food-wineglass-idle 4s ease-in-out infinite;
+}
+.wineglass::before {
+  content: '';
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border: 3px solid rgba(200, 210, 220, 0.5);
+  border-radius: 0 0 50% 50%;
+  top: 0;
+  left: 7px;
+  background: linear-gradient(180deg,
+    transparent 0%, transparent 30%,
+    rgba(139, 0, 0, 0.7) 30%,
+    rgba(178, 34, 34, 0.8) 60%,
+    rgba(139, 0, 0, 0.9) 100%
+  );
+  box-shadow: inset -3px 0 8px rgba(255, 255, 255, 0.15);
+}
+.wineglass::after {
+  content: '';
+  position: absolute;
+  width: 3px;
+  height: 55px;
+  background: linear-gradient(180deg, rgba(200, 210, 220, 0.5), rgba(180, 190, 200, 0.6));
+  top: 58px;
+  left: 38px;
+}
+.wineglass .head {
+  position: absolute;
+  width: 50px;
+  height: 8px;
+  background: linear-gradient(180deg, rgba(200, 210, 220, 0.6), rgba(180, 190, 200, 0.5));
+  border-radius: 3px;
+  bottom: 0;
+  left: 15px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+.card:hover .wineglass,
+.lightbox-art .wineglass {
+  animation: food-wineglass-swirl 1.5s ease-in-out infinite;
+}
+.card:hover .wineglass::before,
+.lightbox-art .wineglass::before {
+  background: linear-gradient(180deg,
+    transparent 0%, transparent 25%,
+    rgba(139, 0, 0, 0.6) 25%,
+    rgba(178, 34, 34, 0.8) 50%,
+    rgba(139, 0, 0, 0.9) 100%
+  );
+}
+@keyframes food-wineglass-idle {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(1deg); }
+}
+@keyframes food-wineglass-swirl {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-8deg); }
+  75% { transform: rotate(8deg); }
+}
+
+/* ---------- 9. TACO ---------- */
+.taco {
+  position: relative;
+  width: 130px;
+  height: 100px;
+  animation: food-taco-idle 3s ease-in-out infinite;
+}
+.taco::before {
+  content: '';
+  position: absolute;
+  width: 110px;
+  height: 70px;
+  background: linear-gradient(180deg, #d4a35a, #c49245);
+  border-radius: 55px 55px 0 0;
+  bottom: 10px;
+  left: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+  mask: radial-gradient(ellipse at 50% 120%, transparent 50%, black 51%);
+  -webkit-mask: radial-gradient(ellipse at 50% 120%, transparent 50%, black 51%);
+}
+.taco::after {
+  content: '';
+  position: absolute;
+  width: 90px;
+  height: 25px;
+  background: linear-gradient(180deg, #6d4c41, #5d4037);
+  border-radius: 15px 15px 0 0;
+  bottom: 25px;
+  left: 20px;
+}
+.taco .head {
+  position: absolute;
+  width: 85px;
+  height: 12px;
+  background: linear-gradient(90deg, #27ae60, #2ecc71, #27ae60);
+  border-radius: 5px;
+  bottom: 46px;
+  left: 22px;
+  z-index: 2;
+  clip-path: polygon(0 0, 5% 100%, 10% 0, 15% 100%, 20% 0, 25% 100%, 30% 0, 35% 100%, 40% 0, 45% 100%, 50% 0, 55% 100%, 60% 0, 65% 100%, 70% 0, 75% 100%, 80% 0, 85% 100%, 90% 0, 95% 100%, 100% 0);
+}
+.taco .body {
+  position: absolute;
+  width: 80px;
+  height: 8px;
+  background: linear-gradient(90deg, #e74c3c, #c0392b, #e74c3c);
+  border-radius: 3px;
+  bottom: 56px;
+  left: 25px;
+  z-index: 2;
+}
+.taco .ear-left {
+  position: absolute;
+  width: 75px;
+  height: 8px;
+  background: linear-gradient(90deg, #f9ca24, #f0932b, #f9ca24);
+  border-radius: 3px;
+  bottom: 62px;
+  left: 28px;
+  z-index: 2;
+}
+.card:hover .taco,
+.lightbox-art .taco {
+  animation: food-taco-tilt 0.6s ease-in-out infinite;
+}
+@keyframes food-taco-idle {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(1deg); }
+}
+@keyframes food-taco-tilt {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-8deg) translateY(-3px); }
+  75% { transform: rotate(8deg) translateY(-3px); }
+}
+
+/* ---------- 10. POPSICLE ---------- */
+.popsicle {
+  position: relative;
+  width: 70px;
+  height: 155px;
+  animation: food-popsicle-idle 3s ease-in-out infinite;
+}
+.popsicle::before {
+  content: '';
+  position: absolute;
+  width: 55px;
+  height: 90px;
+  background: linear-gradient(180deg, #e74c3c 0%, #e74c3c 45%, #f39c12 55%, #f39c12 100%);
+  border-radius: 28px 28px 5px 5px;
+  top: 0;
+  left: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2), inset -5px 0 10px rgba(255,255,255,0.15);
+}
+.popsicle::after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 55px;
+  background: linear-gradient(180deg, #d4a35a, #c49245);
+  border-radius: 2px 2px 4px 4px;
+  top: 88px;
+  left: 31px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+}
+.popsicle .head {
+  position: absolute;
+  width: 8px;
+  height: 12px;
+  background: linear-gradient(180deg, rgba(231, 76, 60, 0.6), transparent);
+  border-radius: 0 0 4px 4px;
+  top: 85px;
+  left: 18px;
+  filter: blur(1px);
+  animation: food-popsicle-drip 2s ease-in-out infinite;
+}
+.popsicle .head::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 10px;
+  background: linear-gradient(180deg, rgba(243, 156, 18, 0.6), transparent);
+  border-radius: 0 0 3px 3px;
+  top: 0;
+  left: 25px;
+  filter: blur(1px);
+  animation: food-popsicle-drip 2s ease-in-out 0.8s infinite;
+}
+.card:hover .popsicle,
+.lightbox-art .popsicle {
+  animation: food-popsicle-wobble 0.5s ease-in-out infinite;
+}
+.card:hover .popsicle .head,
+.lightbox-art .popsicle .head {
+  height: 20px;
+  animation: food-popsicle-drip 1s ease-in-out infinite;
+}
+@keyframes food-popsicle-idle {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(2deg); }
+}
+@keyframes food-popsicle-drip {
+  0%, 100% { opacity: 0.6; transform: scaleY(1); }
+  50% { opacity: 1; transform: scaleY(1.3); }
+}
+@keyframes food-popsicle-wobble {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-8deg); }
+  75% { transform: rotate(8deg); }
+}

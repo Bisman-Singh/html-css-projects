@@ -1,0 +1,1075 @@
+/* ===== SCENES CSS ART — 10 pieces ===== */
+
+/* ---------- 1. MOUNTAIN ---------- */
+.scene-mountain {
+  position: relative;
+  width: 180px;
+  height: 160px;
+  background: linear-gradient(180deg, #0c0a1d 0%, #1a1145 40%, #2d1b69 70%, #1e293b 100%);
+  border-radius: 12px;
+  overflow: hidden;
+  animation: scene-mountain-idle 5s ease-in-out infinite;
+}
+.scene-mountain::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 10px;
+  width: 0;
+  height: 0;
+  border-left: 55px solid transparent;
+  border-right: 55px solid transparent;
+  border-bottom: 90px solid #374151;
+  filter: drop-shadow(0 0 4px rgba(55, 65, 81, 0.5));
+}
+.scene-mountain::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 60px;
+  width: 0;
+  height: 0;
+  border-left: 70px solid transparent;
+  border-right: 70px solid transparent;
+  border-bottom: 120px solid #4b5563;
+  filter: drop-shadow(0 0 6px rgba(75, 85, 99, 0.5));
+}
+.scene-mountain span:nth-child(1) {
+  position: absolute;
+  bottom: 80px;
+  left: 92px;
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 25px solid #e2e8f0;
+  z-index: 1;
+}
+.scene-mountain span:nth-child(2) {
+  position: absolute;
+  bottom: 55px;
+  left: 35px;
+  width: 0;
+  height: 0;
+  border-left: 14px solid transparent;
+  border-right: 14px solid transparent;
+  border-bottom: 18px solid #cbd5e1;
+  z-index: 1;
+}
+.scene-mountain span:nth-child(3) {
+  position: absolute;
+  top: 18px;
+  right: 25px;
+  width: 22px;
+  height: 22px;
+  background: radial-gradient(circle, #fef3c7, #fbbf24);
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(251, 191, 36, 0.4), 0 0 30px rgba(251, 191, 36, 0.2);
+  z-index: 2;
+}
+.scene-mountain span:nth-child(4) {
+  position: absolute;
+  z-index: 3;
+  width: 2px;
+  height: 2px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow:
+    15px 12px 0 0 #fff, 40px 8px 0 0 #fff, 65px 20px 0 -0.5px #fff,
+    90px 15px 0 0 #fff, 120px 10px 0 -0.5px #fff, 25px 35px 0 -0.5px #fff,
+    55px 40px 0 0 #fff, 110px 30px 0 -0.5px #fff, 145px 22px 0 0 #fff,
+    80px 45px 0 -0.5px #fff, 10px 50px 0 0 #fff, 135px 42px 0 -0.5px #fff;
+  top: 5px;
+  left: 5px;
+  animation: scene-mountain-stars 2s ease-in-out infinite;
+}
+.card:hover .scene-mountain,
+.lightbox-art .scene-mountain {
+  animation: none;
+}
+.card:hover .scene-mountain span:nth-child(4),
+.lightbox-art .scene-mountain span:nth-child(4) {
+  animation: scene-mountain-twinkle 0.8s ease-in-out infinite;
+}
+.card:hover .scene-mountain span:nth-child(3),
+.lightbox-art .scene-mountain span:nth-child(3) {
+  box-shadow: 0 0 25px rgba(251, 191, 36, 0.6), 0 0 50px rgba(251, 191, 36, 0.3);
+}
+@keyframes scene-mountain-idle {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.01); }
+}
+@keyframes scene-mountain-stars {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+@keyframes scene-mountain-twinkle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+/* ---------- 2. CITY SKYLINE ---------- */
+.scene-city {
+  position: relative;
+  width: 180px;
+  height: 160px;
+  background: linear-gradient(180deg, #1e1b4b 0%, #4338ca 30%, #f97316 55%, #fbbf24 70%, #fef3c7 100%);
+  border-radius: 12px;
+  overflow: hidden;
+  animation: scene-city-idle 5s ease-in-out infinite;
+}
+.scene-city::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background: #111827;
+  clip-path: polygon(
+    0% 100%, 0% 50%, 5% 50%, 5% 35%, 12% 35%, 12% 20%, 18% 20%, 18% 55%, 25% 55%, 25% 30%, 30% 30%, 30% 10%, 35% 10%, 35% 30%,
+    40% 30%, 40% 45%, 48% 45%, 48% 15%, 52% 15%, 52% 5%, 56% 5%, 56% 15%, 60% 15%, 60% 45%,
+    65% 45%, 65% 25%, 72% 25%, 72% 40%, 78% 40%, 78% 20%, 85% 20%, 85% 50%, 92% 50%, 92% 35%, 100% 35%, 100% 100%
+  );
+}
+.scene-city::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background:
+    radial-gradient(circle, #fbbf24 1px, transparent 1px) 12px 30px / 8px 10px repeat,
+    radial-gradient(circle, #fde68a 1px, transparent 1px) 36px 18px / 6px 8px repeat,
+    radial-gradient(circle, #fbbf24 1px, transparent 1px) 62px 22px / 7px 9px repeat,
+    radial-gradient(circle, #fde68a 1px, transparent 1px) 88px 28px / 5px 8px repeat;
+  animation: scene-city-lights 3s ease-in-out infinite;
+}
+.scene-city span:nth-child(1) {
+  position: absolute;
+  bottom: 68px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 30px;
+  background: radial-gradient(circle, #fef3c7, #f97316);
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(249, 115, 22, 0.5);
+  animation: scene-city-sun 6s ease-in-out infinite;
+}
+.card:hover .scene-city::after,
+.lightbox-art .scene-city::after {
+  animation: scene-city-lights-hover 0.6s ease-in-out infinite;
+}
+.card:hover .scene-city span:nth-child(1),
+.lightbox-art .scene-city span:nth-child(1) {
+  box-shadow: 0 0 35px rgba(249, 115, 22, 0.7), 0 0 60px rgba(249, 115, 22, 0.3);
+}
+@keyframes scene-city-idle {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.05); }
+}
+@keyframes scene-city-lights {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
+}
+@keyframes scene-city-lights-hover {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+@keyframes scene-city-sun {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-5px); }
+}
+
+/* ---------- 3. BEACH ---------- */
+.scene-beach {
+  position: relative;
+  width: 180px;
+  height: 160px;
+  background: linear-gradient(180deg, #7dd3fc 0%, #38bdf8 40%, #0ea5e9 55%, #f5d0a9 60%, #e8c38a 100%);
+  border-radius: 12px;
+  overflow: hidden;
+  animation: scene-beach-idle 4s ease-in-out infinite;
+}
+.scene-beach::before {
+  content: '';
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  width: 28px;
+  height: 28px;
+  background: radial-gradient(circle, #fef9c3, #fbbf24);
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(251, 191, 36, 0.6), 0 0 40px rgba(251, 191, 36, 0.2);
+}
+.scene-beach::after {
+  content: '';
+  position: absolute;
+  bottom: 55px;
+  left: 0;
+  width: 200%;
+  height: 20px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: scene-beach-wave 3s ease-in-out infinite;
+}
+.scene-beach span:nth-child(1) {
+  position: absolute;
+  bottom: 20px;
+  left: 25px;
+  width: 6px;
+  height: 55px;
+  background: linear-gradient(180deg, #78350f, #92400e);
+  border-radius: 3px;
+  transform: rotate(-5deg);
+}
+.scene-beach span:nth-child(1)::before {
+  content: '';
+  position: absolute;
+  top: -15px;
+  left: -12px;
+  width: 35px;
+  height: 25px;
+  background: #15803d;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-20deg);
+  box-shadow: 5px -5px 0 -2px #166534;
+}
+.scene-beach span:nth-child(1)::after {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 4px;
+  width: 30px;
+  height: 20px;
+  background: #16a34a;
+  border-radius: 0 50% 50% 50%;
+  transform: rotate(15deg);
+}
+.scene-beach span:nth-child(2) {
+  position: absolute;
+  bottom: 55px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.2);
+  animation: scene-beach-wave2 4s 1s ease-in-out infinite;
+}
+.card:hover .scene-beach::after,
+.lightbox-art .scene-beach::after {
+  animation: scene-beach-wave-fast 1s ease-in-out infinite;
+}
+.card:hover .scene-beach,
+.lightbox-art .scene-beach {
+  filter: saturate(1.3);
+}
+@keyframes scene-beach-idle {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.05); }
+}
+@keyframes scene-beach-wave {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0%); }
+}
+@keyframes scene-beach-wave2 {
+  0%, 100% { transform: translateY(0); opacity: 0.3; }
+  50% { transform: translateY(-3px); opacity: 0.6; }
+}
+@keyframes scene-beach-wave-fast {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0%); }
+}
+
+/* ---------- 4. UNDERWATER ---------- */
+.scene-underwater {
+  position: relative;
+  width: 180px;
+  height: 160px;
+  background: linear-gradient(180deg, #083344 0%, #0c4a6e 30%, #0e7490 60%, #155e75 100%);
+  border-radius: 12px;
+  overflow: hidden;
+  animation: scene-uw-idle 5s ease-in-out infinite;
+}
+.scene-underwater::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 25px;
+  background: linear-gradient(90deg, #854d0e, #a16207, #854d0e);
+  border-radius: 0 0 12px 12px;
+}
+.scene-underwater::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  box-shadow:
+    20px -10px 0 1px rgba(255, 255, 255, 0.3),
+    50px -25px 0 0 rgba(255, 255, 255, 0.2),
+    80px -15px 0 2px rgba(255, 255, 255, 0.25),
+    120px -30px 0 1px rgba(255, 255, 255, 0.2),
+    140px -8px 0 0 rgba(255, 255, 255, 0.35),
+    35px -45px 0 1px rgba(255, 255, 255, 0.15),
+    95px -50px 0 0 rgba(255, 255, 255, 0.2);
+  bottom: 30px;
+  left: 10px;
+  animation: scene-uw-bubbles 4s ease-in-out infinite;
+}
+.scene-underwater span:nth-child(1) {
+  position: absolute;
+  bottom: 20px;
+  left: 15px;
+  width: 8px;
+  height: 35px;
+  background: #16a34a;
+  border-radius: 4px 4px 0 0;
+  transform-origin: bottom center;
+  animation: scene-uw-seaweed1 3s ease-in-out infinite;
+}
+.scene-underwater span:nth-child(1)::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 12px;
+  width: 6px;
+  height: 28px;
+  background: #15803d;
+  border-radius: 3px 3px 0 0;
+  animation: scene-uw-seaweed2 3.5s ease-in-out infinite;
+}
+.scene-underwater span:nth-child(2) {
+  position: absolute;
+  top: 55px;
+  right: 25px;
+  width: 22px;
+  height: 12px;
+  background: #f97316;
+  border-radius: 50%;
+  animation: scene-uw-fish1 5s ease-in-out infinite;
+}
+.scene-underwater span:nth-child(2)::before {
+  content: '';
+  position: absolute;
+  right: -8px;
+  top: 1px;
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 10px solid #f97316;
+}
+.scene-underwater span:nth-child(2)::after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 4px;
+  width: 3px;
+  height: 3px;
+  background: #1e293b;
+  border-radius: 50%;
+}
+.scene-underwater span:nth-child(3) {
+  position: absolute;
+  bottom: 22px;
+  right: 20px;
+  width: 18px;
+  height: 20px;
+  background: #ef4444;
+  border-radius: 50% 50% 0 0;
+  box-shadow: 12px 0 0 -2px #f97316, -10px 2px 0 -3px #ec4899;
+}
+.card:hover .scene-underwater::after,
+.lightbox-art .scene-underwater::after {
+  animation: scene-uw-bubbles-hover 1.5s ease-out infinite;
+}
+.card:hover .scene-underwater span:nth-child(2),
+.lightbox-art .scene-underwater span:nth-child(2) {
+  animation: scene-uw-fish-hover 2s linear infinite;
+}
+@keyframes scene-uw-idle {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.08); }
+}
+@keyframes scene-uw-bubbles {
+  0%, 100% { transform: translateY(0); opacity: 0.6; }
+  50% { transform: translateY(-10px); opacity: 1; }
+}
+@keyframes scene-uw-bubbles-hover {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(-40px); opacity: 0; }
+}
+@keyframes scene-uw-seaweed1 {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(8deg); }
+}
+@keyframes scene-uw-seaweed2 {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(-6deg); }
+}
+@keyframes scene-uw-fish1 {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(-15px); }
+}
+@keyframes scene-uw-fish-hover {
+  0% { transform: translateX(20px); }
+  100% { transform: translateX(-180px); }
+}
+
+/* ---------- 5. FOREST ---------- */
+.scene-forest {
+  position: relative;
+  width: 180px;
+  height: 160px;
+  background: linear-gradient(180deg, #a7f3d0 0%, #6ee7b7 20%, #34d399 50%, #059669 100%);
+  border-radius: 12px;
+  overflow: hidden;
+  animation: scene-forest-idle 6s ease-in-out infinite;
+}
+.scene-forest::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 20px;
+  width: 0;
+  height: 0;
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+  border-bottom: 60px solid #065f46;
+  z-index: 3;
+  filter: drop-shadow(2px 0 0 rgba(0, 0, 0, 0.2));
+}
+.scene-forest::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 70px;
+  width: 0;
+  height: 0;
+  border-left: 40px solid transparent;
+  border-right: 40px solid transparent;
+  border-bottom: 90px solid #047857;
+  z-index: 2;
+  filter: drop-shadow(3px 0 0 rgba(0, 0, 0, 0.15));
+}
+.scene-forest span:nth-child(1) {
+  position: absolute;
+  bottom: 0;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border-left: 35px solid transparent;
+  border-right: 35px solid transparent;
+  border-bottom: 75px solid #064e3b;
+  z-index: 1;
+}
+.scene-forest span:nth-child(2) {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.15), transparent);
+  z-index: 4;
+  animation: scene-forest-fog 5s ease-in-out infinite;
+}
+.scene-forest span:nth-child(3) {
+  position: absolute;
+  bottom: 0;
+  left: -10px;
+  width: 0;
+  height: 0;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-bottom: 50px solid #064e3b;
+  z-index: 4;
+  opacity: 0.6;
+}
+.card:hover .scene-forest,
+.lightbox-art .scene-forest {
+  animation: none;
+}
+.card:hover .scene-forest span:nth-child(2),
+.lightbox-art .scene-forest span:nth-child(2) {
+  animation: scene-forest-fog-hover 2s ease-in-out infinite;
+}
+.card:hover .scene-forest::before,
+.lightbox-art .scene-forest::before {
+  transform: translateX(-5px);
+  transition: transform 0.5s;
+}
+.card:hover .scene-forest::after,
+.lightbox-art .scene-forest::after {
+  transform: translateX(3px);
+  transition: transform 0.5s;
+}
+@keyframes scene-forest-idle {
+  0%, 100% { filter: brightness(1) saturate(1); }
+  50% { filter: brightness(1.05) saturate(1.1); }
+}
+@keyframes scene-forest-fog {
+  0%, 100% { opacity: 0.3; transform: translateX(0); }
+  50% { opacity: 0.6; transform: translateX(5px); }
+}
+@keyframes scene-forest-fog-hover {
+  0%, 100% { opacity: 0.1; transform: translateX(-10px); }
+  50% { opacity: 0.5; transform: translateX(10px); }
+}
+
+/* ---------- 6. DESERT ---------- */
+.scene-desert {
+  position: relative;
+  width: 180px;
+  height: 160px;
+  background: linear-gradient(180deg, #fef3c7 0%, #fde68a 30%, #fbbf24 60%, #d4a259 75%, #c2884d 100%);
+  border-radius: 12px;
+  overflow: hidden;
+  animation: scene-desert-idle 5s ease-in-out infinite;
+}
+.scene-desert::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: -10px;
+  width: 120%;
+  height: 50px;
+  background: linear-gradient(180deg, #d4a259, #c2884d);
+  border-radius: 50% 50% 0 0;
+}
+.scene-desert::after {
+  content: '';
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  width: 100%;
+  height: 35px;
+  background: #c2884d;
+  border-radius: 50% 30% 0 0;
+  transform: translateX(-30%);
+}
+.scene-desert span:nth-child(1) {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  width: 35px;
+  height: 35px;
+  background: radial-gradient(circle, #fff, #fbbf24);
+  border-radius: 50%;
+  box-shadow: 0 0 30px rgba(251, 191, 36, 0.6), 0 0 60px rgba(251, 191, 36, 0.3);
+  z-index: 2;
+}
+.scene-desert span:nth-child(2) {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  width: 6px;
+  height: 40px;
+  background: #166534;
+  border-radius: 3px;
+  z-index: 3;
+}
+.scene-desert span:nth-child(2)::before {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: -8px;
+  width: 10px;
+  height: 15px;
+  background: #15803d;
+  border-radius: 50%;
+}
+.scene-desert span:nth-child(2)::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -8px;
+  width: 10px;
+  height: 12px;
+  background: #16a34a;
+  border-radius: 50%;
+}
+.scene-desert span:nth-child(3) {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 3px,
+    rgba(255, 255, 255, 0.03) 3px,
+    rgba(255, 255, 255, 0.03) 6px
+  );
+  z-index: 4;
+  opacity: 0;
+  animation: scene-desert-shimmer 3s ease-in-out infinite;
+}
+.card:hover .scene-desert span:nth-child(3),
+.lightbox-art .scene-desert span:nth-child(3) {
+  animation: scene-desert-shimmer-hover 1s ease-in-out infinite;
+}
+.card:hover .scene-desert span:nth-child(1),
+.lightbox-art .scene-desert span:nth-child(1) {
+  box-shadow: 0 0 40px rgba(251, 191, 36, 0.8), 0 0 80px rgba(251, 191, 36, 0.4);
+}
+@keyframes scene-desert-idle {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.03); }
+}
+@keyframes scene-desert-shimmer {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 0.3; }
+}
+@keyframes scene-desert-shimmer-hover {
+  0%, 100% { opacity: 0.5; transform: translateY(0); }
+  50% { opacity: 0.8; transform: translateY(-2px); }
+}
+
+/* ---------- 7. NIGHT SKY ---------- */
+.scene-nightsky {
+  position: relative;
+  width: 180px;
+  height: 160px;
+  background: linear-gradient(180deg, #020617 0%, #0f172a 40%, #1e1b4b 70%, #312e81 100%);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.scene-nightsky::before {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow:
+    8px 12px 0 0 #fff, 20px 30px 0 -0.5px rgba(255,255,255,0.7),
+    35px 8px 0 0 #fff, 50px 25px 0 -0.5px rgba(255,255,255,0.6),
+    65px 15px 0 0 #fff, 80px 35px 0 0 rgba(255,255,255,0.8),
+    95px 10px 0 -0.5px #fff, 110px 28px 0 0 rgba(255,255,255,0.7),
+    125px 18px 0 0 #fff, 140px 8px 0 -0.5px rgba(255,255,255,0.6),
+    155px 22px 0 0 #fff, 15px 55px 0 0 rgba(255,255,255,0.5),
+    45px 48px 0 -0.5px #fff, 75px 52px 0 0 rgba(255,255,255,0.7),
+    105px 45px 0 0 #fff, 135px 50px 0 -0.5px rgba(255,255,255,0.6),
+    160px 40px 0 0 #fff, 28px 70px 0 0 rgba(255,255,255,0.5),
+    58px 65px 0 -0.5px #fff, 88px 72px 0 0 rgba(255,255,255,0.8),
+    118px 68px 0 0 #fff, 148px 62px 0 -0.5px rgba(255,255,255,0.6),
+    10px 85px 0 0 rgba(255,255,255,0.4), 40px 90px 0 0 #fff,
+    70px 88px 0 -0.5px rgba(255,255,255,0.7), 100px 82px 0 0 #fff;
+  top: 5px;
+  left: 5px;
+  animation: scene-ns-stars 3s ease-in-out infinite;
+}
+.scene-nightsky::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 30px;
+  top: 50%;
+  left: 0;
+  background: linear-gradient(90deg,
+    transparent 0%, rgba(167, 139, 250, 0.05) 20%, rgba(192, 132, 252, 0.1) 40%,
+    rgba(167, 139, 250, 0.15) 50%, rgba(192, 132, 252, 0.1) 60%,
+    rgba(167, 139, 250, 0.05) 80%, transparent 100%);
+  filter: blur(6px);
+  transform: rotate(-5deg);
+}
+.scene-nightsky span {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: #fff;
+  border-radius: 50%;
+  top: 20px;
+  right: -5px;
+  opacity: 0;
+  box-shadow: 0 0 6px #fff, 0 0 12px #818cf8;
+}
+.card:hover .scene-nightsky span,
+.lightbox-art .scene-nightsky span {
+  animation: scene-ns-shoot 1.5s ease-out infinite;
+}
+.card:hover .scene-nightsky::before,
+.lightbox-art .scene-nightsky::before {
+  animation: scene-ns-twinkle 0.8s ease-in-out infinite;
+}
+@keyframes scene-ns-stars {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
+}
+@keyframes scene-ns-twinkle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+@keyframes scene-ns-shoot {
+  0% { top: 20px; right: -5px; opacity: 0; width: 3px; }
+  10% { opacity: 1; width: 20px; height: 2px; }
+  100% { top: 100px; right: 160px; opacity: 0; width: 20px; height: 2px; }
+}
+
+/* ---------- 8. GARDEN ---------- */
+.scene-garden {
+  position: relative;
+  width: 180px;
+  height: 160px;
+  background: linear-gradient(180deg, #bfdbfe 0%, #93c5fd 40%, #60a5fa 50%, #22c55e 55%, #16a34a 100%);
+  border-radius: 12px;
+  overflow: hidden;
+  animation: scene-garden-idle 4s ease-in-out infinite;
+}
+.scene-garden::before {
+  content: '';
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: repeating-linear-gradient(90deg, #854d0e 0px, #854d0e 10px, transparent 10px, transparent 14px);
+}
+.scene-garden::after {
+  content: '';
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  width: 100%;
+  height: 25px;
+  background: repeating-linear-gradient(90deg, #92400e 0px, #92400e 3px, transparent 3px, transparent 14px);
+}
+.scene-garden span:nth-child(1) {
+  position: absolute;
+  bottom: 55px;
+  left: 25px;
+  width: 18px;
+  height: 18px;
+  background: radial-gradient(circle, #fbbf24, #f97316);
+  border-radius: 50%;
+  box-shadow: 0 0 6px rgba(251, 191, 36, 0.3);
+  z-index: 2;
+}
+.scene-garden span:nth-child(1)::before {
+  content: '';
+  position: absolute;
+  top: 18px;
+  left: 7px;
+  width: 4px;
+  height: 20px;
+  background: #15803d;
+  border-radius: 2px;
+}
+.scene-garden span:nth-child(1)::after {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: transparent;
+  box-shadow:
+    -6px 0 0 -6px #ef4444, 6px 0 0 -6px #ec4899,
+    0 -6px 0 -6px #f472b6, 0 6px 0 -6px #f43f5e;
+}
+.scene-garden span:nth-child(2) {
+  position: absolute;
+  bottom: 60px;
+  right: 30px;
+  width: 14px;
+  height: 14px;
+  background: radial-gradient(circle, #fde68a, #fbbf24);
+  border-radius: 50%;
+  z-index: 2;
+}
+.scene-garden span:nth-child(2)::before {
+  content: '';
+  position: absolute;
+  top: 14px;
+  left: 5px;
+  width: 4px;
+  height: 18px;
+  background: #16a34a;
+  border-radius: 2px;
+}
+.scene-garden span:nth-child(2)::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  box-shadow:
+    -5px 0 0 -5px #c084fc, 5px 0 0 -5px #a78bfa,
+    0 -5px 0 -5px #818cf8, 0 5px 0 -5px #7c3aed;
+}
+.scene-garden span:nth-child(3) {
+  position: absolute;
+  top: 25px;
+  right: 40px;
+  width: 12px;
+  height: 8px;
+  background: transparent;
+  z-index: 3;
+  animation: scene-garden-butterfly 6s ease-in-out infinite;
+}
+.scene-garden span:nth-child(3)::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 6px;
+  height: 8px;
+  background: #f472b6;
+  border-radius: 50%;
+  transform-origin: right center;
+  animation: scene-garden-wing 0.3s ease-in-out infinite;
+}
+.scene-garden span:nth-child(3)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 6px;
+  height: 8px;
+  background: #ec4899;
+  border-radius: 50%;
+  transform-origin: left center;
+  animation: scene-garden-wing 0.3s 0.15s ease-in-out infinite;
+}
+.card:hover .scene-garden span:nth-child(1),
+.lightbox-art .scene-garden span:nth-child(1) {
+  animation: scene-garden-bloom 1s ease-in-out infinite;
+}
+.card:hover .scene-garden span:nth-child(2),
+.lightbox-art .scene-garden span:nth-child(2) {
+  animation: scene-garden-bloom 1s 0.3s ease-in-out infinite;
+}
+@keyframes scene-garden-idle {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.05); }
+}
+@keyframes scene-garden-butterfly {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(20px, -10px); }
+  50% { transform: translate(-15px, -20px); }
+  75% { transform: translate(10px, 5px); }
+}
+@keyframes scene-garden-wing {
+  0%, 100% { transform: scaleX(1); }
+  50% { transform: scaleX(0.3); }
+}
+@keyframes scene-garden-bloom {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); filter: brightness(1.2); }
+}
+
+/* ---------- 9. BRIDGE ---------- */
+.scene-bridge {
+  position: relative;
+  width: 180px;
+  height: 160px;
+  background: linear-gradient(180deg, #fbbf24 0%, #f97316 25%, #ea580c 40%, #475569 50%, #38bdf8 65%, #0ea5e9 100%);
+  border-radius: 12px;
+  overflow: hidden;
+  animation: scene-bridge-idle 5s ease-in-out infinite;
+}
+.scene-bridge::before {
+  content: '';
+  position: absolute;
+  top: 72px;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background: #1e293b;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+}
+.scene-bridge::after {
+  content: '';
+  position: absolute;
+  top: 40px;
+  left: 45px;
+  width: 6px;
+  height: 35px;
+  background: #334155;
+  z-index: 3;
+  box-shadow: 90px 0 0 0 #334155;
+}
+.scene-bridge span:nth-child(1) {
+  position: absolute;
+  top: 42px;
+  left: 20px;
+  width: 140px;
+  height: 32px;
+  border: 3px solid transparent;
+  border-top-color: #475569;
+  border-radius: 50%;
+  z-index: 1;
+  animation: scene-bridge-cable 4s ease-in-out infinite;
+}
+.scene-bridge span:nth-child(2) {
+  position: absolute;
+  top: 48px;
+  left: 48px;
+  width: 3px;
+  height: 28px;
+  background: #475569;
+  z-index: 2;
+  box-shadow: 15px 0 0 0 #475569, 30px 0 0 0 #475569, 45px 0 0 0 #475569,
+    60px 0 0 0 #475569, 75px 0 0 0 #475569;
+}
+.scene-bridge span:nth-child(3) {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(180deg, rgba(56, 189, 248, 0.3), rgba(14, 165, 233, 0.5));
+}
+.scene-bridge span:nth-child(3)::before {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  animation: scene-bridge-ripple 3s ease-in-out infinite;
+}
+.card:hover .scene-bridge span:nth-child(1),
+.lightbox-art .scene-bridge span:nth-child(1) {
+  animation: scene-bridge-cable-hover 1.5s ease-in-out infinite;
+}
+.card:hover .scene-bridge,
+.lightbox-art .scene-bridge {
+  filter: saturate(1.3);
+}
+@keyframes scene-bridge-idle {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.05); }
+}
+@keyframes scene-bridge-cable {
+  0%, 100% { transform: scaleY(1); }
+  50% { transform: scaleY(1.05); }
+}
+@keyframes scene-bridge-cable-hover {
+  0%, 100% { transform: scaleY(1); }
+  25% { transform: scaleY(1.1) rotate(0.5deg); }
+  75% { transform: scaleY(1.1) rotate(-0.5deg); }
+}
+@keyframes scene-bridge-ripple {
+  0%, 100% { transform: translateX(0); opacity: 0.2; }
+  50% { transform: translateX(10px); opacity: 0.5; }
+}
+
+/* ---------- 10. WATERFALL ---------- */
+.scene-waterfall {
+  position: relative;
+  width: 180px;
+  height: 160px;
+  background: linear-gradient(180deg, #6ee7b7 0%, #34d399 30%, #059669 60%, #047857 100%);
+  border-radius: 12px;
+  overflow: hidden;
+  animation: scene-wf-idle 5s ease-in-out infinite;
+}
+.scene-waterfall::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 35px;
+  height: 100%;
+  background: linear-gradient(180deg,
+    rgba(147, 197, 253, 0.9) 0%, rgba(96, 165, 250, 0.7) 30%,
+    rgba(59, 130, 246, 0.5) 60%, rgba(147, 197, 253, 0.3) 100%);
+  z-index: 2;
+  animation: scene-wf-flow 0.8s linear infinite;
+}
+.scene-waterfall::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 45%;
+  height: 55%;
+  background: linear-gradient(180deg, #65a30d, #4d7c0f);
+  clip-path: polygon(0 0, 100% 0, 60% 100%, 0 100%);
+  z-index: 1;
+}
+.scene-waterfall span:nth-child(1) {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 42%;
+  height: 55%;
+  background: linear-gradient(180deg, #4d7c0f, #365314);
+  clip-path: polygon(40% 100%, 100% 100%, 100% 0, 0 0);
+  z-index: 1;
+}
+.scene-waterfall span:nth-child(2) {
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 20px;
+  background: radial-gradient(ellipse, rgba(147, 197, 253, 0.5), transparent);
+  border-radius: 50%;
+  z-index: 3;
+  animation: scene-wf-pool 2s ease-in-out infinite;
+}
+.scene-waterfall span:nth-child(3) {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  z-index: 4;
+  box-shadow:
+    -10px 5px 0 0 rgba(255, 255, 255, 0.3),
+    8px -3px 0 -1px rgba(255, 255, 255, 0.4),
+    -5px -8px 0 0 rgba(255, 255, 255, 0.2),
+    12px 8px 0 -1px rgba(255, 255, 255, 0.35),
+    -15px -2px 0 0 rgba(255, 255, 255, 0.25);
+  animation: scene-wf-mist 2s ease-out infinite;
+}
+.card:hover .scene-waterfall::before,
+.lightbox-art .scene-waterfall::before {
+  animation: scene-wf-flow-fast 0.3s linear infinite;
+  background: linear-gradient(180deg,
+    rgba(147, 197, 253, 1) 0%, rgba(96, 165, 250, 0.8) 30%,
+    rgba(59, 130, 246, 0.6) 60%, rgba(147, 197, 253, 0.4) 100%);
+}
+.card:hover .scene-waterfall span:nth-child(3),
+.lightbox-art .scene-waterfall span:nth-child(3) {
+  animation: scene-wf-mist-hover 1s ease-out infinite;
+}
+@keyframes scene-wf-idle {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.05); }
+}
+@keyframes scene-wf-flow {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 20px; }
+}
+@keyframes scene-wf-flow-fast {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 20px; }
+}
+@keyframes scene-wf-pool {
+  0%, 100% { transform: translateX(-50%) scaleX(1); opacity: 0.5; }
+  50% { transform: translateX(-50%) scaleX(1.2); opacity: 0.8; }
+}
+@keyframes scene-wf-mist {
+  0% { transform: translateX(-50%) translateY(0); opacity: 0.5; }
+  100% { transform: translateX(-50%) translateY(-15px); opacity: 0; }
+}
+@keyframes scene-wf-mist-hover {
+  0% { transform: translateX(-50%) translateY(0); opacity: 0.8; }
+  100% { transform: translateX(-50%) translateY(-30px); opacity: 0; }
+}

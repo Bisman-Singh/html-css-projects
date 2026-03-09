@@ -1,0 +1,894 @@
+/* ==============================
+   VEHICLES — 10 Pure CSS Art Pieces
+   ============================== */
+
+/* --- 1. Car --- */
+.vehicle-car {
+  position: relative;
+  width: 180px;
+  height: 120px;
+  margin: 0 auto;
+}
+.vehicle-car::before {
+  content: '';
+  position: absolute;
+  bottom: 30px;
+  left: 10px;
+  width: 160px;
+  height: 40px;
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  border-radius: 8px 8px 4px 4px;
+  box-shadow: 0 4px 12px rgba(231,76,60,.4);
+  transition: box-shadow .4s, transform .4s;
+}
+.vehicle-car::after {
+  content: '';
+  position: absolute;
+  bottom: 60px;
+  left: 40px;
+  width: 100px;
+  height: 35px;
+  background: linear-gradient(135deg, #e74c3c, #d35400);
+  border-radius: 10px 10px 0 0;
+  box-shadow: inset 0 -8px 0 rgba(0,0,0,.1);
+  transition: transform .4s;
+}
+.vehicle-car .wheel-left,
+.vehicle-car .wheel-right {
+  position: absolute;
+  bottom: 15px;
+  width: 30px;
+  height: 30px;
+  background: radial-gradient(circle, #555 30%, #333 32%, #333 60%, #222 62%);
+  border-radius: 50%;
+  box-shadow: inset 0 0 4px rgba(255,255,255,.2), 0 2px 4px rgba(0,0,0,.5);
+  animation: vehicleWheelSpin 2s linear infinite;
+}
+.vehicle-car .wheel-left { left: 25px; }
+.vehicle-car .wheel-right { right: 25px; }
+.vehicle-car .window {
+  position: absolute;
+  bottom: 65px;
+  width: 28px;
+  height: 20px;
+  background: linear-gradient(180deg, #74b9ff, #a29bfe);
+  border-radius: 4px 4px 0 0;
+  box-shadow: inset 0 0 4px rgba(255,255,255,.3);
+}
+.vehicle-car .window:nth-child(3) { left: 50px; }
+.vehicle-car .window:nth-child(4) { left: 85px; }
+.vehicle-car .window:nth-child(5) { left: 115px; width: 20px; }
+.vehicle-car .headlight {
+  position: absolute;
+  bottom: 40px;
+  right: 8px;
+  width: 10px;
+  height: 8px;
+  background: #f1c40f;
+  border-radius: 2px;
+  box-shadow: 0 0 6px #f1c40f;
+  transition: box-shadow .4s;
+}
+.card:hover .vehicle-car .headlight,
+.lightbox-art .vehicle-car .headlight {
+  box-shadow: 0 0 20px 8px rgba(241,196,15,.8), 0 0 40px 16px rgba(241,196,15,.4);
+}
+.card:hover .vehicle-car::before,
+.lightbox-art .vehicle-car::before {
+  box-shadow: 0 6px 20px rgba(231,76,60,.6);
+  transform: translateX(4px);
+}
+.card:hover .vehicle-car::after,
+.lightbox-art .vehicle-car::after {
+  transform: translateX(4px);
+}
+.card:hover .vehicle-car .wheel-left,
+.card:hover .vehicle-car .wheel-right,
+.lightbox-art .vehicle-car .wheel-left,
+.lightbox-art .vehicle-car .wheel-right {
+  animation-duration: .3s;
+}
+
+@keyframes vehicleWheelSpin {
+  to { transform: rotate(360deg); }
+}
+
+/* --- 2. Bicycle --- */
+.vehicle-bicycle {
+  position: relative;
+  width: 180px;
+  height: 130px;
+  margin: 0 auto;
+}
+.vehicle-bicycle .bike-wheel {
+  position: absolute;
+  bottom: 10px;
+  width: 50px;
+  height: 50px;
+  border: 4px solid #bdc3c7;
+  border-radius: 50%;
+  box-shadow: inset 0 0 6px rgba(255,255,255,.1);
+  animation: vehicleBikeWheelIdle 4s linear infinite;
+}
+.vehicle-bicycle .bike-wheel::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  background: #95a5a6;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+.vehicle-bicycle .bike-wheel::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 2px;
+  height: 21px;
+  background: #bdc3c7;
+  transform-origin: top center;
+  transform: translate(-50%, 0);
+  box-shadow:
+    0 0 0 0 #bdc3c7,
+    -14px -10px 0 0 transparent;
+}
+.vehicle-bicycle .bike-wheel:first-child { left: 15px; }
+.vehicle-bicycle .bike-wheel:nth-child(2) { right: 15px; }
+.vehicle-bicycle .bike-frame {
+  position: absolute;
+  bottom: 35px;
+  left: 40px;
+  width: 80px;
+  height: 40px;
+  border-bottom: 4px solid #e74c3c;
+  border-left: 4px solid #e74c3c;
+  transform: skewX(-20deg);
+}
+.vehicle-bicycle .bike-frame::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: -5px;
+  width: 4px;
+  height: 50px;
+  background: #e74c3c;
+  transform: rotate(-10deg);
+}
+.vehicle-bicycle .bike-frame::after {
+  content: '';
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  width: 20px;
+  height: 4px;
+  background: #e74c3c;
+  border-radius: 2px;
+  transform: rotate(-30deg);
+}
+.vehicle-bicycle .bike-seat {
+  position: absolute;
+  bottom: 80px;
+  left: 55px;
+  width: 22px;
+  height: 6px;
+  background: #2c3e50;
+  border-radius: 3px;
+}
+.vehicle-bicycle .bike-pedal {
+  position: absolute;
+  bottom: 28px;
+  left: 72px;
+  width: 14px;
+  height: 4px;
+  background: #7f8c8d;
+  border-radius: 2px;
+  animation: vehiclePedalSpin 3s linear infinite;
+  transform-origin: left center;
+}
+.card:hover .vehicle-bicycle .bike-wheel,
+.lightbox-art .vehicle-bicycle .bike-wheel {
+  animation: vehicleBikeWheelFast .4s linear infinite;
+}
+.card:hover .vehicle-bicycle .bike-pedal,
+.lightbox-art .vehicle-bicycle .bike-pedal {
+  animation-duration: .5s;
+}
+
+@keyframes vehicleBikeWheelIdle {
+  to { transform: rotate(360deg); }
+}
+@keyframes vehicleBikeWheelFast {
+  to { transform: rotate(360deg); }
+}
+@keyframes vehiclePedalSpin {
+  to { transform: rotate(360deg); }
+}
+
+/* --- 3. Sailboat --- */
+.vehicle-sailboat {
+  position: relative;
+  width: 160px;
+  height: 140px;
+  margin: 0 auto;
+  animation: vehicleSailRock 3s ease-in-out infinite;
+}
+.vehicle-sailboat::before {
+  content: '';
+  position: absolute;
+  bottom: 15px;
+  left: 10px;
+  width: 140px;
+  height: 30px;
+  background: linear-gradient(135deg, #8b4513, #a0522d);
+  border-radius: 0 0 50% 50%;
+  box-shadow: 0 4px 10px rgba(0,0,0,.3);
+}
+.vehicle-sailboat::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 160px;
+  height: 18px;
+  background: linear-gradient(90deg, #3498db, #2980b9, #3498db);
+  border-radius: 0 0 8px 8px;
+  animation: vehicleWaterWave 2s ease-in-out infinite;
+}
+.vehicle-sailboat .mast {
+  position: absolute;
+  bottom: 40px;
+  left: 78px;
+  width: 4px;
+  height: 80px;
+  background: linear-gradient(180deg, #ddd, #999);
+}
+.vehicle-sailboat .sail {
+  position: absolute;
+  bottom: 50px;
+  left: 82px;
+  width: 0;
+  height: 0;
+  border-left: 50px solid rgba(255,255,255,.9);
+  border-top: 30px solid transparent;
+  border-bottom: 40px solid transparent;
+  filter: drop-shadow(2px 2px 4px rgba(0,0,0,.2));
+  transition: border-left-color .4s;
+}
+.vehicle-sailboat .flag {
+  position: absolute;
+  bottom: 115px;
+  left: 82px;
+  width: 16px;
+  height: 10px;
+  background: #e74c3c;
+  clip-path: polygon(0 0, 100% 30%, 0 100%);
+  animation: vehicleFlagFlutter 1s ease-in-out infinite alternate;
+}
+.card:hover .vehicle-sailboat,
+.lightbox-art .vehicle-sailboat {
+  animation-duration: 1.5s;
+}
+.card:hover .vehicle-sailboat .sail,
+.lightbox-art .vehicle-sailboat .sail {
+  border-left-color: rgba(255,230,200,.95);
+}
+
+@keyframes vehicleSailRock {
+  0%, 100% { transform: rotate(-3deg); }
+  50% { transform: rotate(3deg); }
+}
+@keyframes vehicleWaterWave {
+  0%, 100% { transform: scaleY(1); }
+  50% { transform: scaleY(1.3); }
+}
+@keyframes vehicleFlagFlutter {
+  0% { transform: scaleX(1); }
+  100% { transform: scaleX(.85) skewY(5deg); }
+}
+
+/* --- 4. Helicopter --- */
+.vehicle-helicopter {
+  position: relative;
+  width: 180px;
+  height: 130px;
+  margin: 0 auto;
+  animation: vehicleHeliFloat 3s ease-in-out infinite;
+}
+.vehicle-helicopter::before {
+  content: '';
+  position: absolute;
+  top: 50px;
+  left: 30px;
+  width: 90px;
+  height: 45px;
+  background: linear-gradient(135deg, #2ecc71, #27ae60);
+  border-radius: 20px 40px 10px 10px;
+  box-shadow: 0 4px 12px rgba(46,204,113,.3), inset 0 -8px 0 rgba(0,0,0,.1);
+}
+.vehicle-helicopter::after {
+  content: '';
+  position: absolute;
+  top: 55px;
+  left: 40px;
+  width: 25px;
+  height: 20px;
+  background: linear-gradient(180deg, #74b9ff, #a29bfe);
+  border-radius: 8px 8px 0 0;
+  box-shadow: inset 0 0 4px rgba(255,255,255,.3);
+}
+.vehicle-helicopter .rotor {
+  position: absolute;
+  top: 40px;
+  left: 20px;
+  width: 140px;
+  height: 6px;
+  background: linear-gradient(90deg, #555, #888, #555);
+  border-radius: 3px;
+  transform-origin: center center;
+  animation: vehicleRotorSpin 0.6s linear infinite;
+}
+.vehicle-helicopter .rotor::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  background: #555;
+  border-radius: 50%;
+  transform: translateX(-50%);
+}
+.vehicle-helicopter .tail {
+  position: absolute;
+  top: 60px;
+  right: 15px;
+  width: 50px;
+  height: 8px;
+  background: linear-gradient(90deg, #27ae60, #2ecc71);
+  border-radius: 0 4px 4px 0;
+}
+.vehicle-helicopter .tail::after {
+  content: '';
+  position: absolute;
+  right: -5px;
+  top: -10px;
+  width: 6px;
+  height: 28px;
+  background: #555;
+  border-radius: 3px;
+  animation: vehicleTailRotorSpin .3s linear infinite;
+}
+.vehicle-helicopter .skid {
+  position: absolute;
+  bottom: 18px;
+  width: 60px;
+  height: 4px;
+  background: #777;
+  border-radius: 2px;
+}
+.vehicle-helicopter .skid:nth-child(4) { left: 30px; }
+.vehicle-helicopter .skid:nth-child(5) { left: 30px; top: 95px; width: 4px; height: 14px; border-radius: 2px; }
+.vehicle-helicopter .skid:nth-child(6) { left: 80px; top: 95px; width: 4px; height: 14px; border-radius: 2px; }
+.card:hover .vehicle-helicopter,
+.lightbox-art .vehicle-helicopter {
+  animation: vehicleHeliLift 1s ease-in-out infinite;
+}
+.card:hover .vehicle-helicopter .rotor,
+.lightbox-art .vehicle-helicopter .rotor {
+  animation-duration: .15s;
+}
+
+@keyframes vehicleHeliFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+@keyframes vehicleHeliLift {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+@keyframes vehicleRotorSpin {
+  to { transform: rotate(360deg); }
+}
+@keyframes vehicleTailRotorSpin {
+  to { transform: rotate(360deg); }
+}
+
+/* --- 5. Hot Air Balloon --- */
+.vehicle-balloon {
+  position: relative;
+  width: 140px;
+  height: 160px;
+  margin: 0 auto;
+  animation: vehicleBalloonFloat 4s ease-in-out infinite;
+}
+.vehicle-balloon::before {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 15px;
+  width: 110px;
+  height: 100px;
+  background: linear-gradient(180deg, #e74c3c 0%, #f39c12 25%, #f1c40f 50%, #2ecc71 75%, #3498db 100%);
+  border-radius: 55px 55px 30px 30px;
+  box-shadow: inset -15px 0 20px rgba(0,0,0,.15), 0 5px 15px rgba(0,0,0,.2);
+}
+.vehicle-balloon::after {
+  content: '';
+  position: absolute;
+  bottom: 10px;
+  left: 45px;
+  width: 50px;
+  height: 30px;
+  background: linear-gradient(135deg, #8b4513, #a0522d);
+  border-radius: 3px;
+  box-shadow: 0 3px 8px rgba(0,0,0,.3);
+}
+.vehicle-balloon .rope {
+  position: absolute;
+  bottom: 38px;
+  width: 2px;
+  height: 30px;
+  background: #8b7355;
+}
+.vehicle-balloon .rope:nth-child(1) { left: 48px; transform: rotate(-8deg); }
+.vehicle-balloon .rope:nth-child(2) { left: 70px; }
+.vehicle-balloon .rope:nth-child(3) { left: 92px; transform: rotate(8deg); }
+.vehicle-balloon .balloon-stripe {
+  position: absolute;
+  top: 20px;
+  width: 4px;
+  height: 70px;
+  background: rgba(255,255,255,.2);
+  border-radius: 2px;
+}
+.vehicle-balloon .balloon-stripe:nth-child(4) { left: 40px; }
+.vehicle-balloon .balloon-stripe:nth-child(5) { left: 70px; }
+.vehicle-balloon .balloon-stripe:nth-child(6) { left: 100px; }
+.card:hover .vehicle-balloon,
+.lightbox-art .vehicle-balloon {
+  animation: vehicleBalloonRise 2s ease-in-out infinite;
+}
+
+@keyframes vehicleBalloonFloat {
+  0%, 100% { transform: translateY(0) rotate(-1deg); }
+  50% { transform: translateY(-8px) rotate(1deg); }
+}
+@keyframes vehicleBalloonRise {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-20px) scale(1.05); }
+}
+
+/* --- 6. Submarine --- */
+.vehicle-submarine {
+  position: relative;
+  width: 180px;
+  height: 120px;
+  margin: 0 auto;
+  animation: vehicleSubFloat 3s ease-in-out infinite;
+}
+.vehicle-submarine::before {
+  content: '';
+  position: absolute;
+  top: 40px;
+  left: 10px;
+  width: 150px;
+  height: 50px;
+  background: linear-gradient(180deg, #f39c12, #e67e22);
+  border-radius: 30px;
+  box-shadow: inset 0 -10px 15px rgba(0,0,0,.15), 0 4px 12px rgba(0,0,0,.3);
+}
+.vehicle-submarine::after {
+  content: '';
+  position: absolute;
+  top: 25px;
+  left: 60px;
+  width: 8px;
+  height: 20px;
+  background: linear-gradient(180deg, #bbb, #888);
+  border-radius: 4px 4px 0 0;
+}
+.vehicle-submarine .porthole {
+  position: absolute;
+  top: 50px;
+  width: 18px;
+  height: 18px;
+  background: radial-gradient(circle, #74b9ff 40%, #4a90d9 42%, #2c6faa 100%);
+  border-radius: 50%;
+  border: 3px solid #d4a017;
+  box-shadow: inset 0 0 6px rgba(255,255,255,.3);
+}
+.vehicle-submarine .porthole:nth-child(1) { left: 35px; }
+.vehicle-submarine .porthole:nth-child(2) { left: 70px; }
+.vehicle-submarine .porthole:nth-child(3) { left: 105px; }
+.vehicle-submarine .propeller {
+  position: absolute;
+  top: 50px;
+  right: 5px;
+  width: 20px;
+  height: 30px;
+  border-top: 3px solid #888;
+  border-bottom: 3px solid #888;
+  border-radius: 0 50% 50% 0;
+  animation: vehiclePropSpin 1s linear infinite;
+}
+.vehicle-submarine .bubble {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(116,185,255,.3);
+  animation: vehicleBubbleRise 3s ease-in infinite;
+}
+.vehicle-submarine .bubble:nth-child(5) { width: 8px; height: 8px; top: 35px; left: 80px; animation-delay: 0s; }
+.vehicle-submarine .bubble:nth-child(6) { width: 6px; height: 6px; top: 30px; left: 60px; animation-delay: 1s; }
+.vehicle-submarine .bubble:nth-child(7) { width: 10px; height: 10px; top: 38px; left: 100px; animation-delay: 2s; }
+.card:hover .vehicle-submarine,
+.lightbox-art .vehicle-submarine {
+  animation: vehicleSubDive 2s ease-in-out infinite;
+}
+.card:hover .vehicle-submarine .propeller,
+.lightbox-art .vehicle-submarine .propeller {
+  animation-duration: .2s;
+}
+
+@keyframes vehicleSubFloat {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-5px) rotate(-1deg); }
+}
+@keyframes vehicleSubDive {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(10px) rotate(3deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+@keyframes vehiclePropSpin {
+  0% { transform: scaleY(1); }
+  25% { transform: scaleY(.3); }
+  50% { transform: scaleY(1); }
+  75% { transform: scaleY(.3); }
+  100% { transform: scaleY(1); }
+}
+@keyframes vehicleBubbleRise {
+  0% { opacity: .8; transform: translateY(0) scale(1); }
+  100% { opacity: 0; transform: translateY(-40px) scale(.4); }
+}
+
+/* --- 7. Train --- */
+.vehicle-train {
+  position: relative;
+  width: 180px;
+  height: 120px;
+  margin: 0 auto;
+}
+.vehicle-train::before {
+  content: '';
+  position: absolute;
+  bottom: 25px;
+  left: 15px;
+  width: 120px;
+  height: 55px;
+  background: linear-gradient(180deg, #2c3e50, #34495e);
+  border-radius: 5px 20px 5px 5px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.4);
+}
+.vehicle-train::after {
+  content: '';
+  position: absolute;
+  bottom: 70px;
+  left: 20px;
+  width: 20px;
+  height: 25px;
+  background: linear-gradient(180deg, #7f8c8d, #95a5a6);
+  border-radius: 5px 5px 0 0;
+}
+.vehicle-train .cabin {
+  position: absolute;
+  bottom: 30px;
+  right: 20px;
+  width: 45px;
+  height: 45px;
+  background: linear-gradient(180deg, #e74c3c, #c0392b);
+  border-radius: 3px 3px 0 0;
+}
+.vehicle-train .cabin::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: 30px;
+  height: 18px;
+  background: linear-gradient(180deg, #74b9ff, #a29bfe);
+  border-radius: 3px;
+}
+.vehicle-train .train-wheel {
+  position: absolute;
+  bottom: 12px;
+  width: 22px;
+  height: 22px;
+  background: radial-gradient(circle, #bbb 25%, #666 28%, #444 100%);
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0,0,0,.4);
+  animation: vehicleTrainWheelSpin 2s linear infinite;
+}
+.vehicle-train .train-wheel:nth-child(2) { left: 25px; }
+.vehicle-train .train-wheel:nth-child(3) { left: 55px; }
+.vehicle-train .train-wheel:nth-child(4) { left: 85px; }
+.vehicle-train .train-wheel:nth-child(5) { right: 30px; }
+.vehicle-train .smoke {
+  position: absolute;
+  top: 10px;
+  left: 22px;
+  width: 14px;
+  height: 14px;
+  background: rgba(200,200,200,.5);
+  border-radius: 50%;
+  opacity: 0;
+}
+.card:hover .vehicle-train .smoke,
+.lightbox-art .vehicle-train .smoke {
+  animation: vehicleSteamPuff 1.5s ease-out infinite;
+}
+.vehicle-train .smoke:nth-child(7) { animation-delay: .3s; left: 28px; }
+.vehicle-train .smoke:nth-child(8) { animation-delay: .6s; left: 18px; }
+.card:hover .vehicle-train .train-wheel,
+.lightbox-art .vehicle-train .train-wheel {
+  animation-duration: .4s;
+}
+
+@keyframes vehicleTrainWheelSpin {
+  to { transform: rotate(360deg); }
+}
+@keyframes vehicleSteamPuff {
+  0% { opacity: .7; transform: translateY(0) scale(.5); }
+  100% { opacity: 0; transform: translateY(-30px) scale(1.5); }
+}
+
+/* --- 8. Bus --- */
+.vehicle-bus {
+  position: relative;
+  width: 180px;
+  height: 120px;
+  margin: 0 auto;
+}
+.vehicle-bus::before {
+  content: '';
+  position: absolute;
+  bottom: 25px;
+  left: 10px;
+  width: 160px;
+  height: 55px;
+  background: linear-gradient(180deg, #f39c12, #e67e22);
+  border-radius: 8px 8px 4px 4px;
+  box-shadow: 0 4px 12px rgba(243,156,18,.3);
+  transition: transform .4s;
+}
+.vehicle-bus::after {
+  content: '';
+  position: absolute;
+  bottom: 55px;
+  left: 15px;
+  width: 150px;
+  height: 20px;
+  background: linear-gradient(180deg, #74b9ff 60%, #5ca0e0 100%);
+  border-radius: 4px 4px 0 0;
+  box-shadow:
+    30px 0 0 0 rgba(0,0,0,.1),
+    60px 0 0 0 rgba(0,0,0,.1),
+    90px 0 0 0 rgba(0,0,0,.1),
+    120px 0 0 0 rgba(0,0,0,.1);
+}
+.vehicle-bus .bus-wheel {
+  position: absolute;
+  bottom: 12px;
+  width: 26px;
+  height: 26px;
+  background: radial-gradient(circle, #777 30%, #333 32%, #333 60%, #222 62%);
+  border-radius: 50%;
+  animation: vehicleBusWheelSpin 3s linear infinite;
+}
+.vehicle-bus .bus-wheel:first-child { left: 25px; }
+.vehicle-bus .bus-wheel:nth-child(2) { right: 25px; }
+.vehicle-bus .bus-door {
+  position: absolute;
+  bottom: 28px;
+  left: 20px;
+  width: 18px;
+  height: 32px;
+  background: linear-gradient(180deg, #5ca0e0, #3a7bc8);
+  border-radius: 3px;
+  border: 2px solid #d68910;
+  transition: transform .3s;
+}
+.vehicle-bus .bus-sign {
+  position: absolute;
+  top: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 12px;
+  background: #2c3e50;
+  border-radius: 2px;
+  box-shadow: inset 0 0 4px rgba(241,196,15,.5);
+}
+.card:hover .vehicle-bus::before,
+.lightbox-art .vehicle-bus::before {
+  transform: translateX(5px);
+}
+.card:hover .vehicle-bus .bus-wheel,
+.lightbox-art .vehicle-bus .bus-wheel {
+  animation-duration: .4s;
+}
+.card:hover .vehicle-bus .bus-door,
+.lightbox-art .vehicle-bus .bus-door {
+  transform: translateX(-8px);
+}
+
+@keyframes vehicleBusWheelSpin {
+  to { transform: rotate(360deg); }
+}
+
+/* --- 9. Scooter --- */
+.vehicle-scooter {
+  position: relative;
+  width: 150px;
+  height: 130px;
+  margin: 0 auto;
+  transition: transform .4s;
+}
+.vehicle-scooter::before {
+  content: '';
+  position: absolute;
+  bottom: 35px;
+  left: 25px;
+  width: 80px;
+  height: 30px;
+  background: linear-gradient(135deg, #9b59b6, #8e44ad);
+  border-radius: 15px 5px 5px 15px;
+  box-shadow: 0 4px 10px rgba(155,89,182,.3);
+}
+.vehicle-scooter::after {
+  content: '';
+  position: absolute;
+  bottom: 55px;
+  left: 25px;
+  width: 50px;
+  height: 25px;
+  background: linear-gradient(135deg, #9b59b6, #7d3c98);
+  border-radius: 20px 10px 0 0;
+}
+.vehicle-scooter .sc-wheel {
+  position: absolute;
+  bottom: 10px;
+  width: 35px;
+  height: 35px;
+  border: 4px solid #555;
+  border-radius: 50%;
+  background: radial-gradient(circle, #888 20%, transparent 22%);
+  animation: vehicleScWheelSpin 3s linear infinite;
+}
+.vehicle-scooter .sc-wheel:first-child { left: 15px; }
+.vehicle-scooter .sc-wheel:nth-child(2) { right: 15px; }
+.vehicle-scooter .handlebar {
+  position: absolute;
+  bottom: 65px;
+  left: 22px;
+  width: 4px;
+  height: 40px;
+  background: #777;
+  border-radius: 2px;
+  transform: rotate(-10deg);
+}
+.vehicle-scooter .handlebar::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -10px;
+  width: 24px;
+  height: 6px;
+  background: #555;
+  border-radius: 3px;
+}
+.vehicle-scooter .footboard {
+  position: absolute;
+  bottom: 28px;
+  left: 30px;
+  width: 70px;
+  height: 6px;
+  background: #666;
+  border-radius: 3px;
+}
+.card:hover .vehicle-scooter,
+.lightbox-art .vehicle-scooter {
+  transform: rotate(-5deg) translateX(5px);
+}
+.card:hover .vehicle-scooter .sc-wheel,
+.lightbox-art .vehicle-scooter .sc-wheel {
+  animation-duration: .3s;
+}
+
+@keyframes vehicleScWheelSpin {
+  to { transform: rotate(360deg); }
+}
+
+/* --- 10. Airplane --- */
+.vehicle-airplane {
+  position: relative;
+  width: 180px;
+  height: 120px;
+  margin: 0 auto;
+  animation: vehiclePlaneFloat 3s ease-in-out infinite;
+}
+.vehicle-airplane::before {
+  content: '';
+  position: absolute;
+  top: 45px;
+  left: 20px;
+  width: 120px;
+  height: 28px;
+  background: linear-gradient(180deg, #ecf0f1, #bdc3c7);
+  border-radius: 14px 30px 30px 14px;
+  box-shadow: 0 3px 10px rgba(0,0,0,.2);
+}
+.vehicle-airplane::after {
+  content: '';
+  position: absolute;
+  top: 50px;
+  left: 30px;
+  width: 12px;
+  height: 18px;
+  background: linear-gradient(180deg, #74b9ff, #a29bfe);
+  border-radius: 4px;
+}
+.vehicle-airplane .wing {
+  position: absolute;
+  top: 55px;
+  left: 55px;
+  width: 70px;
+  height: 8px;
+  background: linear-gradient(180deg, #ddd, #aaa);
+  border-radius: 2px 4px 4px 2px;
+  box-shadow: 0 2px 6px rgba(0,0,0,.15);
+}
+.vehicle-airplane .wing::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: 0;
+  width: 70px;
+  height: 8px;
+  background: linear-gradient(180deg, #ddd, #aaa);
+  border-radius: 2px 4px 4px 2px;
+}
+.vehicle-airplane .tail {
+  position: absolute;
+  top: 30px;
+  left: 18px;
+  width: 0;
+  height: 0;
+  border-bottom: 18px solid #bdc3c7;
+  border-left: 15px solid transparent;
+  border-right: 5px solid transparent;
+}
+.vehicle-airplane .engine {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: radial-gradient(circle, #999 40%, #666 100%);
+  border-radius: 50%;
+  box-shadow: 0 0 4px rgba(0,0,0,.3);
+}
+.vehicle-airplane .engine:nth-child(3) { top: 37px; left: 80px; }
+.vehicle-airplane .engine:nth-child(4) { top: 63px; left: 80px; }
+.card:hover .vehicle-airplane,
+.lightbox-art .vehicle-airplane {
+  animation: vehiclePlaneTakeoff 1.5s ease-in-out infinite;
+}
+
+@keyframes vehiclePlaneFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+@keyframes vehiclePlaneTakeoff {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(-5deg); }
+}

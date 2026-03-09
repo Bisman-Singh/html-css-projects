@@ -1,0 +1,904 @@
+/* ============================================================
+   FANTASY — 10 pure-CSS art pieces
+   Classes: .fan-ghost, .fan-dragon, .fan-wizard, .fan-crystal,
+            .fan-chest, .fan-wand, .fan-potion, .fan-crown,
+            .fan-sword, .fan-shield
+   ============================================================ */
+
+/* ---------- 1. Ghost ---------- */
+.fan-ghost {
+  position: relative;
+  width: 120px;
+  height: 160px;
+  animation: fanGhostBob 3s ease-in-out infinite;
+}
+.fan-ghost .ghost-body {
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  width: 90px;
+  height: 110px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(200,200,255,0.6));
+  border-radius: 45px 45px 0 0;
+  box-shadow: 0 0 20px rgba(255,255,255,0.3);
+}
+.fan-ghost .ghost-eye {
+  position: absolute;
+  width: 16px;
+  height: 20px;
+  background: #1e293b;
+  border-radius: 50%;
+  top: 45px;
+  z-index: 2;
+}
+.fan-ghost .ghost-eye-l { left: 32px; }
+.fan-ghost .ghost-eye-r { left: 72px; }
+.fan-ghost .ghost-mouth {
+  position: absolute;
+  top: 72px;
+  left: 48px;
+  width: 24px;
+  height: 14px;
+  border-radius: 0 0 50% 50%;
+  background: #334155;
+  z-index: 2;
+}
+.fan-ghost .ghost-tail {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  width: 90px;
+  height: 30px;
+  background: linear-gradient(180deg, rgba(200,200,255,0.6), transparent);
+  clip-path: polygon(0% 0%, 20% 100%, 40% 0%, 60% 100%, 80% 0%, 100% 100%, 100% 0%);
+  animation: fanGhostTail 2s ease-in-out infinite;
+}
+.card:hover .fan-ghost,
+.lightbox-art .fan-ghost {
+  animation: fanGhostHover 1.5s ease-in-out infinite;
+}
+.card:hover .fan-ghost .ghost-eye,
+.lightbox-art .fan-ghost .ghost-eye {
+  height: 10px;
+  transition: height 0.3s;
+}
+@keyframes fanGhostBob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+@keyframes fanGhostTail {
+  0%, 100% { clip-path: polygon(0% 0%, 20% 100%, 40% 0%, 60% 100%, 80% 0%, 100% 100%, 100% 0%); }
+  50% { clip-path: polygon(0% 100%, 20% 0%, 40% 100%, 60% 0%, 80% 100%, 100% 0%, 100% 0%); }
+}
+@keyframes fanGhostHover {
+  0%, 100% { transform: translateY(0) scale(1.05); opacity: 0.85; }
+  50% { transform: translateY(-15px) scale(1.1); opacity: 1; }
+}
+
+/* ---------- 2. Dragon ---------- */
+.fan-dragon {
+  position: relative;
+  width: 160px;
+  height: 150px;
+  animation: fanDragonIdle 3s ease-in-out infinite;
+}
+.fan-dragon::before {
+  content: '';
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  width: 100px;
+  height: 80px;
+  background: linear-gradient(135deg, #16a34a, #15803d, #166534);
+  border-radius: 60% 40% 30% 50%;
+  box-shadow: inset -10px -5px 15px rgba(0,0,0,0.3);
+}
+.fan-dragon::after {
+  content: '';
+  position: absolute;
+  top: 55px;
+  left: 10px;
+  width: 40px;
+  height: 25px;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  border-radius: 50% 20% 20% 50%;
+}
+.fan-dragon .horn-l {
+  position: absolute;
+  top: 15px;
+  left: 50px;
+  width: 8px;
+  height: 25px;
+  background: linear-gradient(180deg, #854d0e, #a16207);
+  border-radius: 3px 3px 0 0;
+  transform: rotate(-15deg);
+}
+.fan-dragon .horn-r {
+  position: absolute;
+  top: 12px;
+  left: 85px;
+  width: 8px;
+  height: 25px;
+  background: linear-gradient(180deg, #854d0e, #a16207);
+  border-radius: 3px 3px 0 0;
+  transform: rotate(15deg);
+}
+.fan-dragon .dragon-eye {
+  position: absolute;
+  top: 48px;
+  left: 55px;
+  width: 20px;
+  height: 16px;
+  background: #fbbf24;
+  border-radius: 50%;
+  z-index: 3;
+  box-shadow: 0 0 8px rgba(251, 191, 36, 0.6);
+}
+.fan-dragon .dragon-eye::after {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 7px;
+  width: 6px;
+  height: 10px;
+  background: #1e293b;
+  border-radius: 50%;
+}
+.fan-dragon .nostril {
+  position: absolute;
+  top: 62px;
+  left: 20px;
+  width: 8px;
+  height: 8px;
+  background: #0f172a;
+  border-radius: 50%;
+  z-index: 3;
+}
+.fan-dragon .scale {
+  position: absolute;
+  width: 15px;
+  height: 10px;
+  background: #15803d;
+  border-radius: 50% 50% 0 0;
+  opacity: 0.5;
+}
+.fan-dragon .sc1 { top: 40px; left: 90px; }
+.fan-dragon .sc2 { top: 55px; left: 100px; }
+.fan-dragon .sc3 { top: 70px; left: 85px; }
+.fan-dragon .fire {
+  position: absolute;
+  top: 55px;
+  left: -15px;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  transition: all 0.5s;
+}
+.fan-dragon .fire::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: -30px;
+  width: 35px;
+  height: 20px;
+  background: linear-gradient(90deg, transparent, #f59e0b, #ef4444, #dc2626);
+  border-radius: 0 50% 50% 0;
+  filter: blur(3px);
+}
+.card:hover .fan-dragon .fire,
+.lightbox-art .fan-dragon .fire {
+  opacity: 1;
+  animation: fanDragonFire 0.5s ease-in-out infinite;
+}
+.card:hover .fan-dragon,
+.lightbox-art .fan-dragon {
+  animation: fanDragonHover 1s ease-in-out infinite;
+}
+@keyframes fanDragonIdle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+@keyframes fanDragonHover {
+  0%, 100% { transform: scale(1.05); }
+  50% { transform: scale(1.1) translateX(5px); }
+}
+@keyframes fanDragonFire {
+  0%, 100% { transform: scaleX(1); }
+  50% { transform: scaleX(1.3); }
+}
+
+/* ---------- 3. Wizard ---------- */
+.fan-wizard {
+  position: relative;
+  width: 130px;
+  height: 170px;
+  animation: fanWizIdle 3s ease-in-out infinite;
+}
+.fan-wizard::before {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 25px;
+  width: 0;
+  height: 0;
+  border-left: 45px solid transparent;
+  border-right: 45px solid transparent;
+  border-bottom: 90px solid #4338ca;
+  filter: drop-shadow(0 0 5px rgba(67, 56, 202, 0.4));
+}
+.fan-wizard::after {
+  content: '';
+  position: absolute;
+  top: 88px;
+  left: 10px;
+  width: 110px;
+  height: 18px;
+  background: linear-gradient(180deg, #3730a3, #312e81);
+  border-radius: 50%;
+}
+.fan-wizard .hat-star {
+  position: absolute;
+  top: 25px;
+  left: 52px;
+  width: 12px;
+  height: 12px;
+  background: #fbbf24;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  z-index: 3;
+  animation: fanWizStarTwinkle 2s ease-in-out infinite;
+}
+.fan-wizard .hat-star2 {
+  position: absolute;
+  top: 55px;
+  left: 80px;
+  width: 8px;
+  height: 8px;
+  background: #fcd34d;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  z-index: 3;
+  animation: fanWizStarTwinkle 2s ease-in-out infinite 0.5s;
+}
+.fan-wizard .buckle {
+  position: absolute;
+  top: 82px;
+  left: 48px;
+  width: 22px;
+  height: 16px;
+  border: 3px solid #fbbf24;
+  border-radius: 3px;
+  z-index: 3;
+}
+.fan-wizard .face {
+  position: absolute;
+  top: 105px;
+  left: 35px;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(180deg, #fde68a, #fbbf24);
+  border-radius: 50%;
+}
+.fan-wizard .beard {
+  position: absolute;
+  top: 135px;
+  left: 40px;
+  width: 40px;
+  height: 35px;
+  background: #e5e7eb;
+  border-radius: 0 0 50% 50%;
+  clip-path: polygon(0% 0%, 100% 0%, 90% 40%, 80% 100%, 60% 70%, 50% 100%, 40% 70%, 20% 100%, 10% 40%);
+}
+.card:hover .fan-wizard,
+.lightbox-art .fan-wizard {
+  animation: fanWizHover 1.5s ease-in-out infinite;
+  filter: drop-shadow(0 0 15px rgba(67, 56, 202, 0.6));
+}
+@keyframes fanWizIdle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+@keyframes fanWizStarTwinkle {
+  0%, 100% { opacity: 0.5; transform: scale(0.8) rotate(0deg); }
+  50% { opacity: 1; transform: scale(1.2) rotate(180deg); }
+}
+@keyframes fanWizHover {
+  0%, 100% { transform: scale(1.05) rotate(-2deg); }
+  50% { transform: scale(1.1) rotate(2deg); }
+}
+
+/* ---------- 4. Crystal Ball ---------- */
+.fan-crystal {
+  position: relative;
+  width: 130px;
+  height: 170px;
+  animation: fanCrystalIdle 4s ease-in-out infinite;
+}
+.fan-crystal::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, rgba(196, 181, 253, 0.6), rgba(139, 92, 246, 0.4), rgba(91, 33, 182, 0.8));
+  box-shadow: inset 0 0 30px rgba(139, 92, 246, 0.5), 0 0 20px rgba(139, 92, 246, 0.3);
+}
+.fan-crystal::after {
+  content: '';
+  position: absolute;
+  top: 25px;
+  left: 30px;
+  width: 25px;
+  height: 15px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  transform: rotate(-30deg);
+}
+.fan-crystal .crystal-swirl {
+  position: absolute;
+  top: 35px;
+  left: 35px;
+  width: 60px;
+  height: 60px;
+  border: 3px solid rgba(196, 181, 253, 0.3);
+  border-radius: 50%;
+  border-top-color: transparent;
+  border-right-color: transparent;
+  animation: fanCrystalSwirl 4s linear infinite;
+}
+.fan-crystal .stand {
+  position: absolute;
+  bottom: 15px;
+  left: 35px;
+  width: 60px;
+  height: 20px;
+  background: linear-gradient(180deg, #78716c, #57534e, #44403c);
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+}
+.fan-crystal .stand::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 10px;
+  width: 40px;
+  height: 12px;
+  background: linear-gradient(180deg, #a8a29e, #78716c);
+  border-radius: 5px 5px 0 0;
+}
+.card:hover .fan-crystal,
+.lightbox-art .fan-crystal {
+  animation: fanCrystalHover 1.5s ease-in-out infinite;
+}
+.card:hover .fan-crystal::before,
+.lightbox-art .fan-crystal::before {
+  box-shadow: inset 0 0 40px rgba(139, 92, 246, 0.8), 0 0 35px rgba(139, 92, 246, 0.6);
+  background: radial-gradient(circle at 35% 35%, rgba(255, 255, 255, 0.4), rgba(196, 181, 253, 0.6), rgba(139, 92, 246, 0.8));
+}
+@keyframes fanCrystalIdle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+@keyframes fanCrystalSwirl {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+@keyframes fanCrystalHover {
+  0%, 100% { transform: scale(1.05); filter: brightness(1.1); }
+  50% { transform: scale(1.1); filter: brightness(1.4); }
+}
+
+/* ---------- 5. Treasure Chest ---------- */
+.fan-chest {
+  position: relative;
+  width: 140px;
+  height: 130px;
+  animation: fanChestIdle 3s ease-in-out infinite;
+}
+.fan-chest .chest-body {
+  position: absolute;
+  bottom: 10px;
+  left: 15px;
+  width: 110px;
+  height: 60px;
+  background: linear-gradient(180deg, #92400e, #78350f);
+  border-radius: 5px;
+  box-shadow: inset 0 -5px 10px rgba(0,0,0,0.3);
+}
+.fan-chest .chest-lid {
+  position: absolute;
+  bottom: 65px;
+  left: 15px;
+  width: 110px;
+  height: 40px;
+  background: linear-gradient(180deg, #b45309, #92400e);
+  border-radius: 10px 10px 0 0;
+  transform-origin: bottom left;
+  transition: transform 0.5s ease;
+}
+.fan-chest .band {
+  position: absolute;
+  width: 110px;
+  height: 6px;
+  background: #a16207;
+  left: 15px;
+  z-index: 2;
+}
+.fan-chest .band-top { bottom: 85px; border-radius: 3px 3px 0 0; }
+.fan-chest .band-mid { bottom: 50px; }
+.fan-chest .band-bot { bottom: 15px; border-radius: 0 0 3px 3px; }
+.fan-chest .lock {
+  position: absolute;
+  bottom: 55px;
+  left: 58px;
+  width: 24px;
+  height: 20px;
+  background: #fbbf24;
+  border-radius: 3px;
+  z-index: 5;
+  box-shadow: 0 0 5px rgba(251, 191, 36, 0.5);
+}
+.fan-chest .lock::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 5px;
+  width: 14px;
+  height: 12px;
+  border: 3px solid #f59e0b;
+  border-radius: 50% 50% 0 0;
+  border-bottom: none;
+}
+.fan-chest .gold {
+  position: absolute;
+  bottom: 68px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #fde68a, #f59e0b);
+  opacity: 0;
+  z-index: 1;
+  transition: opacity 0.5s, transform 0.5s;
+}
+.fan-chest .g1 { left: 30px; }
+.fan-chest .g2 { left: 50px; }
+.fan-chest .g3 { left: 70px; }
+.fan-chest .g4 { left: 40px; bottom: 75px; }
+.fan-chest .g5 { left: 60px; bottom: 75px; }
+.card:hover .fan-chest .chest-lid,
+.lightbox-art .fan-chest .chest-lid {
+  transform: rotate(-40deg);
+}
+.card:hover .fan-chest .gold,
+.lightbox-art .fan-chest .gold {
+  opacity: 1;
+  transform: translateY(-10px);
+}
+.card:hover .fan-chest,
+.lightbox-art .fan-chest {
+  animation: fanChestHover 1s ease-in-out infinite;
+}
+@keyframes fanChestIdle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+@keyframes fanChestHover {
+  0%, 100% { transform: scale(1.05); }
+  50% { transform: scale(1.08); }
+}
+
+/* ---------- 6. Magic Wand ---------- */
+.fan-wand {
+  position: relative;
+  width: 60px;
+  height: 180px;
+  animation: fanWandIdle 3s ease-in-out infinite;
+}
+.fan-wand::before {
+  content: '';
+  position: absolute;
+  top: 40px;
+  left: 23px;
+  width: 14px;
+  height: 130px;
+  background: linear-gradient(180deg, #1e293b, #334155, #1e293b);
+  border-radius: 3px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+.fan-wand::after {
+  content: '';
+  position: absolute;
+  top: 120px;
+  left: 20px;
+  width: 20px;
+  height: 8px;
+  background: linear-gradient(180deg, #d97706, #b45309);
+  border-radius: 2px;
+}
+.fan-wand .wand-star {
+  position: absolute;
+  top: 8px;
+  left: 12px;
+  width: 36px;
+  height: 36px;
+  background: #fbbf24;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  filter: drop-shadow(0 0 8px rgba(251, 191, 36, 0.7));
+  animation: fanWandStarGlow 2s ease-in-out infinite;
+}
+.fan-wand .sparkle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #fcd34d;
+  opacity: 0;
+}
+.fan-wand .sp1 { top: 5px; left: 5px; }
+.fan-wand .sp2 { top: 15px; left: 50px; }
+.fan-wand .sp3 { top: 35px; left: 0px; }
+.card:hover .fan-wand,
+.lightbox-art .fan-wand {
+  animation: fanWandHover 1s ease-in-out infinite;
+}
+.card:hover .fan-wand .sparkle,
+.lightbox-art .fan-wand .sparkle {
+  animation: fanWandSparkle 1s ease-in-out infinite;
+}
+.card:hover .fan-wand .sp1,
+.lightbox-art .fan-wand .sp1 { animation-delay: 0s; }
+.card:hover .fan-wand .sp2,
+.lightbox-art .fan-wand .sp2 { animation-delay: 0.3s; }
+.card:hover .fan-wand .sp3,
+.lightbox-art .fan-wand .sp3 { animation-delay: 0.6s; }
+@keyframes fanWandIdle {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(3deg); }
+}
+@keyframes fanWandStarGlow {
+  0%, 100% { filter: drop-shadow(0 0 8px rgba(251,191,36,0.5)); }
+  50% { filter: drop-shadow(0 0 15px rgba(251,191,36,0.9)); }
+}
+@keyframes fanWandHover {
+  0%, 100% { transform: rotate(-10deg); }
+  50% { transform: rotate(10deg); }
+}
+@keyframes fanWandSparkle {
+  0% { opacity: 0; transform: scale(0) translateY(0); }
+  50% { opacity: 1; transform: scale(1.5) translateY(-10px); }
+  100% { opacity: 0; transform: scale(0) translateY(-20px); }
+}
+
+/* ---------- 7. Potion ---------- */
+.fan-potion {
+  position: relative;
+  width: 100px;
+  height: 170px;
+  animation: fanPotionIdle 3s ease-in-out infinite;
+}
+.fan-potion .flask {
+  position: absolute;
+  bottom: 10px;
+  left: 15px;
+  width: 70px;
+  height: 90px;
+  background: linear-gradient(180deg, rgba(200,200,255,0.15), rgba(200,200,255,0.1));
+  border: 2px solid rgba(200,200,255,0.3);
+  border-radius: 10px 10px 35px 35px;
+  overflow: hidden;
+}
+.fan-potion .liquid {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60%;
+  background: linear-gradient(180deg, #a855f7, #7c3aed, #6d28d9);
+  border-radius: 0 0 33px 33px;
+  animation: fanPotionLiquid 3s ease-in-out infinite;
+}
+.fan-potion .neck {
+  position: absolute;
+  bottom: 100px;
+  left: 32px;
+  width: 36px;
+  height: 35px;
+  background: linear-gradient(180deg, rgba(200,200,255,0.15), rgba(200,200,255,0.1));
+  border: 2px solid rgba(200,200,255,0.3);
+  border-bottom: none;
+  border-radius: 5px 5px 0 0;
+}
+.fan-potion .cork {
+  position: absolute;
+  bottom: 132px;
+  left: 34px;
+  width: 32px;
+  height: 14px;
+  background: linear-gradient(180deg, #d97706, #92400e);
+  border-radius: 3px 3px 5px 5px;
+}
+.fan-potion .bubble {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.3);
+  animation: fanPotionBubble 3s ease-in-out infinite;
+}
+.fan-potion .b1 { bottom: 30px; left: 30px; width: 8px; height: 8px; animation-delay: 0s; }
+.fan-potion .b2 { bottom: 45px; left: 50px; width: 5px; height: 5px; animation-delay: 1s; }
+.fan-potion .b3 { bottom: 20px; left: 60px; width: 6px; height: 6px; animation-delay: 2s; }
+.card:hover .fan-potion,
+.lightbox-art .fan-potion {
+  animation: fanPotionHover 1s ease-in-out infinite;
+}
+.card:hover .fan-potion .bubble,
+.lightbox-art .fan-potion .bubble {
+  animation-duration: 1s;
+}
+@keyframes fanPotionIdle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+@keyframes fanPotionLiquid {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+@keyframes fanPotionBubble {
+  0% { transform: translateY(0) scale(1); opacity: 0.6; }
+  50% { transform: translateY(-15px) scale(1.2); opacity: 1; }
+  100% { transform: translateY(-30px) scale(0.5); opacity: 0; }
+}
+@keyframes fanPotionHover {
+  0%, 100% { transform: rotate(-5deg) scale(1.05); }
+  50% { transform: rotate(5deg) scale(1.1); }
+}
+
+/* ---------- 8. Crown ---------- */
+.fan-crown {
+  position: relative;
+  width: 150px;
+  height: 120px;
+  animation: fanCrownIdle 3s ease-in-out infinite;
+}
+.fan-crown::before {
+  content: '';
+  position: absolute;
+  bottom: 20px;
+  left: 15px;
+  width: 120px;
+  height: 50px;
+  background: linear-gradient(180deg, #f59e0b, #d97706, #b45309);
+  border-radius: 0 0 10px 10px;
+  box-shadow: inset 0 5px 15px rgba(255,255,255,0.2), 0 5px 15px rgba(0,0,0,0.3);
+}
+.fan-crown::after {
+  content: '';
+  position: absolute;
+  bottom: 60px;
+  left: 15px;
+  width: 120px;
+  height: 40px;
+  background: linear-gradient(180deg, #fbbf24, #f59e0b);
+  clip-path: polygon(0% 100%, 0% 40%, 15% 0%, 30% 60%, 50% 0%, 70% 60%, 85% 0%, 100% 40%, 100% 100%);
+  box-shadow: inset 0 5px 10px rgba(255,255,255,0.3);
+}
+.fan-crown .gem {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  z-index: 3;
+  box-shadow: 0 0 6px currentColor;
+}
+.fan-crown .gem-r { bottom: 35px; left: 35px; background: #ef4444; color: #ef4444; }
+.fan-crown .gem-b { bottom: 38px; left: 65px; background: #3b82f6; color: #3b82f6; }
+.fan-crown .gem-g { bottom: 35px; left: 95px; background: #22c55e; color: #22c55e; }
+.fan-crown .gem-top {
+  bottom: 62px;
+  left: 67px;
+  width: 16px;
+  height: 16px;
+  background: radial-gradient(circle at 35% 35%, #fef3c7, #fbbf24);
+  z-index: 4;
+  animation: fanCrownGemPulse 2s ease-in-out infinite;
+}
+.card:hover .fan-crown,
+.lightbox-art .fan-crown {
+  animation: fanCrownHover 1.5s ease-in-out infinite;
+  filter: drop-shadow(0 0 15px rgba(251, 191, 36, 0.6));
+}
+.card:hover .fan-crown .gem,
+.lightbox-art .fan-crown .gem {
+  animation: fanCrownGemSparkle 0.8s ease-in-out infinite;
+}
+@keyframes fanCrownIdle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+@keyframes fanCrownGemPulse {
+  0%, 100% { box-shadow: 0 0 5px rgba(251,191,36,0.5); }
+  50% { box-shadow: 0 0 15px rgba(251,191,36,0.9); }
+}
+@keyframes fanCrownHover {
+  0%, 100% { transform: scale(1.05) translateY(0); }
+  50% { transform: scale(1.1) translateY(-5px); }
+}
+@keyframes fanCrownGemSparkle {
+  0%, 100% { transform: scale(1); filter: brightness(1); }
+  50% { transform: scale(1.3); filter: brightness(1.5); }
+}
+
+/* ---------- 9. Sword ---------- */
+.fan-sword {
+  position: relative;
+  width: 60px;
+  height: 190px;
+  animation: fanSwordIdle 3s ease-in-out infinite;
+}
+.fan-sword .blade {
+  position: absolute;
+  top: 5px;
+  left: 20px;
+  width: 20px;
+  height: 110px;
+  background: linear-gradient(90deg, #94a3b8, #e2e8f0, #cbd5e1, #94a3b8);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 50% 100%, 0% 90%);
+  box-shadow: 0 0 10px rgba(226, 232, 240, 0.3);
+}
+.fan-sword .blade::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 8px;
+  width: 2px;
+  height: 95%;
+  background: rgba(255,255,255,0.4);
+}
+.fan-sword .crossguard {
+  position: absolute;
+  top: 112px;
+  left: 5px;
+  width: 50px;
+  height: 12px;
+  background: linear-gradient(180deg, #f59e0b, #b45309);
+  border-radius: 3px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+.fan-sword .grip {
+  position: absolute;
+  top: 124px;
+  left: 22px;
+  width: 16px;
+  height: 40px;
+  background: repeating-linear-gradient(180deg, #78350f 0px, #78350f 4px, #92400e 4px, #92400e 8px);
+  border-radius: 2px;
+}
+.fan-sword .pommel {
+  position: absolute;
+  top: 162px;
+  left: 20px;
+  width: 20px;
+  height: 20px;
+  background: radial-gradient(circle at 40% 40%, #fbbf24, #d97706);
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(251, 191, 36, 0.5);
+}
+.fan-sword .slash {
+  position: absolute;
+  top: 30px;
+  left: -10px;
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.8), transparent);
+  opacity: 0;
+  transform: rotate(-30deg);
+}
+.card:hover .fan-sword,
+.lightbox-art .fan-sword {
+  animation: fanSwordHover 0.8s ease-in-out infinite;
+}
+.card:hover .fan-sword .slash,
+.lightbox-art .fan-sword .slash {
+  animation: fanSwordSlash 0.8s ease-in-out infinite;
+}
+.card:hover .fan-sword .blade,
+.lightbox-art .fan-sword .blade {
+  box-shadow: 0 0 20px rgba(226, 232, 240, 0.6);
+}
+@keyframes fanSwordIdle {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-3px) rotate(1deg); }
+}
+@keyframes fanSwordHover {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(15deg) translateX(5px); }
+  75% { transform: rotate(-15deg) translateX(-5px); }
+}
+@keyframes fanSwordSlash {
+  0% { opacity: 0; transform: rotate(-30deg) translateX(-20px); }
+  50% { opacity: 1; transform: rotate(-30deg) translateX(20px); }
+  100% { opacity: 0; transform: rotate(-30deg) translateX(60px); }
+}
+
+/* ---------- 10. Shield ---------- */
+.fan-shield {
+  position: relative;
+  width: 130px;
+  height: 155px;
+  animation: fanShieldIdle 3s ease-in-out infinite;
+}
+.fan-shield::before {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 120px;
+  height: 145px;
+  background: linear-gradient(180deg, #64748b, #475569, #334155);
+  clip-path: polygon(50% 0%, 100% 10%, 100% 60%, 50% 100%, 0% 60%, 0% 10%);
+  box-shadow: inset 0 0 20px rgba(255,255,255,0.1);
+}
+.fan-shield::after {
+  content: '';
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  width: 100px;
+  height: 125px;
+  background: linear-gradient(180deg, #dc2626, #b91c1c, #991b1b);
+  clip-path: polygon(50% 5%, 95% 13%, 95% 58%, 50% 95%, 5% 58%, 5% 13%);
+}
+.fan-shield .cross-v {
+  position: absolute;
+  top: 25px;
+  left: 55px;
+  width: 20px;
+  height: 110px;
+  background: linear-gradient(90deg, #fbbf24, #f59e0b);
+  clip-path: polygon(0% 5%, 100% 5%, 100% 55%, 70% 90%, 50% 95%, 30% 90%, 0% 55%);
+  z-index: 3;
+}
+.fan-shield .cross-h {
+  position: absolute;
+  top: 55px;
+  left: 25px;
+  width: 80px;
+  height: 18px;
+  background: linear-gradient(180deg, #fbbf24, #f59e0b);
+  z-index: 3;
+}
+.fan-shield .flash {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 130px;
+  height: 155px;
+  background: radial-gradient(circle, rgba(255,255,255,0.4), transparent 70%);
+  opacity: 0;
+  z-index: 10;
+}
+.card:hover .fan-shield,
+.lightbox-art .fan-shield {
+  animation: fanShieldHover 0.5s ease-in-out;
+}
+.card:hover .fan-shield .flash,
+.lightbox-art .fan-shield .flash {
+  animation: fanShieldFlash 0.6s ease-out;
+}
+.card:hover .fan-shield::before,
+.lightbox-art .fan-shield::before {
+  box-shadow: inset 0 0 20px rgba(255,255,255,0.1), 0 0 20px rgba(100, 116, 139, 0.5);
+}
+@keyframes fanShieldIdle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+@keyframes fanShieldHover {
+  0% { transform: scale(1); }
+  30% { transform: scale(0.95); }
+  60% { transform: scale(1.1); }
+  100% { transform: scale(1.05); }
+}
+@keyframes fanShieldFlash {
+  0% { opacity: 0.8; }
+  100% { opacity: 0; }
+}

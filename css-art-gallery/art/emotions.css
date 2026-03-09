@@ -1,0 +1,817 @@
+/* ==============================
+   EMOTIONS — 10 Pure CSS Art Pieces
+   ============================== */
+
+/* --- 1. Heart --- */
+.emo-heart {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 10px auto;
+  animation: emoHeartbeat 1.2s ease-in-out infinite;
+}
+.emo-heart::before,
+.emo-heart::after {
+  content: '';
+  position: absolute;
+  width: 60px;
+  height: 90px;
+  background: linear-gradient(180deg, #e74c3c, #c0392b);
+  border-radius: 60px 60px 0 0;
+}
+.emo-heart::before {
+  top: 15px;
+  left: 10px;
+  transform: rotate(-45deg);
+  transform-origin: bottom right;
+  box-shadow: -4px 0 10px rgba(231,76,60,.3);
+}
+.emo-heart::after {
+  top: 15px;
+  right: 10px;
+  transform: rotate(45deg);
+  transform-origin: bottom left;
+  box-shadow: 4px 0 10px rgba(231,76,60,.3);
+}
+.emo-heart .heart-shine {
+  position: absolute;
+  top: 25px;
+  left: 30px;
+  width: 15px;
+  height: 15px;
+  background: rgba(255,255,255,.25);
+  border-radius: 50%;
+  z-index: 1;
+}
+.card:hover .emo-heart,
+.lightbox-art .emo-heart {
+  animation-duration: .5s;
+}
+
+@keyframes emoHeartbeat {
+  0%, 100% { transform: scale(1); }
+  15% { transform: scale(1.15); }
+  30% { transform: scale(1); }
+  45% { transform: scale(1.1); }
+}
+
+/* --- 2. Happy Face --- */
+.emo-happy {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 10px auto;
+  animation: emoHappyIdle 3s ease-in-out infinite;
+}
+.emo-happy::before {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 110px;
+  height: 110px;
+  background: radial-gradient(circle at 40% 35%, #ffd93d, #f6c700);
+  border-radius: 50%;
+  box-shadow: 0 6px 15px rgba(246,199,0,.4), inset 0 -8px 15px rgba(0,0,0,.1);
+}
+.emo-happy .happy-eye {
+  position: absolute;
+  top: 38px;
+  width: 14px;
+  height: 18px;
+  background: #333;
+  border-radius: 50%;
+  z-index: 1;
+}
+.emo-happy .happy-eye::before {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 5px;
+  height: 5px;
+  background: #fff;
+  border-radius: 50%;
+}
+.emo-happy .happy-eye:first-child { left: 30px; }
+.emo-happy .happy-eye:nth-child(2) { left: 72px; }
+.emo-happy .happy-mouth {
+  position: absolute;
+  top: 65px;
+  left: 35px;
+  width: 50px;
+  height: 25px;
+  border: 4px solid #333;
+  border-top: none;
+  border-radius: 0 0 25px 25px;
+  z-index: 1;
+}
+.emo-happy .happy-cheek {
+  position: absolute;
+  top: 60px;
+  width: 18px;
+  height: 12px;
+  background: rgba(255,150,100,.35);
+  border-radius: 50%;
+  z-index: 1;
+}
+.emo-happy .happy-cheek:nth-child(4) { left: 15px; }
+.emo-happy .happy-cheek:nth-child(5) { right: 15px; }
+.card:hover .emo-happy,
+.lightbox-art .emo-happy {
+  animation: emoHappyBounce .5s ease-in-out infinite;
+}
+
+@keyframes emoHappyIdle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+@keyframes emoHappyBounce {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-10px) scale(1.05); }
+}
+
+/* --- 3. Sad Face --- */
+.emo-sad {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 10px auto;
+}
+.emo-sad::before {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 110px;
+  height: 110px;
+  background: radial-gradient(circle at 40% 35%, #74b9ff, #5a9fd4);
+  border-radius: 50%;
+  box-shadow: 0 6px 15px rgba(90,159,212,.4), inset 0 -8px 15px rgba(0,0,0,.1);
+}
+.emo-sad .sad-eye {
+  position: absolute;
+  top: 40px;
+  width: 14px;
+  height: 16px;
+  background: #333;
+  border-radius: 50%;
+  z-index: 1;
+}
+.emo-sad .sad-eye::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: -2px;
+  width: 18px;
+  height: 8px;
+  border: 3px solid #2c5f8a;
+  border-bottom: none;
+  border-radius: 10px 10px 0 0;
+}
+.emo-sad .sad-eye:first-child { left: 30px; }
+.emo-sad .sad-eye:nth-child(2) { left: 72px; }
+.emo-sad .sad-mouth {
+  position: absolute;
+  top: 75px;
+  left: 38px;
+  width: 40px;
+  height: 15px;
+  border: 4px solid #333;
+  border-bottom: none;
+  border-radius: 20px 20px 0 0;
+  transform: rotate(180deg);
+  z-index: 1;
+}
+.emo-sad .sad-tear {
+  position: absolute;
+  top: 55px;
+  width: 8px;
+  height: 12px;
+  background: rgba(100,180,255,.7);
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  opacity: 0;
+  z-index: 1;
+}
+.emo-sad .sad-tear:nth-child(4) { left: 33px; }
+.emo-sad .sad-tear:nth-child(5) { left: 78px; animation-delay: .8s; }
+.card:hover .emo-sad .sad-tear,
+.lightbox-art .emo-sad .sad-tear {
+  animation: emoTearDrop 1.5s ease-in infinite;
+}
+
+@keyframes emoTearDrop {
+  0% { opacity: 0; transform: translateY(0); }
+  20% { opacity: .8; }
+  100% { opacity: 0; transform: translateY(30px); }
+}
+
+/* --- 4. Angry Face --- */
+.emo-angry {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 10px auto;
+}
+.emo-angry::before {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 110px;
+  height: 110px;
+  background: radial-gradient(circle at 40% 35%, #ff6b6b, #e74c3c);
+  border-radius: 50%;
+  box-shadow: 0 6px 15px rgba(231,76,60,.4), inset 0 -8px 15px rgba(0,0,0,.15);
+}
+.emo-angry .angry-eye {
+  position: absolute;
+  top: 42px;
+  width: 14px;
+  height: 14px;
+  background: #333;
+  border-radius: 50%;
+  z-index: 1;
+}
+.emo-angry .angry-eye:first-child { left: 30px; }
+.emo-angry .angry-eye:nth-child(2) { left: 72px; }
+.emo-angry .angry-brow {
+  position: absolute;
+  top: 30px;
+  width: 22px;
+  height: 5px;
+  background: #333;
+  border-radius: 3px;
+  z-index: 1;
+}
+.emo-angry .angry-brow:nth-child(3) { left: 26px; transform: rotate(20deg); }
+.emo-angry .angry-brow:nth-child(4) { left: 70px; transform: rotate(-20deg); }
+.emo-angry .angry-mouth {
+  position: absolute;
+  top: 72px;
+  left: 32px;
+  width: 52px;
+  height: 16px;
+  background: #333;
+  border-radius: 3px;
+  z-index: 1;
+  box-shadow:
+    inset 4px 0 0 #fff,
+    inset 8px 0 0 #333,
+    inset 12px 0 0 #fff,
+    inset 16px 0 0 #333,
+    inset 20px 0 0 #fff,
+    inset 24px 0 0 #333,
+    inset 28px 0 0 #fff,
+    inset 32px 0 0 #333,
+    inset 36px 0 0 #fff,
+    inset 40px 0 0 #333,
+    inset 44px 0 0 #fff;
+}
+.card:hover .emo-angry,
+.lightbox-art .emo-angry {
+  animation: emoAngryShake .15s ease-in-out 5;
+}
+
+@keyframes emoAngryShake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  75% { transform: translateX(4px); }
+}
+
+/* --- 5. Surprised Face --- */
+.emo-surprised {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 10px auto;
+}
+.emo-surprised::before {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 110px;
+  height: 110px;
+  background: radial-gradient(circle at 40% 35%, #ffd93d, #f6c700);
+  border-radius: 50%;
+  box-shadow: 0 6px 15px rgba(246,199,0,.4), inset 0 -8px 15px rgba(0,0,0,.1);
+}
+.emo-surprised .surprise-eye {
+  position: absolute;
+  top: 35px;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border-radius: 50%;
+  border: 3px solid #333;
+  z-index: 1;
+}
+.emo-surprised .surprise-eye::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  background: #333;
+  border-radius: 50%;
+}
+.emo-surprised .surprise-eye:first-child { left: 25px; }
+.emo-surprised .surprise-eye:nth-child(2) { left: 68px; }
+.emo-surprised .surprise-brow {
+  position: absolute;
+  top: 24px;
+  width: 18px;
+  height: 4px;
+  background: #333;
+  border-radius: 2px;
+  z-index: 1;
+}
+.emo-surprised .surprise-brow:nth-child(3) { left: 27px; }
+.emo-surprised .surprise-brow:nth-child(4) { left: 72px; }
+.emo-surprised .surprise-mouth {
+  position: absolute;
+  top: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 25px;
+  height: 25px;
+  background: #333;
+  border-radius: 50%;
+  z-index: 1;
+}
+.emo-surprised .surprise-mouth::before {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 19px;
+  height: 19px;
+  background: #8b0000;
+  border-radius: 50%;
+}
+.card:hover .emo-surprised,
+.lightbox-art .emo-surprised {
+  animation: emoJump .4s ease-in-out 3;
+}
+
+@keyframes emoJump {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-12px) scale(1.08); }
+}
+
+/* --- 6. Cool Face --- */
+.emo-cool {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 10px auto;
+}
+.emo-cool::before {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 110px;
+  height: 110px;
+  background: radial-gradient(circle at 40% 35%, #ffd93d, #f6c700);
+  border-radius: 50%;
+  box-shadow: 0 6px 15px rgba(246,199,0,.4), inset 0 -8px 15px rgba(0,0,0,.1);
+}
+.emo-cool .cool-glass {
+  position: absolute;
+  top: 38px;
+  width: 30px;
+  height: 16px;
+  background: linear-gradient(180deg, #1a1a2e, #111);
+  border-radius: 4px;
+  z-index: 1;
+  box-shadow: 0 2px 4px rgba(0,0,0,.3);
+}
+.emo-cool .cool-glass::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 12px;
+  height: 6px;
+  background: rgba(255,255,255,.15);
+  border-radius: 2px;
+  transition: background .3s;
+}
+.emo-cool .cool-glass:first-child { left: 18px; }
+.emo-cool .cool-glass:nth-child(2) { left: 68px; }
+.emo-cool .cool-bridge {
+  position: absolute;
+  top: 42px;
+  left: 48px;
+  width: 20px;
+  height: 4px;
+  background: #1a1a2e;
+  border-radius: 2px;
+  z-index: 1;
+}
+.emo-cool .cool-mouth {
+  position: absolute;
+  top: 72px;
+  left: 32px;
+  width: 50px;
+  height: 4px;
+  background: #333;
+  border-radius: 2px;
+  z-index: 1;
+  transform: rotate(5deg);
+}
+.emo-cool .cool-mouth::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  right: 0;
+  width: 8px;
+  height: 8px;
+  border: 3px solid #333;
+  border-top: none;
+  border-left: none;
+  border-radius: 0 0 8px 0;
+}
+.card:hover .emo-cool .cool-glass::before,
+.lightbox-art .emo-cool .cool-glass::before {
+  background: rgba(255,255,255,.4);
+  box-shadow: 0 0 8px rgba(255,255,255,.3);
+}
+
+/* --- 7. Wink Face --- */
+.emo-wink {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 10px auto;
+}
+.emo-wink::before {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 110px;
+  height: 110px;
+  background: radial-gradient(circle at 40% 35%, #ffd93d, #f6c700);
+  border-radius: 50%;
+  box-shadow: 0 6px 15px rgba(246,199,0,.4), inset 0 -8px 15px rgba(0,0,0,.1);
+}
+.emo-wink .wink-eye-open {
+  position: absolute;
+  top: 38px;
+  left: 30px;
+  width: 14px;
+  height: 18px;
+  background: #333;
+  border-radius: 50%;
+  z-index: 1;
+}
+.emo-wink .wink-eye-open::before {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 5px;
+  height: 5px;
+  background: #fff;
+  border-radius: 50%;
+}
+.emo-wink .wink-eye-closed {
+  position: absolute;
+  top: 46px;
+  left: 68px;
+  width: 18px;
+  height: 4px;
+  background: #333;
+  border-radius: 2px;
+  z-index: 1;
+}
+.emo-wink .wink-eye-closed::after {
+  content: '';
+  position: absolute;
+  top: -3px;
+  right: 0;
+  width: 6px;
+  height: 6px;
+  border: 2px solid #333;
+  border-bottom: none;
+  border-left: none;
+  border-radius: 0 6px 0 0;
+}
+.emo-wink .wink-mouth {
+  position: absolute;
+  top: 68px;
+  left: 35px;
+  width: 45px;
+  height: 22px;
+  border: 4px solid #333;
+  border-top: none;
+  border-radius: 0 0 22px 22px;
+  z-index: 1;
+}
+.emo-wink .wink-tongue {
+  position: absolute;
+  top: 78px;
+  left: 48px;
+  width: 20px;
+  height: 14px;
+  background: #e74c3c;
+  border-radius: 0 0 10px 10px;
+  z-index: 1;
+}
+.card:hover .emo-wink,
+.lightbox-art .emo-wink {
+  animation: emoWinkBounce .6s ease-in-out infinite;
+}
+
+@keyframes emoWinkBounce {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-5px) rotate(-3deg); }
+  75% { transform: translateY(-5px) rotate(3deg); }
+}
+
+/* --- 8. Starry Eyes Face --- */
+.emo-starry {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 10px auto;
+}
+.emo-starry::before {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 110px;
+  height: 110px;
+  background: radial-gradient(circle at 40% 35%, #ffd93d, #f6c700);
+  border-radius: 50%;
+  box-shadow: 0 6px 15px rgba(246,199,0,.4), inset 0 -8px 15px rgba(0,0,0,.1);
+}
+.emo-starry .star-eye {
+  position: absolute;
+  top: 35px;
+  width: 22px;
+  height: 22px;
+  background: #f39c12;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  z-index: 1;
+  animation: emoStarIdle 2s ease-in-out infinite;
+}
+.emo-starry .star-eye:first-child { left: 25px; }
+.emo-starry .star-eye:nth-child(2) { left: 70px; animation-delay: .5s; }
+.emo-starry .starry-mouth {
+  position: absolute;
+  top: 70px;
+  left: 35px;
+  width: 45px;
+  height: 22px;
+  background: #333;
+  border-radius: 0 0 22px 22px;
+  z-index: 1;
+}
+.emo-starry .starry-mouth::before {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 5px;
+  width: 35px;
+  height: 12px;
+  background: #8b0000;
+  border-radius: 0 0 18px 18px;
+}
+.emo-starry .sparkle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: #fff;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  opacity: 0;
+  z-index: 2;
+}
+.emo-starry .sparkle:nth-child(4) { top: 20px; left: 15px; }
+.emo-starry .sparkle:nth-child(5) { top: 15px; right: 15px; }
+.emo-starry .sparkle:nth-child(6) { top: 30px; right: 10px; }
+.card:hover .emo-starry .sparkle,
+.lightbox-art .emo-starry .sparkle {
+  animation: emoSparkle 1s ease-in-out infinite;
+}
+.emo-starry .sparkle:nth-child(5) { animation-delay: .3s; }
+.emo-starry .sparkle:nth-child(6) { animation-delay: .6s; }
+.card:hover .emo-starry .star-eye,
+.lightbox-art .emo-starry .star-eye {
+  animation-duration: .5s;
+}
+
+@keyframes emoStarIdle {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.1) rotate(15deg); }
+}
+@keyframes emoSparkle {
+  0%, 100% { opacity: 0; transform: scale(.5); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+/* --- 9. Sleepy Face --- */
+.emo-sleepy {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 10px auto;
+  animation: emoSleepyRock 3s ease-in-out infinite;
+}
+.emo-sleepy::before {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 110px;
+  height: 110px;
+  background: radial-gradient(circle at 40% 35%, #a29bfe, #8c82f0);
+  border-radius: 50%;
+  box-shadow: 0 6px 15px rgba(162,155,254,.4), inset 0 -8px 15px rgba(0,0,0,.1);
+}
+.emo-sleepy .sleepy-eye {
+  position: absolute;
+  top: 48px;
+  width: 20px;
+  height: 4px;
+  background: #333;
+  border-radius: 2px;
+  z-index: 1;
+}
+.emo-sleepy .sleepy-eye::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: 0;
+  width: 20px;
+  height: 8px;
+  border: 3px solid #333;
+  border-bottom: none;
+  border-radius: 10px 10px 0 0;
+}
+.emo-sleepy .sleepy-eye:first-child { left: 27px; }
+.emo-sleepy .sleepy-eye:nth-child(2) { left: 70px; }
+.emo-sleepy .sleepy-mouth {
+  position: absolute;
+  top: 72px;
+  left: 48px;
+  width: 20px;
+  height: 10px;
+  border: 3px solid #333;
+  border-top: none;
+  border-radius: 0 0 10px 10px;
+  z-index: 1;
+}
+.emo-sleepy .sleepy-z {
+  position: absolute;
+  top: 15px;
+  font-size: 14px;
+  font-weight: 900;
+  color: rgba(255,255,255,.6);
+  z-index: 2;
+  opacity: 0;
+}
+.emo-sleepy .sleepy-z:nth-child(4) { right: 10px; font-size: 14px; }
+.emo-sleepy .sleepy-z:nth-child(5) { right: 2px; font-size: 18px; }
+.emo-sleepy .sleepy-z:nth-child(6) { right: -5px; font-size: 22px; }
+.card:hover .emo-sleepy .sleepy-z,
+.lightbox-art .emo-sleepy .sleepy-z {
+  animation: emoZFloat 2s ease-out infinite;
+}
+.emo-sleepy .sleepy-z:nth-child(5) { animation-delay: .5s; }
+.emo-sleepy .sleepy-z:nth-child(6) { animation-delay: 1s; }
+
+@keyframes emoSleepyRock {
+  0%, 100% { transform: rotate(-3deg); }
+  50% { transform: rotate(3deg); }
+}
+@keyframes emoZFloat {
+  0% { opacity: .8; transform: translateY(0) scale(.8); }
+  100% { opacity: 0; transform: translateY(-25px) scale(1.2); }
+}
+
+/* --- 10. Party Face --- */
+.emo-party {
+  position: relative;
+  width: 120px;
+  height: 140px;
+  margin: 0 auto;
+}
+.emo-party::before {
+  content: '';
+  position: absolute;
+  top: 25px;
+  left: 5px;
+  width: 110px;
+  height: 110px;
+  background: radial-gradient(circle at 40% 35%, #ffd93d, #f6c700);
+  border-radius: 50%;
+  box-shadow: 0 6px 15px rgba(246,199,0,.4), inset 0 -8px 15px rgba(0,0,0,.1);
+}
+.emo-party .party-hat {
+  position: absolute;
+  top: 0;
+  left: 30px;
+  width: 0;
+  height: 0;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-bottom: 40px solid #e74c3c;
+  z-index: 2;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,.3));
+}
+.emo-party .party-hat::before {
+  content: '';
+  position: absolute;
+  top: 30px;
+  left: -20px;
+  width: 40px;
+  height: 8px;
+  background: linear-gradient(90deg, #3498db, #2ecc71, #f39c12, #e74c3c);
+  border-radius: 4px;
+}
+.emo-party .party-hat::after {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -3px;
+  width: 6px;
+  height: 6px;
+  background: #f1c40f;
+  border-radius: 50%;
+}
+.emo-party .party-eye {
+  position: absolute;
+  top: 58px;
+  width: 12px;
+  height: 14px;
+  background: #333;
+  border-radius: 50%;
+  z-index: 1;
+}
+.emo-party .party-eye:nth-child(2) { left: 30px; }
+.emo-party .party-eye:nth-child(3) { left: 72px; }
+.emo-party .party-mouth {
+  position: absolute;
+  top: 85px;
+  left: 30px;
+  width: 55px;
+  height: 25px;
+  border: 4px solid #333;
+  border-top: none;
+  border-radius: 0 0 25px 25px;
+  z-index: 1;
+}
+.emo-party .party-horn {
+  position: absolute;
+  top: 88px;
+  right: 10px;
+  width: 30px;
+  height: 8px;
+  background: linear-gradient(90deg, #e74c3c, #f39c12, #2ecc71);
+  border-radius: 0 4px 4px 0;
+  z-index: 2;
+  transform-origin: left center;
+}
+.emo-party .confetti {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  opacity: 0;
+  z-index: 3;
+}
+.emo-party .confetti:nth-child(6) { background: #e74c3c; top: 10px; left: 10px; }
+.emo-party .confetti:nth-child(7) { background: #3498db; top: 5px; right: 10px; }
+.emo-party .confetti:nth-child(8) { background: #2ecc71; top: 15px; left: 90px; }
+.emo-party .confetti:nth-child(9) { background: #f39c12; top: 20px; left: 5px; }
+.emo-party .confetti:nth-child(10) { background: #9b59b6; top: 8px; left: 60px; width: 4px; height: 8px; border-radius: 2px; }
+.emo-party .confetti:nth-child(11) { background: #e74c3c; top: 12px; left: 40px; width: 8px; height: 4px; border-radius: 2px; }
+.card:hover .emo-party .confetti,
+.lightbox-art .emo-party .confetti {
+  animation: emoConfetti 1.5s ease-out infinite;
+}
+.emo-party .confetti:nth-child(7) { animation-delay: .2s; }
+.emo-party .confetti:nth-child(8) { animation-delay: .4s; }
+.emo-party .confetti:nth-child(9) { animation-delay: .6s; }
+.emo-party .confetti:nth-child(10) { animation-delay: .8s; }
+.emo-party .confetti:nth-child(11) { animation-delay: 1s; }
+.card:hover .emo-party .party-horn,
+.lightbox-art .emo-party .party-horn {
+  animation: emoHornBlow .5s ease-in-out infinite alternate;
+}
+
+@keyframes emoConfetti {
+  0% { opacity: 1; transform: translateY(0) rotate(0deg); }
+  100% { opacity: 0; transform: translateY(40px) rotate(360deg); }
+}
+@keyframes emoHornBlow {
+  0% { transform: scaleX(1); }
+  100% { transform: scaleX(1.4); }
+}

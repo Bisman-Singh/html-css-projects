@@ -1,0 +1,736 @@
+/* ==============================
+   MUSIC — 10 Pure CSS Art Pieces
+   ============================== */
+
+/* --- 1. Vinyl Record --- */
+.music-vinyl {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+}
+.music-vinyl::before {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 140px;
+  height: 140px;
+  background:
+    radial-gradient(circle, transparent 18%, #111 19%, #111 20%, transparent 21%),
+    radial-gradient(circle, transparent 28%, #111 29%, #111 30%, transparent 31%),
+    radial-gradient(circle, transparent 38%, #111 39%, #111 40%, transparent 41%),
+    radial-gradient(circle, transparent 48%, #222 49%, #222 50%, transparent 51%),
+    radial-gradient(circle, #0a0a0a 0%, #1a1a1a 60%, #0a0a0a 100%);
+  border-radius: 50%;
+  box-shadow: 0 4px 15px rgba(0,0,0,.5), inset 0 0 30px rgba(255,255,255,.03);
+  animation: musicVinylIdle 8s linear infinite;
+}
+.music-vinyl::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  background: radial-gradient(circle, #333 15%, #c0392b 17%, #e74c3c 60%, #c0392b 100%);
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(231,76,60,.3);
+}
+.music-vinyl .vinyl-shine {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, transparent 40%, rgba(255,255,255,.05) 50%, transparent 60%);
+}
+.card:hover .music-vinyl::before,
+.lightbox-art .music-vinyl::before {
+  animation-duration: 1s;
+}
+
+@keyframes musicVinylIdle {
+  to { transform: rotate(360deg); }
+}
+
+/* --- 2. Headphones --- */
+.music-headphones {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  margin: 0 auto;
+}
+.music-headphones::before {
+  content: '';
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  width: 110px;
+  height: 60px;
+  border: 8px solid #2c3e50;
+  border-bottom: none;
+  border-radius: 55px 55px 0 0;
+  box-shadow: 0 -3px 8px rgba(0,0,0,.2);
+}
+.music-headphones .hp-cup {
+  position: absolute;
+  top: 60px;
+  width: 36px;
+  height: 50px;
+  background: linear-gradient(180deg, #34495e, #2c3e50);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,.4), inset 0 2px 4px rgba(255,255,255,.1);
+}
+.music-headphones .hp-cup:first-child { left: 8px; }
+.music-headphones .hp-cup:nth-child(2) { right: 8px; }
+.music-headphones .hp-cup::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 22px;
+  height: 36px;
+  background: linear-gradient(180deg, #555, #444);
+  border-radius: 6px;
+}
+.music-headphones .hp-note {
+  position: absolute;
+  font-size: 18px;
+  color: rgba(129,140,248,.6);
+  opacity: 0;
+}
+.music-headphones .hp-note:nth-child(3) { top: 30px; left: 55px; }
+.music-headphones .hp-note:nth-child(4) { top: 20px; left: 70px; }
+.music-headphones .hp-note:nth-child(5) { top: 35px; left: 85px; }
+.card:hover .music-headphones .hp-note,
+.lightbox-art .music-headphones .hp-note {
+  animation: musicNoteFloat 2s ease-out infinite;
+}
+.music-headphones .hp-note:nth-child(4) { animation-delay: .5s; }
+.music-headphones .hp-note:nth-child(5) { animation-delay: 1s; }
+
+@keyframes musicNoteFloat {
+  0% { opacity: .8; transform: translateY(0) rotate(0deg); }
+  100% { opacity: 0; transform: translateY(-30px) rotate(20deg); }
+}
+
+/* --- 3. Piano Keys --- */
+.music-piano {
+  position: relative;
+  width: 170px;
+  height: 100px;
+  margin: 10px auto;
+}
+.music-piano::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 5px;
+  width: 160px;
+  height: 90px;
+  background: repeating-linear-gradient(
+    90deg,
+    #f5f5f5 0px, #f5f5f5 21px,
+    #ddd 21px, #ddd 23px
+  );
+  border-radius: 0 0 4px 4px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.3), inset 0 -4px 8px rgba(0,0,0,.1);
+}
+.music-piano .black-key {
+  position: absolute;
+  top: 0;
+  width: 12px;
+  height: 55px;
+  background: linear-gradient(180deg, #1a1a1a, #333);
+  border-radius: 0 0 3px 3px;
+  box-shadow: 0 3px 6px rgba(0,0,0,.4), inset 0 -2px 4px rgba(255,255,255,.05);
+  transition: height .15s, box-shadow .15s;
+  z-index: 1;
+}
+.music-piano .black-key:nth-child(1) { left: 20px; }
+.music-piano .black-key:nth-child(2) { left: 43px; }
+.music-piano .black-key:nth-child(3) { left: 87px; }
+.music-piano .black-key:nth-child(4) { left: 110px; }
+.music-piano .black-key:nth-child(5) { left: 133px; }
+.card:hover .music-piano .black-key,
+.lightbox-art .music-piano .black-key {
+  animation: musicKeyPress .6s ease-in-out infinite;
+}
+.music-piano .black-key:nth-child(2) { animation-delay: .1s; }
+.music-piano .black-key:nth-child(3) { animation-delay: .2s; }
+.music-piano .black-key:nth-child(4) { animation-delay: .3s; }
+.music-piano .black-key:nth-child(5) { animation-delay: .4s; }
+
+@keyframes musicKeyPress {
+  0%, 100% { height: 55px; box-shadow: 0 3px 6px rgba(0,0,0,.4); }
+  50% { height: 50px; box-shadow: 0 1px 3px rgba(0,0,0,.3); }
+}
+
+/* --- 4. Guitar --- */
+.music-guitar {
+  position: relative;
+  width: 130px;
+  height: 160px;
+  margin: 0 auto;
+}
+.music-guitar::before {
+  content: '';
+  position: absolute;
+  bottom: 5px;
+  left: 20px;
+  width: 90px;
+  height: 80px;
+  background: radial-gradient(ellipse at 50% 60%, #d4a050 0%, #b8860b 60%, #8b6914 100%);
+  border-radius: 45px 45px 50px 50px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.4), inset 0 -5px 10px rgba(0,0,0,.2);
+}
+.music-guitar::after {
+  content: '';
+  position: absolute;
+  bottom: 30px;
+  left: 55px;
+  width: 20px;
+  height: 20px;
+  background: #111;
+  border-radius: 50%;
+}
+.music-guitar .guitar-neck {
+  position: absolute;
+  top: 5px;
+  left: 57px;
+  width: 16px;
+  height: 80px;
+  background: linear-gradient(90deg, #8b6914, #a07818, #8b6914);
+  border-radius: 3px 3px 0 0;
+  box-shadow: 0 2px 6px rgba(0,0,0,.3);
+}
+.music-guitar .guitar-neck::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -4px;
+  width: 24px;
+  height: 12px;
+  background: #5a4010;
+  border-radius: 4px 4px 0 0;
+}
+.music-guitar .guitar-string {
+  position: absolute;
+  top: 15px;
+  width: 1px;
+  height: 120px;
+  background: linear-gradient(180deg, #ccc, #aaa);
+  transition: transform .1s;
+}
+.music-guitar .guitar-string:nth-child(2) { left: 59px; }
+.music-guitar .guitar-string:nth-child(3) { left: 62px; }
+.music-guitar .guitar-string:nth-child(4) { left: 65px; }
+.music-guitar .guitar-string:nth-child(5) { left: 68px; }
+.music-guitar .guitar-string:nth-child(6) { left: 71px; }
+.music-guitar .tuning-peg {
+  position: absolute;
+  top: 6px;
+  width: 5px;
+  height: 5px;
+  background: #c8a030;
+  border-radius: 50%;
+}
+.music-guitar .tuning-peg:nth-child(7) { left: 52px; }
+.music-guitar .tuning-peg:nth-child(8) { left: 52px; top: 12px; }
+.music-guitar .tuning-peg:nth-child(9) { left: 74px; }
+.music-guitar .tuning-peg:nth-child(10) { left: 74px; top: 12px; }
+.card:hover .music-guitar .guitar-string,
+.lightbox-art .music-guitar .guitar-string {
+  animation: musicStrum .15s ease-in-out 3;
+}
+.music-guitar .guitar-string:nth-child(3) { animation-delay: .03s; }
+.music-guitar .guitar-string:nth-child(4) { animation-delay: .06s; }
+.music-guitar .guitar-string:nth-child(5) { animation-delay: .09s; }
+.music-guitar .guitar-string:nth-child(6) { animation-delay: .12s; }
+
+@keyframes musicStrum {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-2px); }
+  75% { transform: translateX(2px); }
+}
+
+/* --- 5. Drums --- */
+.music-drums {
+  position: relative;
+  width: 180px;
+  height: 130px;
+  margin: 0 auto;
+}
+.music-drums::before {
+  content: '';
+  position: absolute;
+  bottom: 10px;
+  left: 35px;
+  width: 110px;
+  height: 70px;
+  background: linear-gradient(180deg, #e74c3c, #c0392b);
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(231,76,60,.3), inset 0 -10px 15px rgba(0,0,0,.2);
+}
+.music-drums::after {
+  content: '';
+  position: absolute;
+  bottom: 45px;
+  left: 35px;
+  width: 110px;
+  height: 30px;
+  background: radial-gradient(ellipse, rgba(255,255,255,.1) 0%, rgba(255,220,200,.05) 100%);
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,.15);
+}
+.music-drums .snare {
+  position: absolute;
+  bottom: 30px;
+  left: 5px;
+  width: 55px;
+  height: 40px;
+  background: linear-gradient(180deg, #f39c12, #e67e22);
+  border-radius: 50%;
+  box-shadow: 0 3px 8px rgba(243,156,18,.3);
+}
+.music-drums .snare::after {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 45px;
+  height: 15px;
+  background: radial-gradient(ellipse, rgba(255,255,255,.15), transparent);
+  border-radius: 50%;
+}
+.music-drums .hihat {
+  position: absolute;
+  bottom: 55px;
+  right: 10px;
+  width: 40px;
+  height: 8px;
+  background: linear-gradient(180deg, #c8a030, #a08020);
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0,0,0,.3);
+}
+.music-drums .hihat::before {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 0;
+  width: 40px;
+  height: 6px;
+  background: linear-gradient(180deg, #b09020, #907010);
+  border-radius: 50%;
+}
+.music-drums .hihat::after {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 18px;
+  width: 4px;
+  height: 35px;
+  background: #888;
+  border-radius: 2px;
+}
+.music-drums .drumstick {
+  position: absolute;
+  width: 3px;
+  height: 50px;
+  background: linear-gradient(180deg, #d4a050, #b8860b);
+  border-radius: 2px;
+  transform-origin: bottom center;
+}
+.music-drums .drumstick:nth-child(3) { top: 0; left: 70px; transform: rotate(-15deg); }
+.music-drums .drumstick:nth-child(4) { top: 0; left: 110px; transform: rotate(15deg); }
+.card:hover .music-drums .drumstick,
+.lightbox-art .music-drums .drumstick {
+  animation: musicDrumHit .3s ease-in-out infinite alternate;
+}
+.card:hover .music-drums::before,
+.lightbox-art .music-drums::before {
+  animation: musicDrumVibrate .1s ease-in-out 4;
+}
+
+@keyframes musicDrumHit {
+  0% { transform: rotate(-15deg); }
+  100% { transform: rotate(-25deg); }
+}
+@keyframes musicDrumVibrate {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+}
+
+/* --- 6. Saxophone --- */
+.music-sax {
+  position: relative;
+  width: 120px;
+  height: 160px;
+  margin: 0 auto;
+  animation: musicSaxIdle 4s ease-in-out infinite;
+}
+.music-sax::before {
+  content: '';
+  position: absolute;
+  bottom: 5px;
+  left: 30px;
+  width: 60px;
+  height: 50px;
+  background: radial-gradient(ellipse at 50% 80%, #d4a050, #c8a030);
+  border-radius: 0 0 30px 30px;
+  box-shadow: 0 4px 10px rgba(0,0,0,.3), inset -5px 0 10px rgba(0,0,0,.1);
+}
+.music-sax::after {
+  content: '';
+  position: absolute;
+  top: 15px;
+  left: 50px;
+  width: 14px;
+  height: 90px;
+  background: linear-gradient(90deg, #c8a030, #d4a050, #c8a030);
+  border-radius: 7px;
+  transform: rotate(-5deg);
+  box-shadow: inset -3px 0 5px rgba(0,0,0,.15);
+}
+.music-sax .sax-mouthpiece {
+  position: absolute;
+  top: 5px;
+  left: 42px;
+  width: 10px;
+  height: 20px;
+  background: #333;
+  border-radius: 5px 5px 3px 3px;
+  transform: rotate(-15deg);
+}
+.music-sax .sax-key {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: radial-gradient(circle, #e8c050, #c8a030);
+  border-radius: 50%;
+  box-shadow: 0 1px 3px rgba(0,0,0,.3);
+}
+.music-sax .sax-key:nth-child(2) { top: 45px; left: 65px; }
+.music-sax .sax-key:nth-child(3) { top: 60px; left: 66px; }
+.music-sax .sax-key:nth-child(4) { top: 75px; left: 65px; }
+.music-sax .sax-key:nth-child(5) { top: 90px; left: 63px; }
+.card:hover .music-sax,
+.lightbox-art .music-sax {
+  animation: musicSaxSway 1s ease-in-out infinite;
+}
+
+@keyframes musicSaxIdle {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(2deg); }
+}
+@keyframes musicSaxSway {
+  0%, 100% { transform: rotate(-3deg); }
+  50% { transform: rotate(3deg); }
+}
+
+/* --- 7. Mic Stand --- */
+.music-micstand {
+  position: relative;
+  width: 100px;
+  height: 160px;
+  margin: 0 auto;
+}
+.music-micstand::before {
+  content: '';
+  position: absolute;
+  bottom: 5px;
+  left: 15px;
+  width: 70px;
+  height: 8px;
+  background: linear-gradient(180deg, #555, #333);
+  border-radius: 4px;
+}
+.music-micstand::after {
+  content: '';
+  position: absolute;
+  bottom: 13px;
+  left: 46px;
+  width: 8px;
+  height: 110px;
+  background: linear-gradient(90deg, #888, #aaa, #888);
+  border-radius: 4px 4px 0 0;
+}
+.music-micstand .ms-head {
+  position: absolute;
+  top: 10px;
+  left: 35px;
+  width: 30px;
+  height: 35px;
+  background:
+    radial-gradient(ellipse at 30% 30%, #888 0%, #555 100%);
+  border-radius: 15px 15px 12px 12px;
+  box-shadow: 0 3px 8px rgba(0,0,0,.3);
+  background-image:
+    repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,.1) 2px, rgba(0,0,0,.1) 3px),
+    repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0,0,0,.08) 2px, rgba(0,0,0,.08) 3px);
+}
+.music-micstand .ms-spotlight {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 100px;
+  background: radial-gradient(ellipse at 50% 0%, rgba(241,196,15,.15), transparent 70%);
+  opacity: 0;
+  transition: opacity .4s;
+}
+.card:hover .music-micstand .ms-spotlight,
+.lightbox-art .music-micstand .ms-spotlight {
+  opacity: 1;
+  animation: musicSpotlight 2s ease-in-out infinite;
+}
+
+@keyframes musicSpotlight {
+  0%, 100% { opacity: .8; }
+  50% { opacity: .4; }
+}
+
+/* --- 8. Speaker --- */
+.music-speaker {
+  position: relative;
+  width: 110px;
+  height: 150px;
+  margin: 0 auto;
+}
+.music-speaker::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 90px;
+  height: 130px;
+  background: linear-gradient(180deg, #2c3e50, #1a252f);
+  border-radius: 8px;
+  box-shadow: 0 6px 15px rgba(0,0,0,.4), inset 0 1px 3px rgba(255,255,255,.1);
+}
+.music-speaker .woofer {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 60px;
+  background:
+    radial-gradient(circle, #333 15%, #222 17%, #222 30%, #333 32%, #444 50%, #333 52%, #2a2a2a 100%);
+  border-radius: 50%;
+  border: 3px solid #3a4a5a;
+  box-shadow: inset 0 0 10px rgba(0,0,0,.5);
+  transition: transform .1s;
+}
+.music-speaker .tweeter {
+  position: absolute;
+  top: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 22px;
+  height: 22px;
+  background: radial-gradient(circle, #555 30%, #333 50%, #222 100%);
+  border-radius: 50%;
+  border: 2px solid #3a4a5a;
+}
+.music-speaker .speaker-led {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 6px;
+  background: #2ecc71;
+  border-radius: 50%;
+  box-shadow: 0 0 4px rgba(46,204,113,.5);
+}
+.card:hover .music-speaker .woofer,
+.lightbox-art .music-speaker .woofer {
+  animation: musicBassPulse .15s ease-in-out infinite alternate;
+}
+
+@keyframes musicBassPulse {
+  0% { transform: translateX(-50%) scale(1); }
+  100% { transform: translateX(-50%) scale(1.06); }
+}
+
+/* --- 9. Trumpet --- */
+.music-trumpet {
+  position: relative;
+  width: 180px;
+  height: 100px;
+  margin: 15px auto;
+}
+.music-trumpet::before {
+  content: '';
+  position: absolute;
+  top: 35px;
+  left: 30px;
+  width: 100px;
+  height: 16px;
+  background: linear-gradient(180deg, #d4a050, #c8a030, #b08020);
+  border-radius: 8px 0 0 8px;
+  box-shadow: 0 3px 8px rgba(0,0,0,.2), inset 0 2px 4px rgba(255,255,255,.2);
+}
+.music-trumpet::after {
+  content: '';
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  width: 45px;
+  height: 46px;
+  background: radial-gradient(ellipse at 0% 50%, transparent 40%, #c8a030 42%, #d4a050 70%, #c8a030 100%);
+  border-radius: 0 50% 50% 0;
+  box-shadow: 3px 0 8px rgba(0,0,0,.2);
+}
+.music-trumpet .valve {
+  position: absolute;
+  top: 22px;
+  width: 10px;
+  height: 18px;
+  background: linear-gradient(180deg, #e8c050, #c8a030);
+  border-radius: 5px 5px 0 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,.2);
+}
+.music-trumpet .valve:first-child { left: 60px; }
+.music-trumpet .valve:nth-child(2) { left: 78px; }
+.music-trumpet .valve:nth-child(3) { left: 96px; }
+.music-trumpet .mouthpiece {
+  position: absolute;
+  top: 37px;
+  left: 15px;
+  width: 20px;
+  height: 12px;
+  background: linear-gradient(180deg, #d4a050, #b08020);
+  border-radius: 6px 0 0 6px;
+}
+.music-trumpet .trumpet-note {
+  position: absolute;
+  top: 15px;
+  right: 5px;
+  width: 10px;
+  height: 10px;
+  background: rgba(241,196,15,.5);
+  border-radius: 50%;
+  opacity: 0;
+}
+.music-trumpet .trumpet-note::after {
+  content: '';
+  position: absolute;
+  top: -5px;
+  right: -2px;
+  width: 2px;
+  height: 12px;
+  background: rgba(241,196,15,.5);
+}
+.music-trumpet .trumpet-note:nth-child(5) { top: 5px; right: 0; }
+.music-trumpet .trumpet-note:nth-child(6) { top: 25px; right: -5px; }
+.card:hover .music-trumpet .trumpet-note,
+.lightbox-art .music-trumpet .trumpet-note {
+  animation: musicTrumpetNote 1.5s ease-out infinite;
+}
+.music-trumpet .trumpet-note:nth-child(5) { animation-delay: .3s; }
+.music-trumpet .trumpet-note:nth-child(6) { animation-delay: .6s; }
+
+@keyframes musicTrumpetNote {
+  0% { opacity: .7; transform: translateX(0) translateY(0) scale(1); }
+  100% { opacity: 0; transform: translateX(15px) translateY(-15px) scale(.5); }
+}
+
+/* --- 10. Harp --- */
+.music-harp {
+  position: relative;
+  width: 130px;
+  height: 160px;
+  margin: 0 auto;
+}
+.music-harp::before {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 20px;
+  width: 8px;
+  height: 140px;
+  background: linear-gradient(180deg, #d4a050, #8b6914);
+  border-radius: 4px;
+  box-shadow: 2px 0 4px rgba(0,0,0,.2);
+}
+.music-harp::after {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 20px;
+  width: 80px;
+  height: 8px;
+  background: linear-gradient(90deg, #d4a050, #b08020);
+  border-radius: 4px 20px 4px 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,.2);
+  transform-origin: left;
+  transform: rotate(15deg);
+}
+.music-harp .harp-base {
+  position: absolute;
+  bottom: 5px;
+  left: 15px;
+  width: 70px;
+  height: 10px;
+  background: linear-gradient(90deg, #8b6914, #a07818);
+  border-radius: 4px;
+}
+.music-harp .harp-curve {
+  position: absolute;
+  top: 15px;
+  left: 27px;
+  width: 65px;
+  height: 100px;
+  border: 4px solid transparent;
+  border-right: 6px solid #c8a030;
+  border-radius: 0 60px 40px 0;
+}
+.music-harp .harp-string {
+  position: absolute;
+  bottom: 15px;
+  width: 1px;
+  background: linear-gradient(180deg, rgba(255,215,0,.6), rgba(255,215,0,.3));
+  transition: background .3s;
+}
+.music-harp .harp-string:nth-child(3) { left: 32px; height: 100px; }
+.music-harp .harp-string:nth-child(4) { left: 40px; height: 110px; }
+.music-harp .harp-string:nth-child(5) { left: 48px; height: 115px; }
+.music-harp .harp-string:nth-child(6) { left: 56px; height: 118px; }
+.music-harp .harp-string:nth-child(7) { left: 64px; height: 116px; }
+.music-harp .harp-string:nth-child(8) { left: 72px; height: 108px; }
+.music-harp .harp-string:nth-child(9) { left: 80px; height: 95px; }
+.music-harp .harp-scroll {
+  position: absolute;
+  top: 0;
+  left: 16px;
+  width: 16px;
+  height: 16px;
+  border: 4px solid #d4a050;
+  border-radius: 50%;
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+  transform: rotate(-45deg);
+}
+.card:hover .music-harp .harp-string,
+.lightbox-art .music-harp .harp-string {
+  animation: musicHarpShimmer 1s ease-in-out infinite;
+  background: linear-gradient(180deg, rgba(255,215,0,.9), rgba(255,215,0,.5));
+}
+.music-harp .harp-string:nth-child(4) { animation-delay: .1s; }
+.music-harp .harp-string:nth-child(5) { animation-delay: .2s; }
+.music-harp .harp-string:nth-child(6) { animation-delay: .3s; }
+.music-harp .harp-string:nth-child(7) { animation-delay: .4s; }
+.music-harp .harp-string:nth-child(8) { animation-delay: .5s; }
+.music-harp .harp-string:nth-child(9) { animation-delay: .6s; }
+
+@keyframes musicHarpShimmer {
+  0%, 100% { opacity: .5; transform: scaleX(1); }
+  50% { opacity: 1; transform: scaleX(2); }
+}

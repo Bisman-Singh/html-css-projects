@@ -1,0 +1,918 @@
+/* ===== HOLIDAYS CSS ART — 10 pieces ===== */
+
+/* ---------- 1. PUMPKIN ---------- */
+.hol-pumpkin {
+  position: relative;
+  width: 150px;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hol-pumpkin::before {
+  content: '';
+  position: absolute;
+  width: 90px;
+  height: 80px;
+  background: radial-gradient(ellipse at 30% 40%, #fb923c, #ea580c 50%, #c2410c 100%);
+  border-radius: 50%;
+  top: 45px;
+  box-shadow:
+    -18px 0 0 -4px #f97316, 18px 0 0 -4px #f97316,
+    0 0 20px rgba(234, 88, 12, 0.3),
+    inset -10px 0 15px rgba(0, 0, 0, 0.15), inset 10px 0 15px rgba(0, 0, 0, 0.15);
+  animation: hol-pumpkin-idle 3s ease-in-out infinite;
+}
+.hol-pumpkin::after {
+  content: '';
+  position: absolute;
+  top: 35px;
+  width: 8px;
+  height: 16px;
+  background: linear-gradient(180deg, #15803d, #166534);
+  border-radius: 3px 3px 0 0;
+  z-index: 1;
+}
+.hol-pumpkin span:nth-child(1) {
+  position: absolute;
+  top: 60px;
+  left: calc(50% - 18px);
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 12px solid #fbbf24;
+  z-index: 1;
+  box-shadow: 0 0 8px rgba(251, 191, 36, 0.5);
+  filter: drop-shadow(0 0 3px rgba(251, 191, 36, 0.6));
+}
+.hol-pumpkin span:nth-child(2) {
+  position: absolute;
+  top: 60px;
+  right: calc(50% - 18px);
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 12px solid #fbbf24;
+  z-index: 1;
+  filter: drop-shadow(0 0 3px rgba(251, 191, 36, 0.6));
+}
+.hol-pumpkin span:nth-child(3) {
+  position: absolute;
+  top: 82px;
+  width: 30px;
+  height: 10px;
+  background: #fbbf24;
+  z-index: 1;
+  clip-path: polygon(0% 0%, 10% 100%, 25% 0%, 40% 100%, 55% 0%, 70% 100%, 85% 0%, 100% 100%, 100% 0%);
+  filter: drop-shadow(0 0 4px rgba(251, 191, 36, 0.5));
+}
+.card:hover .hol-pumpkin::before,
+.lightbox-art .hol-pumpkin::before {
+  box-shadow:
+    -18px 0 0 -4px #f97316, 18px 0 0 -4px #f97316,
+    0 0 40px rgba(251, 191, 36, 0.5), 0 0 60px rgba(234, 88, 12, 0.3),
+    inset -10px 0 15px rgba(0, 0, 0, 0.15), inset 10px 0 15px rgba(0, 0, 0, 0.15);
+  animation: hol-pumpkin-glow 1s ease-in-out infinite;
+}
+.card:hover .hol-pumpkin span:nth-child(1),
+.lightbox-art .hol-pumpkin span:nth-child(1),
+.card:hover .hol-pumpkin span:nth-child(2),
+.lightbox-art .hol-pumpkin span:nth-child(2),
+.card:hover .hol-pumpkin span:nth-child(3),
+.lightbox-art .hol-pumpkin span:nth-child(3) {
+  filter: drop-shadow(0 0 8px rgba(251, 191, 36, 0.9));
+}
+@keyframes hol-pumpkin-idle {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+}
+@keyframes hol-pumpkin-glow {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.3); }
+}
+
+/* ---------- 2. CHRISTMAS TREE ---------- */
+.hol-xmastree {
+  position: relative;
+  width: 150px;
+  height: 170px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hol-xmastree::before {
+  content: '';
+  position: absolute;
+  bottom: 10px;
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 100px solid #15803d;
+  filter: drop-shadow(0 0 8px rgba(21, 128, 61, 0.3));
+  animation: hol-xmas-idle 4s ease-in-out infinite;
+}
+.hol-xmastree::after {
+  content: '';
+  position: absolute;
+  bottom: 10px;
+  width: 20px;
+  height: 22px;
+  background: linear-gradient(180deg, #78350f, #92400e);
+  border-radius: 3px;
+}
+.hol-xmastree span:nth-child(1) {
+  position: absolute;
+  top: 18px;
+  width: 18px;
+  height: 18px;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  background: #fbbf24;
+  z-index: 2;
+  box-shadow: 0 0 10px rgba(251, 191, 36, 0.5);
+  animation: hol-xmas-star 2s ease-in-out infinite;
+}
+.hol-xmastree span:nth-child(2) {
+  position: absolute;
+  top: 55px;
+  left: calc(50% - 8px);
+  width: 8px;
+  height: 8px;
+  background: #ef4444;
+  border-radius: 50%;
+  z-index: 2;
+  box-shadow:
+    16px 15px 0 -1px #3b82f6,
+    -10px 25px 0 -1px #fbbf24,
+    8px 38px 0 -1px #a855f7,
+    -15px 45px 0 -1px #ef4444,
+    20px 52px 0 -1px #22c55e;
+  animation: hol-xmas-ornaments 3s ease-in-out infinite;
+}
+.hol-xmastree span:nth-child(3) {
+  position: absolute;
+  top: 50px;
+  left: calc(50% - 20px);
+  width: 40px;
+  height: 60px;
+  border: 2px dashed rgba(251, 191, 36, 0.3);
+  border-radius: 0;
+  z-index: 2;
+  transform: rotate(15deg);
+  border-top: none;
+  border-bottom: none;
+}
+.card:hover .hol-xmastree span:nth-child(2),
+.lightbox-art .hol-xmastree span:nth-child(2) {
+  animation: hol-xmas-twinkle 0.5s ease-in-out infinite;
+}
+.card:hover .hol-xmastree span:nth-child(1),
+.lightbox-art .hol-xmastree span:nth-child(1) {
+  animation: hol-xmas-star-hover 0.6s ease-in-out infinite;
+  box-shadow: 0 0 20px rgba(251, 191, 36, 0.8);
+}
+@keyframes hol-xmas-idle {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+}
+@keyframes hol-xmas-star {
+  0%, 100% { transform: rotate(0deg); opacity: 0.9; }
+  50% { transform: rotate(10deg); opacity: 1; }
+}
+@keyframes hol-xmas-star-hover {
+  0%, 100% { transform: scale(1) rotate(0deg); filter: brightness(1); }
+  50% { transform: scale(1.3) rotate(15deg); filter: brightness(1.5); }
+}
+@keyframes hol-xmas-ornaments {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 1; }
+}
+@keyframes hol-xmas-twinkle {
+  0%, 100% { opacity: 1; filter: brightness(1); }
+  50% { opacity: 0.5; filter: brightness(1.8); }
+}
+
+/* ---------- 3. GIFT ---------- */
+.hol-gift {
+  position: relative;
+  width: 150px;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hol-gift::before {
+  content: '';
+  position: absolute;
+  width: 80px;
+  height: 65px;
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
+  border-radius: 6px;
+  top: 55px;
+  box-shadow: 0 4px 12px rgba(185, 28, 28, 0.3), inset 0 0 15px rgba(0, 0, 0, 0.1);
+  animation: hol-gift-idle 3s ease-in-out infinite;
+}
+.hol-gift::after {
+  content: '';
+  position: absolute;
+  top: 55px;
+  width: 80px;
+  height: 65px;
+  background:
+    linear-gradient(90deg, transparent 35px, #fbbf24 35px, #fbbf24 45px, transparent 45px),
+    linear-gradient(180deg, transparent 27px, #fbbf24 27px, #fbbf24 37px, transparent 37px);
+  border-radius: 6px;
+  z-index: 1;
+}
+.hol-gift span:nth-child(1) {
+  position: absolute;
+  top: 40px;
+  width: 90px;
+  height: 16px;
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  border-radius: 4px;
+  z-index: 2;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.5s ease;
+}
+.hol-gift span:nth-child(2) {
+  position: absolute;
+  top: 28px;
+  width: 25px;
+  height: 18px;
+  border: 4px solid #fbbf24;
+  border-bottom: none;
+  border-radius: 12px 12px 0 0;
+  z-index: 3;
+  box-shadow: -15px 0 0 0 #fbbf24;
+  background: transparent;
+}
+.card:hover .hol-gift span:nth-child(1),
+.lightbox-art .hol-gift span:nth-child(1) {
+  transform: translateY(-10px) rotate(-3deg);
+}
+.card:hover .hol-gift span:nth-child(2),
+.lightbox-art .hol-gift span:nth-child(2) {
+  transform: translateY(-10px) rotate(-3deg);
+  transition: transform 0.5s ease;
+}
+.card:hover .hol-gift::before,
+.lightbox-art .hol-gift::before {
+  box-shadow: 0 4px 20px rgba(185, 28, 28, 0.5), inset 0 0 15px rgba(0, 0, 0, 0.1);
+}
+@keyframes hol-gift-idle {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+}
+
+/* ---------- 4. FIREWORKS ---------- */
+.hol-fireworks {
+  position: relative;
+  width: 180px;
+  height: 160px;
+  background: linear-gradient(180deg, #020617 0%, #0f172a 60%, #1e293b 100%);
+  border-radius: 12px;
+  overflow: hidden;
+  animation: hol-fw-idle 3s ease-in-out infinite;
+}
+.hol-fireworks::before {
+  content: '';
+  position: absolute;
+  top: 40px;
+  left: 50px;
+  width: 6px;
+  height: 6px;
+  background: #ef4444;
+  border-radius: 50%;
+  box-shadow:
+    10px -10px 0 0 #ef4444, -10px -10px 0 0 #ef4444,
+    10px 10px 0 0 #ef4444, -10px 10px 0 0 #ef4444,
+    14px 0 0 0 #ef4444, -14px 0 0 0 #ef4444,
+    0 14px 0 0 #ef4444, 0 -14px 0 0 #ef4444,
+    18px -5px 0 -1px #fbbf24, -18px 5px 0 -1px #fbbf24,
+    5px -18px 0 -1px #fbbf24, -5px 18px 0 -1px #fbbf24;
+  animation: hol-fw-burst1 4s ease-out infinite;
+}
+.hol-fireworks::after {
+  content: '';
+  position: absolute;
+  top: 50px;
+  right: 40px;
+  width: 5px;
+  height: 5px;
+  background: #22c55e;
+  border-radius: 50%;
+  box-shadow:
+    8px -8px 0 0 #22c55e, -8px -8px 0 0 #22c55e,
+    8px 8px 0 0 #22c55e, -8px 8px 0 0 #22c55e,
+    12px 0 0 0 #22c55e, -12px 0 0 0 #22c55e,
+    0 12px 0 0 #22c55e, 0 -12px 0 0 #22c55e,
+    15px -4px 0 -1px #38bdf8, -15px 4px 0 -1px #38bdf8;
+  animation: hol-fw-burst2 4s 1.5s ease-out infinite;
+}
+.hol-fireworks span:nth-child(1) {
+  position: absolute;
+  top: 80px;
+  left: 90px;
+  width: 4px;
+  height: 4px;
+  background: #c084fc;
+  border-radius: 50%;
+  box-shadow:
+    7px -7px 0 0 #c084fc, -7px -7px 0 0 #c084fc,
+    7px 7px 0 0 #c084fc, -7px 7px 0 0 #c084fc,
+    10px 0 0 0 #c084fc, -10px 0 0 0 #c084fc,
+    0 10px 0 0 #c084fc, 0 -10px 0 0 #c084fc,
+    13px -3px 0 -1px #f472b6, -13px 3px 0 -1px #f472b6;
+  animation: hol-fw-burst3 4s 3s ease-out infinite;
+}
+.card:hover .hol-fireworks::before,
+.lightbox-art .hol-fireworks::before {
+  animation: hol-fw-burst1-hover 1.2s ease-out infinite;
+}
+.card:hover .hol-fireworks::after,
+.lightbox-art .hol-fireworks::after {
+  animation: hol-fw-burst2-hover 1.2s 0.4s ease-out infinite;
+}
+.card:hover .hol-fireworks span:nth-child(1),
+.lightbox-art .hol-fireworks span:nth-child(1) {
+  animation: hol-fw-burst3-hover 1.2s 0.8s ease-out infinite;
+}
+@keyframes hol-fw-idle {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.1); }
+}
+@keyframes hol-fw-burst1 {
+  0%, 60% { transform: scale(0); opacity: 0; }
+  65% { transform: scale(0.5); opacity: 1; }
+  80% { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(1.3); opacity: 0; }
+}
+@keyframes hol-fw-burst2 {
+  0%, 60% { transform: scale(0); opacity: 0; }
+  65% { transform: scale(0.5); opacity: 1; }
+  80% { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(1.3); opacity: 0; }
+}
+@keyframes hol-fw-burst3 {
+  0%, 60% { transform: scale(0); opacity: 0; }
+  65% { transform: scale(0.5); opacity: 1; }
+  80% { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(1.3); opacity: 0; }
+}
+@keyframes hol-fw-burst1-hover {
+  0% { transform: scale(0); opacity: 0; }
+  30% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(2); opacity: 0; }
+}
+@keyframes hol-fw-burst2-hover {
+  0% { transform: scale(0); opacity: 0; }
+  30% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(2); opacity: 0; }
+}
+@keyframes hol-fw-burst3-hover {
+  0% { transform: scale(0); opacity: 0; }
+  30% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(2); opacity: 0; }
+}
+
+/* ---------- 5. SNOW GLOBE ---------- */
+.hol-snowglobe {
+  position: relative;
+  width: 150px;
+  height: 170px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hol-snowglobe::before {
+  content: '';
+  position: absolute;
+  width: 110px;
+  height: 110px;
+  background: radial-gradient(circle at 35% 35%, rgba(147, 197, 253, 0.2), rgba(30, 58, 138, 0.3) 70%, rgba(15, 23, 42, 0.5));
+  border: 3px solid rgba(148, 163, 184, 0.4);
+  border-radius: 50%;
+  top: 10px;
+  box-shadow: inset 0 0 30px rgba(147, 197, 253, 0.1), 0 0 15px rgba(148, 163, 184, 0.1);
+  animation: hol-sg-idle 4s ease-in-out infinite;
+}
+.hol-snowglobe::after {
+  content: '';
+  position: absolute;
+  bottom: 8px;
+  width: 80px;
+  height: 22px;
+  background: linear-gradient(180deg, #78350f, #92400e);
+  border-radius: 4px 4px 8px 8px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+}
+.hol-snowglobe span:nth-child(1) {
+  position: absolute;
+  top: 50px;
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 30px solid #15803d;
+  z-index: 1;
+  filter: drop-shadow(0 0 3px rgba(21, 128, 61, 0.3));
+}
+.hol-snowglobe span:nth-child(1)::after {
+  content: '';
+  position: absolute;
+  top: 28px;
+  left: -2px;
+  width: 4px;
+  height: 10px;
+  background: #78350f;
+}
+.hol-snowglobe span:nth-child(2) {
+  position: absolute;
+  top: 30px;
+  left: calc(50% - 40px);
+  width: 3px;
+  height: 3px;
+  background: #fff;
+  border-radius: 50%;
+  z-index: 2;
+  box-shadow:
+    10px 5px 0 0 #fff, 20px -2px 0 -0.5px #fff, 35px 8px 0 0 #fff,
+    50px 3px 0 -0.5px #fff, 65px 10px 0 0 #fff, 75px -5px 0 -0.5px #fff,
+    5px 20px 0 0 #fff, 25px 18px 0 -0.5px #fff, 45px 25px 0 0 #fff,
+    60px 22px 0 -0.5px #fff, 15px 35px 0 0 #fff, 40px 40px 0 -0.5px #fff,
+    55px 38px 0 0 #fff, 70px 30px 0 -0.5px #fff;
+  animation: hol-sg-snow 3s linear infinite;
+}
+.card:hover .hol-snowglobe span:nth-child(2),
+.lightbox-art .hol-snowglobe span:nth-child(2) {
+  animation: hol-sg-snow-hover 1.5s linear infinite;
+}
+.card:hover .hol-snowglobe::before,
+.lightbox-art .hol-snowglobe::before {
+  box-shadow: inset 0 0 30px rgba(147, 197, 253, 0.2), 0 0 25px rgba(148, 163, 184, 0.2);
+}
+@keyframes hol-sg-idle {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.01); }
+}
+@keyframes hol-sg-snow {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(25px); opacity: 0.3; }
+}
+@keyframes hol-sg-snow-hover {
+  0% { transform: translateY(-10px); opacity: 1; }
+  100% { transform: translateY(40px); opacity: 0; }
+}
+
+/* ---------- 6. CANDY CANE ---------- */
+.hol-candy {
+  position: relative;
+  width: 150px;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hol-candy::before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 80px;
+  background: repeating-linear-gradient(
+    -45deg,
+    #ef4444, #ef4444 8px,
+    #f8fafc 8px, #f8fafc 16px
+  );
+  border-radius: 10px;
+  top: 55px;
+  left: calc(50% - 10px);
+  box-shadow: 0 0 10px rgba(239, 68, 68, 0.2);
+  animation: hol-candy-idle 4s ease-in-out infinite;
+}
+.hol-candy::after {
+  content: '';
+  position: absolute;
+  top: 30px;
+  left: calc(50% - 10px);
+  width: 40px;
+  height: 40px;
+  border: 20px solid transparent;
+  border-top: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-radius: 50%;
+  box-sizing: border-box;
+  background:
+    repeating-linear-gradient(
+      -45deg,
+      #ef4444, #ef4444 8px,
+      #f8fafc 8px, #f8fafc 16px
+    ) padding-box;
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  padding: 10px;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 100%);
+}
+.hol-candy span:nth-child(1) {
+  position: absolute;
+  top: 65px;
+  left: calc(50% + 15px);
+  width: 25px;
+  height: 25px;
+  background: repeating-conic-gradient(#ef4444 0deg 30deg, #f8fafc 30deg 60deg);
+  border-radius: 50%;
+  z-index: 1;
+  box-shadow: 0 0 8px rgba(239, 68, 68, 0.3);
+  animation: hol-candy-swirl 6s linear infinite;
+}
+.card:hover .hol-candy::before,
+.lightbox-art .hol-candy::before {
+  animation: hol-candy-spin 2s linear infinite;
+}
+.card:hover .hol-candy span:nth-child(1),
+.lightbox-art .hol-candy span:nth-child(1) {
+  animation: hol-candy-swirl-hover 1s linear infinite;
+}
+@keyframes hol-candy-idle {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(2deg); }
+}
+@keyframes hol-candy-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@keyframes hol-candy-swirl {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@keyframes hol-candy-swirl-hover {
+  from { transform: rotate(0deg) scale(1.1); }
+  to { transform: rotate(360deg) scale(1.1); }
+}
+
+/* ---------- 7. EASTER EGG ---------- */
+.hol-egg {
+  position: relative;
+  width: 150px;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hol-egg::before {
+  content: '';
+  position: absolute;
+  width: 70px;
+  height: 90px;
+  background: linear-gradient(180deg, #a78bfa 0%, #818cf8 30%, #60a5fa 60%, #38bdf8 100%);
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  box-shadow: 0 4px 15px rgba(129, 140, 248, 0.3), inset 0 0 15px rgba(255, 255, 255, 0.1);
+  animation: hol-egg-idle 3s ease-in-out infinite;
+}
+.hol-egg::after {
+  content: '';
+  position: absolute;
+  width: 70px;
+  height: 90px;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  background:
+    linear-gradient(90deg, transparent 0%, transparent 30%, rgba(251, 191, 36, 0.5) 30%, rgba(251, 191, 36, 0.5) 33%, transparent 33%, transparent 67%, rgba(251, 191, 36, 0.5) 67%, rgba(251, 191, 36, 0.5) 70%, transparent 70%),
+    repeating-linear-gradient(0deg, transparent 0px, transparent 18px, rgba(244, 114, 182, 0.4) 18px, rgba(244, 114, 182, 0.4) 22px, transparent 22px);
+  z-index: 1;
+}
+.hol-egg span:nth-child(1) {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #fbbf24;
+  border-radius: 50%;
+  z-index: 2;
+  box-shadow:
+    10px -15px 0 0 #f472b6, -10px -15px 0 0 #22c55e,
+    15px 5px 0 0 #ef4444, -15px 5px 0 0 #3b82f6,
+    10px 20px 0 0 #a855f7, -10px 20px 0 0 #fbbf24;
+}
+.card:hover .hol-egg::before,
+.lightbox-art .hol-egg::before {
+  animation: hol-egg-roll 1.5s ease-in-out infinite;
+}
+@keyframes hol-egg-idle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(2deg); }
+  75% { transform: rotate(-2deg); }
+}
+@keyframes hol-egg-roll {
+  0% { transform: rotate(0deg) translateX(0); }
+  25% { transform: rotate(15deg) translateX(8px); }
+  50% { transform: rotate(0deg) translateX(0); }
+  75% { transform: rotate(-15deg) translateX(-8px); }
+  100% { transform: rotate(0deg) translateX(0); }
+}
+
+/* ---------- 8. TURKEY ---------- */
+.hol-turkey {
+  position: relative;
+  width: 150px;
+  height: 170px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hol-turkey::before {
+  content: '';
+  position: absolute;
+  width: 55px;
+  height: 55px;
+  background: linear-gradient(135deg, #a16207, #92400e);
+  border-radius: 50%;
+  top: 60px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  animation: hol-turkey-idle 3s ease-in-out infinite;
+}
+.hol-turkey::after {
+  content: '';
+  position: absolute;
+  top: 15px;
+  width: 80px;
+  height: 60px;
+  background: transparent;
+  border-radius: 50%;
+  z-index: 0;
+  box-shadow:
+    0 -8px 0 -2px #ef4444,
+    -12px -6px 0 -2px #f97316,
+    12px -6px 0 -2px #f97316,
+    -22px 0 0 -2px #fbbf24,
+    22px 0 0 -2px #fbbf24,
+    -28px 10px 0 -3px #a16207,
+    28px 10px 0 -3px #a16207;
+}
+.hol-turkey span:nth-child(1) {
+  position: absolute;
+  top: 42px;
+  width: 25px;
+  height: 28px;
+  background: linear-gradient(180deg, #92400e, #78350f);
+  border-radius: 50%;
+  z-index: 2;
+}
+.hol-turkey span:nth-child(1)::before {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  width: 4px;
+  height: 4px;
+  background: #1e293b;
+  border-radius: 50%;
+  box-shadow: 8px 0 0 0 #1e293b;
+}
+.hol-turkey span:nth-child(1)::after {
+  content: '';
+  position: absolute;
+  top: 14px;
+  left: 8px;
+  width: 10px;
+  height: 5px;
+  background: #fbbf24;
+  clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+}
+.hol-turkey span:nth-child(2) {
+  position: absolute;
+  top: 50px;
+  left: calc(50% + 2px);
+  width: 6px;
+  height: 12px;
+  background: #ef4444;
+  border-radius: 0 0 3px 3px;
+  z-index: 3;
+}
+.card:hover .hol-turkey::after,
+.lightbox-art .hol-turkey::after {
+  animation: hol-turkey-fan 0.8s ease-in-out infinite;
+}
+.card:hover .hol-turkey span:nth-child(1),
+.lightbox-art .hol-turkey span:nth-child(1) {
+  animation: hol-turkey-gobble 0.5s ease-in-out infinite;
+}
+@keyframes hol-turkey-idle {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+}
+@keyframes hol-turkey-fan {
+  0%, 100% { transform: scaleX(1); }
+  50% { transform: scaleX(1.15); }
+}
+@keyframes hol-turkey-gobble {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-2px); }
+  75% { transform: translateX(2px); }
+}
+
+/* ---------- 9. FOUR-LEAF CLOVER ---------- */
+.hol-clover {
+  position: relative;
+  width: 150px;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hol-clover::before {
+  content: '';
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  background: radial-gradient(circle at 60% 60%, #22c55e, #15803d);
+  border-radius: 50% 50% 5px 50%;
+  top: 38px;
+  left: calc(50% - 37px);
+  box-shadow:
+    inset -3px -3px 8px rgba(0, 0, 0, 0.15),
+    0 0 10px rgba(34, 197, 94, 0.2);
+  animation: hol-clover-idle 4s ease-in-out infinite;
+}
+.hol-clover::after {
+  content: '';
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  background: radial-gradient(circle at 40% 60%, #22c55e, #15803d);
+  border-radius: 50% 50% 50% 5px;
+  top: 38px;
+  right: calc(50% - 37px);
+  box-shadow: inset 3px -3px 8px rgba(0, 0, 0, 0.15);
+  animation: hol-clover-idle 4s ease-in-out infinite;
+}
+.hol-clover span:nth-child(1) {
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  background: radial-gradient(circle at 60% 40%, #16a34a, #166534);
+  border-radius: 50% 5px 50% 50%;
+  top: 70px;
+  left: calc(50% - 37px);
+  box-shadow: inset -3px 3px 8px rgba(0, 0, 0, 0.15);
+}
+.hol-clover span:nth-child(2) {
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  background: radial-gradient(circle at 40% 40%, #16a34a, #166534);
+  border-radius: 5px 50% 50% 50%;
+  top: 70px;
+  right: calc(50% - 37px);
+  box-shadow: inset 3px 3px 8px rgba(0, 0, 0, 0.15);
+}
+.hol-clover span:nth-child(3) {
+  position: absolute;
+  top: 100px;
+  width: 5px;
+  height: 30px;
+  background: linear-gradient(180deg, #15803d, #166534);
+  border-radius: 3px;
+  z-index: 1;
+  transform: rotate(5deg);
+}
+.card:hover .hol-clover,
+.lightbox-art .hol-clover {
+  filter: brightness(1.1);
+}
+.card:hover .hol-clover::before,
+.lightbox-art .hol-clover::before {
+  animation: hol-clover-sparkle 0.8s ease-in-out infinite;
+  box-shadow: inset -3px -3px 8px rgba(0, 0, 0, 0.15), 0 0 20px rgba(34, 197, 94, 0.5);
+}
+.card:hover .hol-clover::after,
+.lightbox-art .hol-clover::after {
+  box-shadow: inset 3px -3px 8px rgba(0, 0, 0, 0.15), 0 0 20px rgba(34, 197, 94, 0.5);
+}
+.card:hover .hol-clover span:nth-child(1),
+.lightbox-art .hol-clover span:nth-child(1),
+.card:hover .hol-clover span:nth-child(2),
+.lightbox-art .hol-clover span:nth-child(2) {
+  box-shadow: 0 0 20px rgba(34, 197, 94, 0.5);
+}
+@keyframes hol-clover-idle {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(3deg); }
+}
+@keyframes hol-clover-sparkle {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.5); }
+}
+
+/* ---------- 10. BIRTHDAY CAKE ---------- */
+.hol-cake {
+  position: relative;
+  width: 150px;
+  height: 170px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hol-cake::before {
+  content: '';
+  position: absolute;
+  width: 90px;
+  height: 35px;
+  background: linear-gradient(180deg, #f472b6, #ec4899);
+  border-radius: 4px 4px 8px 8px;
+  top: 75px;
+  box-shadow: 0 3px 10px rgba(236, 72, 153, 0.3);
+  animation: hol-cake-idle 3s ease-in-out infinite;
+}
+.hol-cake::after {
+  content: '';
+  position: absolute;
+  width: 100px;
+  height: 35px;
+  background: linear-gradient(180deg, #e879f9, #d946ef);
+  border-radius: 4px 4px 10px 10px;
+  top: 105px;
+  box-shadow: 0 4px 12px rgba(217, 70, 239, 0.3);
+}
+.hol-cake span:nth-child(1) {
+  position: absolute;
+  top: 68px;
+  width: 95px;
+  height: 12px;
+  background: linear-gradient(180deg, #fef3c7, #fde68a);
+  border-radius: 3px;
+  z-index: 1;
+  overflow: hidden;
+}
+.hol-cake span:nth-child(1)::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent 0px, transparent 8px,
+    rgba(251, 191, 36, 0.3) 8px, rgba(251, 191, 36, 0.3) 10px
+  );
+}
+.hol-cake span:nth-child(2) {
+  position: absolute;
+  top: 100px;
+  width: 105px;
+  height: 10px;
+  background: linear-gradient(180deg, #fef3c7, #fde68a);
+  border-radius: 3px;
+  z-index: 1;
+}
+.hol-cake span:nth-child(3) {
+  position: absolute;
+  top: 43px;
+  left: calc(50% - 2px);
+  width: 4px;
+  height: 28px;
+  background: #fde68a;
+  border-radius: 2px;
+  z-index: 2;
+  box-shadow: -18px 0 0 0 #fde68a, 18px 0 0 0 #fde68a;
+}
+.hol-cake span:nth-child(3)::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -3px;
+  width: 10px;
+  height: 12px;
+  background: radial-gradient(ellipse, #fbbf24, #f97316);
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  box-shadow: -18px 0 0 -1px #fbbf24, 18px 0 0 -1px #fbbf24, 0 0 8px rgba(251, 191, 36, 0.5);
+  animation: hol-cake-flame 0.3s ease-in-out infinite alternate;
+}
+.card:hover .hol-cake span:nth-child(3)::before,
+.lightbox-art .hol-cake span:nth-child(3)::before {
+  animation: hol-cake-flicker 0.15s ease-in-out infinite alternate;
+  box-shadow: -18px 0 0 -1px #fbbf24, 18px 0 0 -1px #fbbf24, 0 0 15px rgba(251, 191, 36, 0.7);
+}
+.card:hover .hol-cake::before,
+.lightbox-art .hol-cake::before {
+  box-shadow: 0 3px 15px rgba(236, 72, 153, 0.5);
+}
+@keyframes hol-cake-idle {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+}
+@keyframes hol-cake-flame {
+  0% { transform: scaleY(1) scaleX(1); }
+  100% { transform: scaleY(1.2) scaleX(0.9); }
+}
+@keyframes hol-cake-flicker {
+  0% { transform: scaleY(0.8) scaleX(1.1) rotate(-3deg); }
+  100% { transform: scaleY(1.3) scaleX(0.85) rotate(3deg); }
+}
